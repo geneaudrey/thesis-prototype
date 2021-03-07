@@ -17,7 +17,7 @@ export default {
 
 <style>
 #app {
-  font-family: Avenir, Helvetica, Arial, sans-serif;
+  font-family: 'Brandon Grotesque Medium';
   -webkit-font-smoothing: antialiased;
   background: #F2F2F2;
   height: 100vh;
@@ -26,4 +26,24 @@ export default {
   color: #2c3e50;
   margin-top: 60px; */
 }
+
+@font-face {
+  font-family: 'Brandon Grotesque Bold';
+  src: url('./assets/fonts/BrandonGrotesque-Bold.eot');
+  src: url('./assets/fonts/BrandonGrotesque-Bold.eot?#iefix') format('embedded-opentype'),
+  url('./assets/fonts/BrandonGrotesque-Bold.woff') format('woff'),
+  url('./assets/fonts/BrandonGrotesque-Bold.ttf') format('truetype');
+  font-weight: normal;
+  font-style: normal;
+  }
+
+@font-face {
+  font-family: 'Brandon Grotesque Medium';
+  src: url('./assets/fonts/BrandonGrotesque-Medium.eot');
+  src: url('./assets/fonts/BrandonGrotesque-Medium.eot?#iefix') format('embedded-opentype'),
+  url('./assets/fonts/BrandonGrotesque-Medium.woff') format('woff'),
+  url('./assets/fonts/BrandonGrotesque-Medium.ttf') format('truetype');
+  font-weight: normal;
+  font-style: normal;
+  }
 </style>
