@@ -1,0 +1,157 @@
+// Custom styles & classes here
+
+// i.e. overriding bootstrap's themes
+$primary: #3AAFA9;
+$secondary: #F5F5F7;
+
+$theme-colors: (
+  "gray": #ECECEE,
+  "darkgray" : #46484D,
+  "deselected": #B6B6B6,
+  "black" : #0C0B0B,
+  "textSecondary": rgb(17,15,36,0.4)
+);
+
+// i.e. creating new classes
+// .test-box {
+//   height: 100px;
+//   width: 100px;
+//   border: 1px solid black;
+// }
+
+.border-2 {
+    border-width:2px !important;
+}
+
+.dashCard {
+    border-radius: 24px !important;
+}
+
+.dashCardItem {
+    border-radius: 14px !important;
+}
+
+.dashDP {
+    border-radius: 12px !important;
+}
+// .navbar {
+//   height: 70px;
+// }
+
+// .dropdown > button {
+//   padding: 2%;
+// }
+// .sidebar {
+//   width: 0%;
+//   -webkit-transition: width 0.3s linear;
+//   -moz-transition: width 0.3s linear;
+//   -ms-transition: width 0.3s linear;
+//   -o-transition: width 0.3s linear;
+//   transition: width 0.3s linear;
+//   white-space: nowrap;
+//   overflow: hidden;
+// }
+
+// .shown.sidebar {
+//   width: 20%;
+//   -webkit-transition: width 0.3s;
+//   -moz-transition: width 0.3s linear;
+//   -ms-transition: width 0.3s linear;
+//   -o-transition: width 0.3s linear;
+//   transition: width 0.3s linear;
+// }
+
+// // Document.vue
+// .sidenav {
+//   position: fixed; /* Fixed Sidebar (stay in place on scroll) */
+//   overflow-x: hidden; /* Disable horizontal scroll */
+//   width: 25%;
+//   height: 100%;
+// }
+
+// .outer {
+//   position: relative;
+//   height: 100%;
+//   width: 25%;
+//   overflow: auto;
+// }
+// ::-webkit-scrollbar {
+//   width: 0px;
+//   background: transparent; /* make scrollbar transparent */
+// }
+
+// // EditorTree.vue
+// .ghost {
+//   opacity: 0.5;
+//   background: #c8ebfb;
+// }
+// .flip-list-move {
+//   transition: transform 0.5s;
+// }
+// .no-move {
+//   transition: transform 0s;
+// }
+// .list-group-item {
+//   cursor: move;
+// }
+// .list-group-item i {
+//   cursor: pointer;
+// }
+// .fa-arrow-down-animated {
+//   animation-name: collapse-icon-animation;
+//   animation-duration: 0.15s;
+//   animation-direction: normal;
+//   animation-timing-function: linear;
+//   animation-fill-mode: forwards;
+// }
+
+// .fa-arrow-up-animated {
+//   animation-name: collapse-icon-animation-reverse;
+//   animation-duration: 0.25s;
+//   animation-direction: normal;
+//   animation-timing-function: linear;
+//   animation-fill-mode: forwards;
+// }
+
+// @keyframes collapse-icon-animation {
+//   0% {
+//     transform: rotate(0deg);
+//   }
+//   100% {
+//     transform: rotate(90deg);
+//   }
+// }
+
+// @keyframes collapse-icon-animation-reverse {
+//   0% {
+//     transform: rotate(90deg);
+//   }
+//   100% {
+//     transform: rotate(0deg);
+//   }
+// }
+
+// .editor-no-background {
+//   & .ql-editor {
+//     & span,
+//     & u,
+//     & s {
+//       background-color: white !important;
+//     }
+//   }
+// }
+
+// .editor-search-highlight {
+//   & .ql-editor {
+//     & u {
+//       background-color: #FF9632 !important;
+//     }
+//     & strong {
+//       background-color: #FFFF00 !important;
+//     }
+//   }
+// }
+
+// Import Bootstrap's styles
+@import "../../node_modules/bootstrap/scss/bootstrap";
+// @import "../../../node_modules/bootstrap-vue/src/index.scss";

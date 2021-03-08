@@ -1,23 +1,23 @@
 <template>
-    <div class="card border-0 shadow-sm p-4">
+    <div class="card border-0 shadow-sm p-4 dashCard">
         <div class="row p-0 m-0">
-            <button type="button" class="btn btn-outline-primary border-0 p-1" @click="active=0">  My Courses </button>
-            <button type="button" class="btn btn-outline-primary border-0 p-1 m-1" @click="active=1"> My Internships </button>
-            <button type="button" class="btn btn-outline-primary border-0 p-1 m-1" @click="active=2">  All Courses </button>
-            <button type="button" class="btn btn-outline-primary border-0 p-1 m-1" @click="active=3">  All Internships </button>
+            <button type="button" :class="[{'text-black' : active == 0}, {'text-deselected' : active !=0}, 'btn btn-outline-primary border-0 p-1 m-1 h3']"  @click="active=0">  My Courses </button>
+            <button type="button" :class="[{'text-black' : active == 1}, {'text-deselected' : active !=1}, 'btn btn-outline-primary border-0 p-1 m-1 h3']"  @click="active=1"> My Internships </button>
+            <button type="button" :class="[{'text-black' : active == 2}, {'text-deselected' : active !=2}, 'btn btn-outline-primary border-0 p-1 m-1 h3']"  @click="active=2">  All Courses </button>
+            <button type="button" :class="[{'text-black' : active == 3}, {'text-deselected' : active !=3}, 'btn btn-outline-primary border-0 p-1 m-1 h3']"  @click="active=3">  All Internships </button>
         </div>
         <div class="row p-0 m-0">
-            <div class="card bg-light border-0 p-1 w-100 m-2" v-for="item in activated" :key="item.id">
+            <div class="card bg-secondary border-0 p-2 w-100 mt-3 dashCardItem" v-for="item in activated" :key="item.id">
                 <div class="row p-0 m-0">
                     <div class="col-flex">
-                        <div class="card border-0" style="width: 80px; height: 80px">
+                        <div class="card border-0 dashDP" style="width: 80px; height: 80px">
                         </div>
                     </div>
-                    <div class="col mt-auto mb-auto">
-                        <p class="mb-0"> <b> {{item.subject}} </b> </p>
+                    <div class="col-3 mt-auto mb-auto">
+                        <p class="mb-1"> <b> {{item.subject}} </b> </p>
                         <p class="mb-0"> by {{item.prof}} </p>
                     </div>
-                    <div class="col-5 mt-auto mb-auto pl-0">
+                    <div class="col mt-auto mb-auto pl-0 text-primary">
                         <div v-if="active==0 || active==1">
                             <i class="fas fa-bullhorn fa-lg p-3"></i>
                             <i class="far fa-file-alt fa-lg p-3"></i>
@@ -30,8 +30,8 @@
                     <div class="col-flex ml-auto mt-auto mb-auto mr-3">
                         <button type="button" class="btn btn-primary mr-3" v-if="active == 0"> @ </button>
                         <button type="button" class="btn btn-primary" v-if="active == 0 || active == 1"> Continue </button>
-                        <button type="button" class="btn btn-outline-primary" v-if="active == 2"> View Course </button>
-                        <button type="button" class="btn btn-outline-primary" v-if="active == 3"> View Internship </button>
+                        <button type="button" class="btn btn-outline-primary border-2" v-if="active == 2"> View Course </button>
+                        <button type="button" class="btn btn-outline-primary border-2" v-if="active == 3"> View Internship </button>
                     </div>
                 </div>
             </div>

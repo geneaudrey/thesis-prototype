@@ -20,7 +20,7 @@ export default {
     right: 0%;
     top: 0%;
     bottom: 0%;
-    height: 100vh;
+    min-height: 100vh;
     background: #2B7A78;
     /* Shadow / Small */
 

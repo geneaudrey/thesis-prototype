@@ -20,7 +20,7 @@ export default {
   font-family: 'Brandon Grotesque Medium';
   -webkit-font-smoothing: antialiased;
   background: #F2F2F2;
-  height: 100vh;
+  min-height: 100vh;
   /* -moz-osx-font-smoothing: grayscale;
   text-align: center;
   color: #2c3e50;
