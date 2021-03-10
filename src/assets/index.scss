@@ -9,7 +9,9 @@ $theme-colors: (
   "darkgray" : #46484D,
   "deselected": #B6B6B6,
   "black" : #0C0B0B,
-  "textSecondary": rgb(17,15,36,0.4)
+  "textSecondary": rgb(17,15,36,0.4),
+  "lightgray": rgb(255,255,255,0.4)
+
 );
 
 // i.e. creating new classes
@@ -34,6 +36,11 @@ $theme-colors: (
 .dashDP {
     border-radius: 12px !important;
 }
+
+.btn:focus {
+    outline: none !important;
+    box-shadow: none !important;
+  }
 // .navbar {
 //   height: 70px;
 // }

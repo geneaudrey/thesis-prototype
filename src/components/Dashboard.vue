@@ -1,7 +1,7 @@
 <template>
   <div class="Dashboard">
     <div class="row" style="width: 100%">
-        <div class="col-2">
+        <div class="col-2 pr-0">
             <Sidebar />
         </div>
         <div class="col-10 pl-4 pt-3">
