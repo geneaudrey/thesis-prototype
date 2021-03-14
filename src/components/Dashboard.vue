@@ -18,7 +18,7 @@
                 </div>
                 <div class="col-4 pl-0 pr-0">
                     <Todo />
-                    calendar
+                    <Calendar class="mt-4" />
                 </div>
             </div>
         </div>
@@ -32,12 +32,14 @@
 import Sidebar from "./Sidebar.vue"
 import DashCard from "./DashCard.vue"
 import Todo from "./Todo.vue"
+import Calendar from "./Calendar.vue"
 export default {
   name: "Dashboard",
   components: {
       Sidebar,
       DashCard,
-      Todo
+      Todo,
+      Calendar
   }
 //   props: {
 //     msg: String
