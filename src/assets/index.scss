@@ -1,5 +1,5 @@
 // Custom styles & classes here
-
+@import url('https://cdn.rawgit.com/mfd/f3d96ec7f0e8f034cc22ea73b3797b59/raw/856f1dbb8d807aabceb80b6d4f94b464df461b3e/gotham.css');
 // i.e. overriding bootstrap's themes
 $primary: #3AAFA9;
 $secondary: #F5F5F7;
@@ -9,7 +9,7 @@ $theme-colors: (
   "darkgray" : #46484D,
   "deselected": #B6B6B6,
   "black" : #0C0B0B,
-  "textSecondary": rgb(17,15,36,0.4),
+  "textSecondary":rgb(48,49,52,1),
   "lightgray": rgb(255,255,255,0.4)
 
 );
@@ -42,14 +42,101 @@ $theme-colors: (
     box-shadow: 0px 8px 16px rgba(0, 0, 0, 0.1), 0px 0px 10px rgba(0, 0, 0, 0.0001) !important;
 }
 
-.h6 {
-    font-size: 14px !important;
+.h1 {
+    font-size: 40px !important;
+    font-family: 'Brandon Grotesque Bold' !important;
+    font-weight: 900 !important;
 }
 
+.regularM {
+    font-size: 14px;
+    font-family: 'Gotham';
+    line-height: 16px;
+}
+
+.regularS {
+    font-size: 12px;
+    font-family: 'Gotham';
+}
+
+.boldS {
+    font-size: 12px !important;
+    font-family: 'Gotham Bold' !important;
+}
+
+.h6 {
+    font-size: 16px !important;
+    font-family: 'Brandon Grotesque Medium' !important;
+}
+
+.boldDefault {
+    font-size: 16px;
+    font-family: 'Gotham Bold' !important;
+}
+
+.regularDefault {
+    font-size: 16px;
+    font-family: 'Gotham' !important;
+}
 .btn:focus {
     outline: none !important;
     box-shadow: none !important;
 }
+
+.dashButton {
+    padding: 9% !important;
+    border-radius: 8px !important;
+}
+@font-face {
+    font-family: 'Brandon Grotesque Bold';
+    src: url('./fonts/BrandonGrotesque-Bold.eot');
+    src: url('./fonts/BrandonGrotesque-Bold.eot?#iefix') format('embedded-opentype'),
+    url('./fonts/BrandonGrotesque-Bold.woff') format('woff'),
+    url('./fonts/BrandonGrotesque-Bold.ttf') format('truetype');
+    font-weight: normal;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: 'Brandon Grotesque Medium';
+    src: url('./fonts/BrandonGrotesque-Medium.eot');
+    src: url('./fonts/BrandonGrotesque-Medium.eot?#iefix') format('embedded-opentype'),
+    url('./fonts/BrandonGrotesque-Medium.woff') format('woff'),
+    url('./fonts/BrandonGrotesque-Medium.ttf') format('truetype');
+    font-weight: normal;
+    font-style: normal;
+}
+
+// @font-face {
+//     font-family: 'Gotham';
+//     // src: url('./fonts/BrandonGrotesque-Bold.eot');
+//     // src: url('./fonts/BrandonGrotesque-Bold.eot?#iefix') format('embedded-opentype'),
+//     // url('./fonts/BrandonGrotesque-Bold.woff') format('woff'),
+//     src: url('./fonts/GothamBook.ttf') format('truetype');
+//     font-weight: normal;
+//     font-style: normal;
+// }
+
+@font-face {
+	font-family: 'Gotham';
+	src: url('./fonts/GothamBook.eot');
+	src: url('./fonts/GothamBook.eot?#iefix') format('embedded-opentype'),
+    url('./fonts/GothamBook.woff') format('woff'), 
+    url('./fonts/GothamBook.ttf') format('truetype');
+    font-weight: normal;
+    font-style: normal;
+}
+
+@font-face {
+	font-family: 'Gotham Bold';
+	src: url('./fonts/gothambold1.eot');
+	src: url('./fonts/gothambold1.eot?#iefix') format('embedded-opentype'),
+    url('./fonts/gothambold1.woff') format('woff'), 
+    url('./fonts/gothambold1.ttf') format('truetype');
+    font-weight: normal;
+    font-style: normal;
+}
+
 // .navbar {
 //   height: 70px;
 // }

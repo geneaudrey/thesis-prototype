@@ -6,11 +6,11 @@
             <img :src="logo" class="icon" />
           </div>
           <p class="mb-1 text-lightgray pl-2"> MAIN </p>
-          <button type="button" :class="[{'activatedItem' : active==0},'btn sidebarItem pl-2']" @click="active=0">Home</button>
-          <button type="button" :class="[{'activatedItem' : active==1},'btn sidebarItem pl-2']" @click="active=1">Dashboard</button>
-          <button type="button" :class="[{'activatedItem' : active==2},'btn sidebarItem pl-2']" @click="active=2">Courses</button>
-          <button type="button" :class="[{'activatedItem' : active==3},'btn sidebarItem pl-2']" @click="active=3">Calendar</button>
-          <button type="button" :class="[{'activatedItem' : active==4},'btn sidebarItem pl-2']" @click="active=4">Inbox</button>
+          <button type="button" :class="[{'activatedItem' : active==0},'btn sidebarItem pl-2']" @click="active=0; $router.push({path: '/home'})">Home</button>
+          <button type="button" :class="[{'activatedItem' : active==1},'btn sidebarItem pl-2']" @click="active=1; $router.push({path: '/dashboard'})" >Dashboard</button>
+          <button type="button" :class="[{'activatedItem' : active==2},'btn sidebarItem pl-2']" @click="active=2; $router.push({path: '/courses'})">Courses</button>
+          <button type="button" :class="[{'activatedItem' : active==3},'btn sidebarItem pl-2']" @click="active=3; $router.push({path: '/calendar'})">Calendar</button>
+          <button type="button" :class="[{'activatedItem' : active==4},'btn sidebarItem pl-2']" @click="active=4; $router.push({path: '/inbox'})">Inbox</button>
         </div>
         <div class="btn-group-vertical w-100">
           <p class="mb-1 text-lightgray"> ACCOUNT </p>
@@ -38,6 +38,7 @@ export default {
       }
     },
     created() {
+      this.active = 0;
       // this.activated = this.myCourses;  
     },
     watch: {

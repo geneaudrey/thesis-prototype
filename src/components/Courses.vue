@@ -1,22 +1,26 @@
 <template>
-  <div class="Dashboard">
+  <div class="Courses">
     <div class="row" style="width: 100%">
         <div class="col-2 pr-0">
             <Sidebar />
         </div>
-        <div class="col-10 pl-4 pt-3">
+        <div class="col-2 pr-0 pl-0">
+            <SubSidebar />
+        </div>
+        <div class="col-8 pl-4 pt-3">
             <div class="input-group shadow-sm" style="width: 20%">
                 <div class="input-group-prepend">
                     <span class="input-group-text pr-1 border-0" style="background: #ffffff"><i class="fas fa-search" style="color:rgba(0,0,0,0.3)"></i></span>
                 </div>
                 <input type="text" class="form-control form-control-sm border-0 pt-2 pb-2 pl-1" placeholder="Search..." >
             </div>
-            <h1 class="pt-4 h1"> Dashboard </h1>
+            <h1 class="pt-4 h1">{{ course.subject }} </h1>
             <div class="row m-0 p-0 pt-2 pb-5">
-                <div class="col-8 pl-0 pr-4">
-                    <DashCard />
+                <div class="col-7 pl-0 pr-4">
+                    <Announcements :id='id' v-if="type == null || type == 'announcements'"/>
+                    <Modules :id='id' v-if="type == 'modules'"/>
                 </div>
-                <div class="col-4 pl-0 pr-0">
+                <div class="col-5 pl-0 pr-0">
                     <Todo />
                     <Calendar class="mt-4" />
                 </div>
@@ -30,20 +34,38 @@
 
 <script>
 import Sidebar from "./Sidebar.vue"
-import DashCard from "./DashCard.vue"
+import SubSidebar from "./SubSidebar.vue"
 import Todo from "./Todo.vue"
 import Calendar from "./Calendar.vue"
+import Announcements from "./CoursesAnnouncements.vue"
+import Modules from "./CoursesModules.vue"
 export default {
-  name: "Dashboard",
+  name: "Courses",
   components: {
       Sidebar,
-      DashCard,
       Todo,
-      Calendar
-  }
-//   props: {
-//     msg: String
-//   }
+      Calendar,
+      SubSidebar,
+      Announcements,
+      Modules
+  },
+  props: {
+    id: String,
+    type: String
+  },
+  data() {
+    return {
+        course: {},
+        announcements: [],
+        modules: [],
+        files: [],
+        assignments: [],
+        discussions: []
+    }
+},
+  created() {
+      this.course = this.$store.state.myCourses[this.id];
+  },
 };
 </script>
 

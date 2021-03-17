@@ -1,23 +1,23 @@
 <template>
-    <div class="card border-0 shadow-sm calendar bg-primary text-white pt-4 pb-4">
-        <div class="row m-0 p-0 pr-3 pl-3">
-            <div class="col-auto">
-                <i class="fas fa-chevron-left h6"></i>
+    <div class="card border-0 shadow-sm calendar bg-primary text-white pt-4 pb-5">
+        <div class="row m-0 p-0 pr-4 pl-4">
+            <div class="col-auto h6">
+                <i class="fas fa-chevron-left"></i>
             </div>
-            <div class="col text-center h5">
+            <div class="col text-center h6">
                 March
             </div>
-            <div class="col-auto">
-                <i class="fas fa-chevron-right h6"></i>
+            <div class="col-auto h6">
+                <i class="fas fa-chevron-right"></i>
             </div>
         </div>
-        <div class="row m-0 p-0 mt-4 mb-3">
-            <div :class="[{'pl-4' : index == 0}, {'pr-4' : index == 6}, 'col text-center text-lightgray']" v-for="(day, index) in daysOfTheWeek" :key="index">
-                <p class="h6"> {{day}} </p>
+        <div class="row m-0 p-0 mt-4 mb-3 ">
+            <div :class="[{paddingLeft : index == 0}, {paddingRight : index == 6}, 'col text-center text-lightgray']" v-for="(day, index) in daysOfTheWeek" :key="index">
+                <p class="regularS"> {{day}} </p>
             </div>
         </div>
-        <div class="row m-0 p-0 mt-1" v-for="(week, index) in daysOfTheMonth" :key="index">
-            <div :class="[{'pl-4' : index == 0}, {'pr-4' : index == 6}, {'text-white' : (day.selected || index < 5) && !day.prevNext }, {'text-lightgray' : (!day.selected && index >= 5) || day.prevNext}, {'font-weight-bold selected' : day.selected}, {'selectedFront' : day.selected == 1}, {'selectedEnd' : day.selected == 10}, 'col text-center pt-2 pb-2']" v-for="(day, index) in week" :key="index">
+        <div class="row m-0 p-0 mt-3" v-for="(week, index) in daysOfTheMonth" :key="index">
+            <div :class="[{paddingLeft : index == 0}, {paddingRight : index == 6}, {'text-white' : (day.selected || index < 5) && !day.prevNext }, {'text-lightgray' : (!day.selected && index >= 5) || day.prevNext}, {'font-weight-bold selected' : day.selected}, {'selectedFront' : day.selected == 1}, {'selectedEnd' : day.selected == 10}, 'col text-center pt-2 pb-2 regularM']" v-for="(day, index) in week" :key="index">
                 {{day.date}}
             </div>
         </div>
@@ -29,7 +29,7 @@ export default {
     name: "Todo",
     data() {
         return {
-            daysOfTheWeek: ["Mon", "Tues", "Wed", "Thurs", "Fri", "Sat", "Sun"],
+            daysOfTheWeek: ["Mon", "Tues", "Wed", "Thu", "Fri", "Sat", "Sun"],
             daysOfTheMonth: [
                 [ {date: 29, selected: false, prevNext: true},
                 {date: 30, selected: false, prevNext: true},
@@ -92,4 +92,11 @@ export default {
     border-radius: 0 100px 100px 0;
 }
 
+.paddingLeft {
+    padding-left: 8%;
+}
+
+.paddingRight {
+    padding-right: 8%;
+}
 </style>
