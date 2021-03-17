@@ -16,8 +16,8 @@
                 <p class="regularS"> {{day}} </p>
             </div>
         </div>
-        <div class="row m-0 p-0 mt-3" v-for="(week, index) in daysOfTheMonth" :key="index">
-            <div :class="[{paddingLeft : index == 0}, {paddingRight : index == 6}, {'text-white' : (day.selected || index < 5) && !day.prevNext }, {'text-lightgray' : (!day.selected && index >= 5) || day.prevNext}, {'font-weight-bold selected' : day.selected}, {'selectedFront' : day.selected == 1}, {'selectedEnd' : day.selected == 10}, 'col text-center pt-2 pb-2 regularM']" v-for="(day, index) in week" :key="index">
+        <div class="row m-0 p-0 mt-2"  v-for="(week, index) in daysOfTheMonth" :key="index">
+            <div :class="[{paddingLeft : index == 0}, {paddingRight : index == 6}, {'text-white' : (day.selected || index < 5) && !day.prevNext }, {'text-lightgray' : (!day.selected && index >= 5) || day.prevNext}, {'font-weight-bold selected' : day.selected}, {'selectedFront' : day.selected == 1}, {'selectedEnd' : day.selected == 10}, 'col text-center paddingCal regularM']" v-for="(day, index) in week" :key="index">
                 {{day.date}}
             </div>
         </div>
@@ -99,4 +99,10 @@ export default {
 .paddingRight {
     padding-right: 8%;
 }
+
+.paddingCal {
+    padding-top: 3%;
+    padding-bottom: 3%;
+}
+
 </style>
