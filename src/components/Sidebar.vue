@@ -6,11 +6,11 @@
             <img :src="logo" class="icon" />
           </div>
           <p class="mb-1 text-lightgray pl-2"> MAIN </p>
-          <button type="button" :class="[{'activatedItem' : active==0},'btn sidebarItem pl-2']" @click="active=0; $router.push({path: '/home'})">Home</button>
-          <button type="button" :class="[{'activatedItem' : active==1},'btn sidebarItem pl-2']" @click="active=1; $router.push({path: '/dashboard'})" >Dashboard</button>
-          <button type="button" :class="[{'activatedItem' : active==2},'btn sidebarItem pl-2']" @click="active=2; $router.push({path: '/courses'})">Courses</button>
-          <button type="button" :class="[{'activatedItem' : active==3},'btn sidebarItem pl-2']" @click="active=3; $router.push({path: '/calendar'})">Calendar</button>
-          <button type="button" :class="[{'activatedItem' : active==4},'btn sidebarItem pl-2']" @click="active=4; $router.push({path: '/inbox'})">Inbox</button>
+          <button type="button" :class="[{'activatedItem' : active==0},'btn sidebarItem pl-2']" @click="move(0);">Home</button>
+          <button type="button" :class="[{'activatedItem' : active==1},'btn sidebarItem pl-2']" @click="move(1); " >Dashboard</button>
+          <button type="button" :class="[{'activatedItem' : active==2},'btn sidebarItem pl-2']" @click="move(2); $router.push({path: '/courses'})">Courses</button>
+          <button type="button" :class="[{'activatedItem' : active==3},'btn sidebarItem pl-2']" @click="move(3); $router.push({path: '/calendar'})">Calendar</button>
+          <button type="button" :class="[{'activatedItem' : active==4},'btn sidebarItem pl-2']" @click="move(4); $router.push({path: '/inbox'})">Inbox</button>
         </div>
         <div class="btn-group-vertical w-100">
           <p class="mb-1 text-lightgray"> ACCOUNT </p>
@@ -22,6 +22,7 @@
 
 <script>
 import logo from "../assets/icons/sample.svg"
+import { mapActions } from 'vuex'
 export default {
   name: "Sidebar",
   // components: {
@@ -33,17 +34,31 @@ export default {
     }
   },
   data() {
-      return {
-        active: 0
-      }
-    },
-    created() {
-      this.active = 0;
-      // this.activated = this.myCourses;  
-    },
-    watch: {
+    return {
+      active: 0,
+      pages:['/home', '/dashboard', '/courses', '/calendar', '/inbox']
     }
-  };
+  },
+  created() {
+    this.active = 0;
+    // this.active = this.$router
+    // this.active = this.$store.state.sidebarActive1;
+    // this.activated = this.myCourses;  
+  },
+  watch: {
+  },
+  methods: {
+    ...mapActions([
+      'sidebarActive1'
+    ]),
+    move(index) {
+      console.log(index);
+      this.active = index;
+      this.sidebarActive1(index);
+      this.$router.push({path: this.pages[index]})
+    }
+  }
+};
 </script>
 
 <style scoped>

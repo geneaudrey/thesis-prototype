@@ -3,8 +3,10 @@ import { createStore } from 'vuex'
 export const store = createStore({
   state () {
     return {
+        sidebarActive1: 0,
+        sidebarActive2: 0,
         myCourses: [
-            { id: 0, subject: 'Self-Advocacy in an Online Work Setting', prof:'Praise Lam', 
+            { id: 0, subject: 'Self-Advocacy & Work for PWDs', prof:'Praise Lam', 
                 announcements: [
                 {
                     id: 0,
@@ -29,19 +31,19 @@ export const store = createStore({
                                 id: 0,
                                 title: 'Lorem Ipsum',
                                 desc: 'Whether its a driving tour, a cruise or a bus, leaf viewing is a great way to spend a fall vacation.',
-                                status: true
+                                status: 2
                             },
                             {
                                 id: 1,
                                 title: 'Lorem Ipsum',
                                 desc: 'Whether its a driving tour, a cruise or a bus, leaf viewing is a great way to spend a fall vacation.',
-                                status: true
+                                status: 1
                             },
                             {
                                 id: 2,
                                 title: 'Lorem Ipsum',
                                 desc: 'Whether its a driving tour, a cruise or a bus, leaf viewing is a great way to spend a fall vacation.',
-                                status: false
+                                status: 0
                             }
                         ]
                     },
@@ -53,19 +55,19 @@ export const store = createStore({
                                 id: 0,
                                 title: 'Lorem Ipsum',
                                 desc: 'Whether its a driving tour, a cruise or a bus, leaf viewing is a great way to spend a fall vacation.',
-                                status: true
+                                status: 2
                             },
                             {
                                 id: 1,
                                 title: 'Lorem Ipsum',
                                 desc: 'Whether its a driving tour, a cruise or a bus, leaf viewing is a great way to spend a fall vacation.',
-                                status: true
+                                status: 1
                             },
                             {
                                 id: 2,
                                 title: 'Lorem Ipsum',
                                 desc: 'Whether its a driving tour, a cruise or a bus, leaf viewing is a great way to spend a fall vacation.',
-                                status: false
+                                status: 0
                             }
                         ]
                     },
@@ -77,7 +79,7 @@ export const store = createStore({
                                 id: 0,
                                 title: 'Lorem Ipsum',
                                 desc: 'Whether its a driving tour, a cruise or a bus, leaf viewing is a great way to spend a fall vacation.',
-                                status: true
+                                status: 2
                             },
                         ]
                     }
@@ -139,6 +141,18 @@ export const store = createStore({
             { id: 3, subject: 'Lorem Ipsum', prof:'Lorem Ipsum' },
             { id: 4, subject: 'Lorem Ipsum', prof:'Lorem Ipsum' },
             ],
+    }
+  },
+  mutations: {
+    sidebarActive1(state, index) {
+      // mutate state
+      state.sidebarActive1 = index;
+    }
+  },
+  actions: {
+    sidebarActive1 ({commit}, index) {
+      commit('sidebarActive1', index);
+      console.log('ey??')
     }
   }
 })

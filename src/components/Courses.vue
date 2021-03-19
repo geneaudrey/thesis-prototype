@@ -4,7 +4,7 @@
         <div class="col-2 pr-0">
             <Sidebar />
         </div>
-        <div class="col-2 pr-0 pl-0">
+        <div class="col-2 pr-0 pl-0 w-40">
             <SubSidebar />
         </div>
         <div class="col-8 pl-4 pt-3">
@@ -14,10 +14,11 @@
                 </div>
                 <input type="text" class="form-control form-control-sm border-0 pt-2 pb-2 pl-1" placeholder="Search..." >
             </div>
-            <h1 class="pt-4 h1">{{ course.subject }} </h1>
+            <h1 class="pt-4 h2">{{ course.subject }} </h1>
             <div class="row m-0 p-0 pt-2 pb-5">
                 <div class="col-7 pl-0 pr-4">
                     <Announcements :id='id' v-if="type == null || type == 'announcements'"/>
+                    <div class="lineBreak mt-1" v-if="type == 'modules'"> </div>
                     <Modules :id='id' v-if="type == 'modules'"/>
                 </div>
                 <div class="col-5 pl-0 pr-0">
@@ -71,4 +72,13 @@ export default {
 
 <!-- Add "scoped" attribute to limit CSS to this component only -->
 <style scoped>
+.lineBreak {
+  width: 100%;
+  height: 3px;
+  left: 496px;
+  top: 121px;
+
+  background: #17252A;
+  opacity: 0.5;
+}
 </style>

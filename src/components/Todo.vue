@@ -8,7 +8,7 @@
                         <button type="button" :class="[{'selected' : item.done == 1}, {'deselected' :item.done == 0}, 'btn text-white p-0 pl-1 pr-1']" @click="item.done = !item.done"> <i class="fas fa-star"></i> </button>
                     </div>
                     <div class="col-7 mt-auto mb-auto">
-                        <p class="mb-1 regularDefault"> {{item.task}} </p>
+                        <p class="mb-1 regularDefault text-black"> {{item.task}} </p>
                         <p class="mb-0 text-textSecondary regularM"> {{item.subj}} </p>
                     </div>
                     <div class="col-4 mt-auto mb-auto pr-1 pl-4">

@@ -8,10 +8,10 @@ $theme-colors: (
   "gray": #ECECEE,
   "darkgray" : #46484D,
   "deselected": #B6B6B6,
-  "black" : #0C0B0B,
+  "black" : rgb(17,15,36,1),
   "textSecondary":rgb(48,49,52,1),
-  "lightgray": rgb(255,255,255,0.4)
-
+  "lightgray": rgb(255,255,255,0.4),
+  "time": rgb(144,144,144,1)
 );
 
 // i.e. creating new classes
@@ -45,29 +45,41 @@ $theme-colors: (
 .h1 {
     font-size: 40px !important;
     font-family: 'Brandon Grotesque Bold' !important;
-    font-weight: 900 !important;
+    
 }
 
-.regularM {
-    font-size: 14px;
-    font-family: 'Gotham';
-    line-height: 16px;
+.h2 {
+    font-size: 32px !important;
+    font-family: 'Brandon Grotesque Bold' !important;
 }
 
-.regularS {
-    font-size: 12px;
-    font-family: 'Gotham';
+// .h3 {
+//     font-size: 16px !important;
+//     font-family: 'Brandon Grotesque Medium' !important;
+// }
+
+.h4 {
+    font-size: 24px !important;
+    font-family: 'Brandon Grotesque Bold' !important;
 }
+
+// .h5 {
+//     font-size: 16px !important;
+//     font-family: 'Brandon Grotesque Medium' !important;
+// }
+
+.h6 {
+    font-size: 16px !important;
+    font-family: 'Brandon Grotesque Medium' !important;
+}
+
 
 .boldS {
     font-size: 12px !important;
     font-family: 'Gotham Bold' !important;
 }
 
-.h6 {
-    font-size: 16px !important;
-    font-family: 'Brandon Grotesque Medium' !important;
-}
+
 
 .boldDefault {
     font-size: 16px;
@@ -77,7 +89,27 @@ $theme-colors: (
 .regularDefault {
     font-size: 16px;
     font-family: 'Gotham' !important;
+    line-height: 24px;
 }
+
+.regularL {
+    font-size: 18px !important;
+    font-family: 'Gotham' !important;
+    line-height: 24px !important;
+}
+
+.regularM {
+    font-size: 14px !important;
+    font-family: 'Gotham' !important;
+    line-height: 16px !important;
+}
+
+.regularS {
+    font-size: 12px !important;
+    font-family: 'Gotham' !important;
+    line-height: 16px !important;
+}
+
 .btn:focus {
     outline: none !important;
     box-shadow: none !important;
@@ -86,6 +118,11 @@ $theme-colors: (
 .dashButton {
     padding: 9% !important;
     border-radius: 8px !important;
+}
+
+.lead {
+    font-size: 24px !important;
+    font-family: 'Gotham Bold' !important;
 }
 @font-face {
     font-family: 'Brandon Grotesque Bold';
