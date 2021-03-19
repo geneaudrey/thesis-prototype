@@ -17,6 +17,11 @@ const routes = [
     component: Courses,
     props: true
   },
+  {
+    path: "/myCourses/:id/:type/:moduleID/:moduleIDID",
+    component: Courses,
+    props: true
+  },
 
 ];
 

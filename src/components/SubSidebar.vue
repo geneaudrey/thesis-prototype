@@ -2,11 +2,11 @@
   <div class="SubSidebar p-2">
       <div class="sidebar" />
         <div class="btn-group-vertical w-100">
-          <button type="button" :class="[{'activatedItem' : active==0},'btn sidebarItem pl-2']" @click="active=0">Announcements</button>
-          <button type="button" :class="[{'activatedItem' : active==1},'btn sidebarItem pl-2']" @click="active=1">Modules</button>
-          <button type="button" :class="[{'activatedItem' : active==2},'btn sidebarItem pl-2']" @click="active=2">Files</button>
-          <button type="button" :class="[{'activatedItem' : active==3},'btn sidebarItem pl-2']" @click="active=3">Assignments</button>
-          <button type="button" :class="[{'activatedItem' : active==4},'btn sidebarItem pl-2']" @click="active=4">Discussions</button>
+          <button type="button" :class="[{'activatedItem' : active==0},'btn sidebarItem pl-2']" @click="move(0)">Announcements</button>
+          <button type="button" :class="[{'activatedItem' : active==1},'btn sidebarItem pl-2']" @click="move(1)">Modules</button>
+          <button type="button" :class="[{'activatedItem' : active==2},'btn sidebarItem pl-2']" @click="move(2)">Files</button>
+          <button type="button" :class="[{'activatedItem' : active==3},'btn sidebarItem pl-2']" @click="move(3)">Assignments</button>
+          <button type="button" :class="[{'activatedItem' : active==4},'btn sidebarItem pl-2']" @click="move(4)">Discussions</button>
         </div>
   </div>
 </template>
@@ -17,23 +17,24 @@ export default {
   // components: {
   //     logo
   // },
+  props: {
+    id: String,
+    active: Number
+  },
   data() {
       return {
-        active: 0
+        pages: ['/announcements', '/modules', '/files', '/assignments', '/discussions']
       }
     },
     created() {
       // this.activated = this.myCourses;  
     },
+    methods: {
+      move(index) {
+        this.$router.push('/myCourses/'+this.id+this.pages[index]);
+      }
+    },
     watch: {
-        active(){
-            if (this.active == 0) {
-                this.$router.push('./announcements')
-            }
-            if (this.active == 1) {
-                this.$router.push('./modules')
-            }
-        }
     }
   };
 </script>

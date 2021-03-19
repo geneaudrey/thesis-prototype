@@ -2,7 +2,7 @@
   <div class="Dashboard">
     <div class="row" style="width: 100%">
         <div class="col-2 pr-0">
-            <Sidebar />
+            <Sidebar :active='1'/>
         </div>
         <div class="col-10 pl-4 pt-3">
             <div class="input-group shadow-sm" style="width: 20%">

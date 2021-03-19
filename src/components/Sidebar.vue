@@ -8,14 +8,14 @@
           <p class="mb-1 text-lightgray pl-2"> MAIN </p>
           <button type="button" :class="[{'activatedItem' : active==0},'btn sidebarItem pl-2']" @click="move(0);">Home</button>
           <button type="button" :class="[{'activatedItem' : active==1},'btn sidebarItem pl-2']" @click="move(1); " >Dashboard</button>
-          <button type="button" :class="[{'activatedItem' : active==2},'btn sidebarItem pl-2']" @click="move(2); $router.push({path: '/courses'})">Courses</button>
-          <button type="button" :class="[{'activatedItem' : active==3},'btn sidebarItem pl-2']" @click="move(3); $router.push({path: '/calendar'})">Calendar</button>
-          <button type="button" :class="[{'activatedItem' : active==4},'btn sidebarItem pl-2']" @click="move(4); $router.push({path: '/inbox'})">Inbox</button>
+          <button type="button" :class="[{'activatedItem' : active==2},'btn sidebarItem pl-2']" @click="move(2);">Courses</button>
+          <button type="button" :class="[{'activatedItem' : active==3},'btn sidebarItem pl-2']" @click="move(3);">Calendar</button>
+          <button type="button" :class="[{'activatedItem' : active==4},'btn sidebarItem pl-2']" @click="move(4);">Inbox</button>
         </div>
         <div class="btn-group-vertical w-100">
           <p class="mb-1 text-lightgray"> ACCOUNT </p>
-          <button type="button" :class="[{'activatedItem' : active==5},'btn sidebarItem pl-2']" @click="active=5">User</button>
-          <button type="button" :class="[{'activatedItem' : active==6},'btn sidebarItem pl-2']" @click="active=6">Log Out</button>
+          <button type="button" :class="[{'activatedItem' : active==5},'btn sidebarItem pl-2']" @click="move(5)">User</button>
+          <button type="button" :class="[{'activatedItem' : active==6},'btn sidebarItem pl-2']" @click="move(6)">Log Out</button>
         </div>
   </div>
 </template>
@@ -33,14 +33,17 @@ export default {
       logo
     }
   },
+  props: {
+    active: Number
+  },
   data() {
     return {
-      active: 0,
       pages:['/home', '/dashboard', '/courses', '/calendar', '/inbox']
     }
   },
   created() {
-    this.active = 0;
+
+    // this.active = 0;
     // this.active = this.$router
     // this.active = this.$store.state.sidebarActive1;
     // this.activated = this.myCourses;  
@@ -53,7 +56,7 @@ export default {
     ]),
     move(index) {
       console.log(index);
-      this.active = index;
+      // this.active = index;
       this.sidebarActive1(index);
       this.$router.push({path: this.pages[index]})
     }

@@ -1,37 +1,67 @@
 <template>
-  <div class="CoursesAnnouncements">
-    <div class="card P-0 mb-4" style="padding:7%" v-for="announcement in announcements" :key="announcement.id">
-        <div class="row p-0 m-0">
-            <div class="col-auto" style="width:80px; height:80px; border-radius: 100px; background: #C4C4C4">
-            </div>
-            <div class="col-auto">
-                <div class="row m-0 mt-1 p-0">
-                  <span class="mt-auto mb-auto"> {{ announcement.poster }} </span>
-                  <span class="material-icons mt-auto mb-auto"> arrow_right </span>
-                  <span class="mt-auto mb-auto"> {{ course.subject }} </span>
-                </div>
-                <div class="row m-0 mt-1 p-0 text-time">
-                  {{ announcement.time }}
-                </div>
-            </div>
+<div class="col-2 pr-0 pl-0 w-40">
+  <SubSidebar :id="id" :active="0"/>
+</div>
+<div class="col-8 pl-4 pt-3">
+    <div class="input-group shadow-sm" style="width: 20%">
+        <div class="input-group-prepend">
+            <span class="input-group-text pr-1 border-0" style="background: #ffffff"><i class="fas fa-search" style="color:rgba(0,0,0,0.3)"></i></span>
         </div>
-        <div class="row p-0 m-0 mt-3 lead">
-            {{ announcement.title.toUpperCase() }}
-        </div>
-        <div class="row p-0 m-0 mt-3 regularL">
-            {{ announcement.body}}
-        </div>
-        <div class="row p-0 m-0 mt-4" style="height: 161px; width: 100%; background: #C4C4C4">
-        </div>
+        <input type="text" class="form-control form-control-sm border-0 pt-2 pb-2 pl-1" placeholder="Search..." >
     </div>
-  </div>
+    <h1 class="pt-4 h2">{{ moduleID != null ? course.modules[parseInt(moduleID)].title : course.subject }} </h1>
+    <div class="row m-0 p-0 pt-2 pb-5">
+        <div class="col-7 pl-0 pr-4">
+          <div class="CoursesAnnouncements">
+            <div class="card P-0 mb-4" style="padding:7%" v-for="announcement in announcements" :key="announcement.id">
+                <div class="row p-0 m-0">
+                    <div class="col-auto" style="width:80px; height:80px; border-radius: 100px; background: #C4C4C4">
+                    </div>
+                    <div class="col-auto">
+                        <div class="row m-0 mt-1 p-0">
+                          <span class="mt-auto mb-auto"> {{ announcement.poster }} </span>
+                          <span class="material-icons mt-auto mb-auto"> arrow_right </span>
+                          <span class="mt-auto mb-auto"> {{ course.subject }} </span>
+                        </div>
+                        <div class="row m-0 mt-1 p-0 text-time">
+                          {{ announcement.time }}
+                        </div>
+                    </div>
+                </div>
+                <div class="row p-0 m-0 mt-3 lead">
+                    {{ announcement.title.toUpperCase() }}
+                </div>
+                <div class="row p-0 m-0 mt-3 regularL">
+                    {{ announcement.body}}
+                </div>
+                <div class="row p-0 m-0 mt-4" style="height: 161px; width: 100%; background: #C4C4C4">
+                </div>
+            </div>
+          </div>
+      </div>
+      <div class="col-5 pl-0 pr-0">
+          <Todo />
+          <Calendar class="mt-4" />
+      </div>
+</div>
+</div>
 </template>
 
 <script>
+import SubSidebar from "./SubSidebar.vue"
+import Todo from "./Todo.vue"
+import Calendar from "./Calendar.vue"
 export default {
   name: "CoursesAnnouncements",
+  components: {
+      Todo,
+      Calendar,
+      SubSidebar,
+  },
   props: {
-    id: String
+    id: String,
+    moduleID: String,
+    type: String
   },
   data() {
     return {
