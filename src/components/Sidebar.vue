@@ -1,21 +1,23 @@
 <template>
-  <div class="Sidebar p-3">
+  <div class="Sidebar p-2">
       <div class="sidebar" />
-        <div class="btn-group-vertical w-100">
-          <div class="w-50">
-            <img :src="logo" class="icon" />
+        <div class="">
+          <div class="btn-group-vertical w-100">
+            <div class="w-50">
+              <img :src="logo" class="icon" />
+            </div>
+            <p class="mb-1 text-lightgray pl-2"> MAIN </p>
+            <button type="button" :class="[{'activatedItem' : active==0},'btn sidebarItem pl-2']" @click="move(0);">Home</button>
+            <button type="button" :class="[{'activatedItem' : active==1},'btn sidebarItem pl-2']" @click="move(1); " >Dashboard</button>
+            <button type="button" :class="[{'activatedItem' : active==2},'btn sidebarItem pl-2']" @click="move(2);">Courses</button>
+            <button type="button" :class="[{'activatedItem' : active==3},'btn sidebarItem pl-2']" @click="move(3);">Calendar</button>
+            <button type="button" :class="[{'activatedItem' : active==4},'btn sidebarItem pl-2']" @click="move(4);">Inbox</button>
           </div>
-          <p class="mb-1 text-lightgray pl-2"> MAIN </p>
-          <button type="button" :class="[{'activatedItem' : active==0},'btn sidebarItem pl-2']" @click="move(0);">Home</button>
-          <button type="button" :class="[{'activatedItem' : active==1},'btn sidebarItem pl-2']" @click="move(1); " >Dashboard</button>
-          <button type="button" :class="[{'activatedItem' : active==2},'btn sidebarItem pl-2']" @click="move(2);">Courses</button>
-          <button type="button" :class="[{'activatedItem' : active==3},'btn sidebarItem pl-2']" @click="move(3);">Calendar</button>
-          <button type="button" :class="[{'activatedItem' : active==4},'btn sidebarItem pl-2']" @click="move(4);">Inbox</button>
-        </div>
-        <div class="btn-group-vertical w-100">
-          <p class="mb-1 text-lightgray"> ACCOUNT </p>
-          <button type="button" :class="[{'activatedItem' : active==5},'btn sidebarItem pl-2']" @click="move(5)">User</button>
-          <button type="button" :class="[{'activatedItem' : active==6},'btn sidebarItem pl-2']" @click="move(6)">Log Out</button>
+          <div class="btn-group-vertical w-100">
+            <p class="mb-1 text-lightgray"> ACCOUNT </p>
+            <button type="button" :class="[{'activatedItem' : active==5},'btn sidebarItem pl-2']" @click="move(5)">User</button>
+            <button type="button" :class="[{'activatedItem' : active==6},'btn sidebarItem pl-2']" @click="move(6)">Log Out</button>
+          </div>
         </div>
   </div>
 </template>
@@ -67,6 +69,7 @@ export default {
 <style scoped>
 .sidebar {
     position: absolute;
+    /* width: 240px; */
     left: 0%;
     right: 0%;
     top: 0%;
@@ -76,6 +79,10 @@ export default {
     /* Shadow / Small */
 
     box-shadow: 0px 1px 3px rgba(0, 0, 0, 0.1);
+}
+.sidebarContent {
+  position: fixed;
+  width: 216px;
 }
 .sidebarItem {
   text-align: left;

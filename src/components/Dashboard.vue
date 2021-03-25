@@ -1,10 +1,10 @@
 <template>
   <div class="Dashboard">
-    <div class="row" style="width: 100%">
-        <div class="col-2 pr-0">
+    <div class="row m-0 p-0" style="width: 100%">
+        <div class="col-2 m-0 p-0">
             <Sidebar :active='1'/>
         </div>
-        <div class="col-10 pl-4 pt-3">
+        <div class="col pl-4 pt-3">
             <div class="input-group shadow-sm" style="width: 20%">
                 <div class="input-group-prepend">
                     <span class="input-group-text pr-1 border-0" style="background: #ffffff"><i class="fas fa-search" style="color:rgba(0,0,0,0.3)"></i></span>

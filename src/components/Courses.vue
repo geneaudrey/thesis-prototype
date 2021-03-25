@@ -9,7 +9,6 @@
         <Modules :id='id' :type="type" v-if="type == 'modules' && moduleID == null"/>
         <ModuleOpen :id='id' v-if="moduleID != null" :moduleID="moduleID" :type="type" :moduleIDID="moduleIDID" :mod='course.modules[parseInt(moduleID)]' />
         
-        
     </div>
   </div>
 </template>

@@ -80,6 +80,8 @@ export default {
     openModule(modid, modidid) {
       // console.log(modid, modidid);
       this.$router.push('/myCourses/'+this.id+'/modules/'+modid+'/'+modidid);
+      document.body.scrollTop = 0; // For Safari
+      document.documentElement.scrollTop = 0; // For Chrome, Firefox, IE and Opera
     }
   }
 };

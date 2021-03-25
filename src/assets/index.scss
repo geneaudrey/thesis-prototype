@@ -11,7 +11,9 @@ $theme-colors: (
   "black" : rgb(17,15,36,1),
   "textSecondary":rgb(48,49,52,1),
   "lightgray": rgb(255,255,255,0.4),
-  "time": rgb(144,144,144,1)
+  "time": rgb(144,144,144,1),
+  "darkPrimary": #2B7A78,
+  "blue": #474DBD
 );
 
 // i.e. creating new classes
@@ -70,7 +72,7 @@ $theme-colors: (
 
 .h6 {
     font-size: 16px !important;
-    font-family: 'Brandon Grotesque Medium' !important;
+    font-family: 'Brandon Grotesque Bold' !important;
 }
 
 

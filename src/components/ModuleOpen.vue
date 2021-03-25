@@ -14,22 +14,34 @@
         <div class="col pl-0 pr-4">
             <div class="ModuleOpen">
                 <div class="card m-0">
-                    <div class="card-header h6"> {{ openedModule.title }} </div>
-                    <div class="pl-5 pr-5 pt-4 pb-4">
-                        <div class="h1 mb-4"> {{ openedModule.title }} </div>
+                    <div class="card-header h6" v-if="openedModule.type == 'lesson'"> Lesson: Part {{ openedModule.lessonNum }} </div>
+                    <div class="card-header h6" v-if="openedModule.type == 'discussion'"> Discussions </div>
+                    <div class="card-header h6" v-if="openedModule.type == 'activity'"> Activity </div>
 
-                        <div v-for="section in openedModule.sections" :key="section.id">
-                            <p> {{ section.title }} </p>
-                            <p> {{ section.body }} </p>
+                    <div class="p-5">
+                        <div :class="[{'text-blue' : openedModule.type == 'activity'}, {'text-darkPrimary' : openedModule.type == 'lesson' || openedModule.type == 'discussion'}, 'h1 mb-3']"> {{ openedModule.title }} </div>
+                        <!-- {{ openedModule.body }} -->
+                        <div v-for="section in openedModule.body" :key="section.id">
+                            <!-- <p> {{ section.title }} </p>
+                            <p> {{ section.body }} </p> -->
+                            <p v-if="section.type == 'p'"> {{section.text}} </p>
+                            <p v-if="section.type == 'listHeader'" class="mb-0 pb-0"> {{section.text}} </p>
+                            <p v-if="section.type == 'header'" class="lead mb-0 p-0"> {{section.text}} </p>
+                            <ul v-if="section.type == 'list'">
+                                <li v-for="item in section.text" :key="item"> 
+                                    {{item}}
+                                </li>
+                            </ul>
+                            <p v-if="section.type == 'ref'" style="font-size: 11px"> {{ section.text }} </p>
                         </div>
 
-                        <div style="width: 852px; height: 86.39px; background: rgb(196,196,196,1);" />
+                        <div style="width: 100%; height: 86.39px; background: rgb(196,196,196,1);" />
                     </div>
-                    <div class="d-flex flex-row-reverse m-0 p-0 pr-5 pb-3 text-primary">
+                    <div class="d-flex flex-row-reverse m-0 p-0 pr-5 pb-3 text-primary btn" v-if="parseInt(moduleIDID) < mod.parts.length -1" @click="nextModule()">
                             <span class="material-icons m-0 p-0" style="font-size: 36px">
                                 navigate_next
                             </span>
-                            <span class="boldS mt-auto mb-auto"> Next </span>
+                            <span class="boldM mt-auto mb-auto"> Next </span>
                             
                     </div>
                 </div>
@@ -71,6 +83,18 @@ export default {
       this.course = this.$store.state.myCourses[this.id];
       this.openedModule = this.mod.parts[this.moduleIDID]
   },
+  methods: {
+      nextModule() {
+          this.$router.push('/myCourses/'+this.id+'/modules/'+this.moduleID+'/'+(parseInt(this.moduleIDID)+1));
+      }
+  },
+  watch: {
+      moduleIDID() {
+          this.openedModule = this.mod.parts[this.moduleIDID];
+          document.body.scrollTop = 0; // For Safari
+          document.documentElement.scrollTop = 0; // For Chrome, Firefox, IE and Opera
+      }
+  }
 };
 </script>
 
