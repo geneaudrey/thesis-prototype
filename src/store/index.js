@@ -170,6 +170,46 @@ export const store = createStore({
                             },
                         ]
                     }
+                ],
+                upcomingAssignments: [
+                    {
+                        id: 0,
+                        title: 'Lorem Ipsum Dolor Sit Amet',
+                        availableUntil: 'Mar 3 at 11:59pm',
+                        deadline: 'Mar 3 at 11:59pm'
+                    },
+                    {
+                        id: 1,
+                        title: 'Lorem Ipsum Dolor Sit Amet',
+                        availableUntil: 'Mar 3 at 11:59pm',
+                        deadline: 'Mar 3 at 11:59pm'
+                    },
+                    {
+                        id: 2,
+                        title: 'Lorem Ipsum Dolor Sit Amet',
+                        availableUntil: 'Mar 3 at 11:59pm',
+                        deadline: 'Mar 3 at 11:59pm'
+                    }
+                ],
+                finishedAssignments: [
+                    {
+                        id: 0,
+                        title: 'Lorem Ipsum Dolor Sit Amet',
+                        availableUntil: 'Mar 3 at 11:59pm',
+                        deadline: 'Mar 3 at 11:59pm'
+                    },
+                    {
+                        id: 1,
+                        title: 'Lorem Ipsum Dolor Sit Amet',
+                        availableUntil: 'Mar 3 at 11:59pm',
+                        deadline: 'Mar 3 at 11:59pm'
+                    },
+                    {
+                        id: 2,
+                        title: 'Lorem Ipsum Dolor Sit Amet',
+                        availableUntil: 'Mar 3 at 11:59pm',
+                        deadline: 'Mar 3 at 11:59pm'
+                    }
                 ] 
             },
             { id: 1, subject: 'How to Start Your Own Business', prof:'Lorem Ipsum', 
@@ -188,7 +228,9 @@ export const store = createStore({
                     title: 'Title of Announcement',
                     body: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.',
                 }],
-                modules:[] 
+                modules:[],
+                upcomingAssignments: [],
+                finishedAssignments: [] 
             },
             { id: 2, subject: 'Graphic Design is My Passion', prof:'Lorem Ipsum', 
                 announcements: [
@@ -206,7 +248,9 @@ export const store = createStore({
                     title: 'Title of Announcement',
                     body: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.',
                 }],
-                modules:[]  
+                modules:[],
+                upcomingAssignments: [],
+                finishedAssignments: []  
             },
             ],
             myInternships: [

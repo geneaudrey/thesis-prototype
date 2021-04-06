@@ -1,5 +1,5 @@
 <template>
-  <div class="Sidebar p-2">
+  <div class="Sidebar p-3">
       <div class="sidebar" />
         <div class="">
           <div class="btn-group-vertical w-100">

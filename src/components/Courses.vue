@@ -8,6 +8,8 @@
         
         <Modules :id='id' :type="type" v-if="type == 'modules' && moduleID == null"/>
         <ModuleOpen :id='id' v-if="moduleID != null" :moduleID="moduleID" :type="type" :moduleIDID="moduleIDID" :mod='course.modules[parseInt(moduleID)]' />
+        <Assignments v-if="type == 'assignments'" :id='id' :moduleID="moduleID" :type="type"/>
+        <!-- {{ type }} -->
         
     </div>
   </div>
@@ -21,6 +23,7 @@ import Sidebar from "./Sidebar.vue"
 import Announcements from "./CoursesAnnouncements.vue"
 import Modules from "./CoursesModules.vue"
 import ModuleOpen from "./ModuleOpen.vue"
+import Assignments from "./CoursesAssignments.vue"
 export default {
   name: "Courses",
   components: {
@@ -30,7 +33,8 @@ export default {
     //   SubSidebar,
       Announcements,
       Modules,
-      ModuleOpen
+      ModuleOpen,
+      Assignments
   },
   props: {
     id: String,

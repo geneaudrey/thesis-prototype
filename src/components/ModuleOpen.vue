@@ -11,14 +11,14 @@
     </div>
     <h1 class="pt-4 h2">{{ moduleID != null ? course.modules[parseInt(moduleID)].title : course.subject }} </h1>
     <div class="row m-0 p-0 pt-1 pb-5">
-        <div class="col pl-0 pr-4">
+        <div class="col pl-0 pr-0">
             <div class="ModuleOpen">
                 <div class="card m-0">
                     <div class="card-header h6" v-if="openedModule.type == 'lesson'"> Lesson: Part {{ openedModule.lessonNum }} </div>
                     <div class="card-header h6" v-if="openedModule.type == 'discussion'"> Discussions </div>
                     <div class="card-header h6" v-if="openedModule.type == 'activity'"> Activity </div>
 
-                    <div class="p-5">
+                    <div class="pt-4 pr-4 pl-4">
                         <div :class="[{'text-blue' : openedModule.type == 'activity'}, {'text-darkPrimary' : openedModule.type == 'lesson' || openedModule.type == 'discussion'}, 'h1 mb-3']"> {{ openedModule.title }} </div>
                         <!-- {{ openedModule.body }} -->
                         <div v-for="section in openedModule.body" :key="section.id">
@@ -37,11 +37,15 @@
 
                         <div style="width: 100%; height: 86.39px; background: rgb(196,196,196,1);" />
                     </div>
-                    <div class="d-flex flex-row-reverse m-0 p-0 pr-5 pb-3 text-primary btn" v-if="parseInt(moduleIDID) < mod.parts.length -1" @click="nextModule()">
+                    <div v-if="openedModule.type == 'discussion' || openedModule.type == 'activity'" class="row p-3 m-3 border border-3">
+                        <span class="material-icons mt-auto mb-auto" style="color: rgb(17,15,36,0.4)"> reply </span>
+                        <span class="regularDefault mt-auto mb-auto pl-2"> Reply </span>
+                    </div>
+                    <div class="d-flex flex-row-reverse m-0 p-0 pr-4 pb-3 text-primary btn pt-1" v-if="parseInt(moduleIDID) < mod.parts.length -1" @click="nextModule()">
                             <span class="material-icons m-0 p-0" style="font-size: 36px">
                                 navigate_next
                             </span>
-                            <span class="boldM mt-auto mb-auto"> Next </span>
+                            <span class="boldDefault mt-auto mb-auto"> Next </span>
                             
                     </div>
                 </div>
