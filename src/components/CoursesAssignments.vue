@@ -1,5 +1,5 @@
 <template>
-<div class="col-2 pr-0 pl-0 w-40">
+<div class="col-2 pr-0 pl-0 w-40" style="max-width: 240px;">
   <SubSidebar :id="id" :active="3"/>
 </div>
 <div class="col-8 pl-4 pt-3">

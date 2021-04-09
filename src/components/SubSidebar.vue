@@ -52,7 +52,7 @@ export default {
     min-height: 100vh;
     background: white;
     /* Shadow / Small */
-
+    max-width: 240px;
     box-shadow: 0px 1px 3px rgba(0, 0, 0, 0.1);
 }
 .sidebarContent {

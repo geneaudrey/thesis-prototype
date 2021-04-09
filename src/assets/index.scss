@@ -5,10 +5,12 @@ $primary: #3AAFA9;
 $secondary: #F5F5F7;
 
 $theme-colors: (
+  "desc": rgb(17,15,36,0.6),
   "gray": #ECECEE,
   "darkgray" : #46484D,
   "deselected": #B6B6B6,
   "black" : rgb(17,15,36,1),
+  "titleBlack": #303134,
   "textSecondary":rgb(48,49,52,1),
   "lightgray": rgb(255,255,255,0.4),
   "time": rgb(144,144,144,1),
@@ -23,12 +25,19 @@ $theme-colors: (
 //   border: 1px solid black;
 // }
 
+.shadow {
+    box-shadow: 0px 12px 15px rgba(0, 0, 0, 0.03) !important;
+}
 .border-2 {
     border-width:2px !important;
 }
 
 .dashCard {
     border-radius: 24px !important;
+}
+
+.imageBorder {
+    border-radius: 24px 24px 0px 0px !important;
 }
 
 .dashCardItem {
@@ -47,28 +56,36 @@ $theme-colors: (
 .h1 {
     font-size: 40px !important;
     font-family: 'Brandon Grotesque Bold' !important;
+    text-shadow: 0px 0.5px, 0.5px 0px, 0.5px 0.5px;
     
+}
+
+.noThick {
+    text-shadow: 0px 0px, 0px 0px, 0px 0px;
 }
 
 .h2 {
     font-size: 32px !important;
     font-family: 'Brandon Grotesque Bold' !important;
+    text-shadow: 0px 0.5px, 0.5px 0px, 0.5px 0.5px;
 }
 
-// .h3 {
-//     font-size: 16px !important;
-//     font-family: 'Brandon Grotesque Medium' !important;
-// }
+.h3 {
+    font-size: 16px !important;
+    font-family: 'Brandon Grotesque Medium' !important;
+    text-shadow: 0px 0.5px, 0.5px 0px, 0.5px 0.5px;
+}
 
 .h4 {
     font-size: 24px !important;
     font-family: 'Brandon Grotesque Bold' !important;
+    text-shadow: 0px 0.2px, 0.2px 0px, 0.2px 0.2px;
 }
 
-// .h5 {
-//     font-size: 16px !important;
-//     font-family: 'Brandon Grotesque Medium' !important;
-// }
+.h5 {
+    font-size: 16px !important;
+    font-family: 'Brandon Grotesque Medium' !important;
+}
 
 .h6 {
     font-size: 16px !important;
@@ -81,6 +98,15 @@ $theme-colors: (
     font-family: 'Gotham Bold' !important;
 }
 
+.boldM {
+    font-size: 14px !important;
+    font-family: 'Gotham Bold' !important;
+}
+
+.boldL {
+    font-size: 18px !important;
+    font-family: 'Gotham Bold' !important;
+}
 
 
 .boldDefault {
@@ -92,7 +118,9 @@ $theme-colors: (
     font-size: 16px;
     font-family: 'Gotham' !important;
     line-height: 24px;
+    
 }
+
 
 .regularL {
     font-size: 18px !important;
@@ -110,6 +138,18 @@ $theme-colors: (
     font-size: 12px !important;
     font-family: 'Gotham' !important;
     line-height: 16px !important;
+}
+
+.paragraph {
+    font-size: 20px !important;
+    font-family: 'Gotham' !important;
+    line-height: 32px !important;
+}
+
+.paragraphBold {
+    font-size: 20px !important;
+    font-family: 'Gotham Bold' !important;
+    line-height: 32px !important;
 }
 
 .btn:focus {

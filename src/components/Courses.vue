@@ -1,9 +1,10 @@
 <template>
   <div class="Courses">
-    <div class="row" style="width: 100%">
-        <div class="col-2 pr-0">
+    <div class="row m-0 p-0" style="width: 100%">
+        <div class="col-2 m-0 p-0" style="max-width: 240px;">
             <Sidebar :active='1'/>
         </div>
+        
         <Announcements :id='id' :moduleID="moduleID" :type="type" v-if="type == null || type == 'announcements'"/>
         
         <Modules :id='id' :type="type" v-if="type == 'modules' && moduleID == null"/>

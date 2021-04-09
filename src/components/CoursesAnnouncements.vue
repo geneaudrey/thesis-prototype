@@ -1,8 +1,8 @@
 <template>
-<div class="col-2 pr-0 pl-0 w-40">
+<div class="col-2 pr-0 pl-0 w-40" style="max-width: 240px;">
   <SubSidebar :id="id" :active="0"/>
 </div>
-<div class="col-8 pl-4 pt-3">
+<div class="col-8 pl-4 pt-3 pr-0">
     <div class="input-group shadow-sm" style="width: 20%">
         <div class="input-group-prepend">
             <span class="input-group-text pr-1 border-0" style="background: #ffffff"><i class="fas fa-search" style="color:rgba(0,0,0,0.3)"></i></span>

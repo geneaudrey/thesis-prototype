@@ -1,5 +1,5 @@
 <template>
-<div class="col-2 pr-0 pl-0 w-40">
+<div class="col-2 pr-0 pl-0 w-40" style="max-width: 240px;">
     <SubSidebar :id="id" :active="1"/>
 </div>
 <div class="col-8 pl-4 pt-3">
@@ -33,9 +33,15 @@
                                 </li>
                             </ul>
                             <p v-if="section.type == 'ref'" style="font-size: 11px"> {{ section.text }} </p>
+                            <p v-if="section.type == 'link'" class="row m-0 p-0 text-primary"> 
+                                <span class="h5 mt-auto mb-auto"> {{ section.text }} </span>
+                                <span class="material-icons m-0 p-0" style="font-size: 36px">
+                                    navigate_next
+                                </span>
+                            </p>
                         </div>
 
-                        <div style="width: 100%; height: 86.39px; background: rgb(196,196,196,1);" />
+                        <div style="width: 100%; height: 86.39px; background: rgb(196,196,196,1);" class="mt-3 mb-3" />
                     </div>
                     <div v-if="openedModule.type == 'discussion' || openedModule.type == 'activity'" class="row p-3 m-3 border border-3">
                         <span class="material-icons mt-auto mb-auto" style="color: rgb(17,15,36,0.4)"> reply </span>

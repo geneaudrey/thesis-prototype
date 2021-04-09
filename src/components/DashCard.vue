@@ -6,7 +6,8 @@
             <button type="button" :class="[{'text-black' : active == 2}, {'text-deselected' : active !=2}, 'btn p-1 m-1 h3']"  @click="active=2">  All Courses </button>
             <button type="button" :class="[{'text-black' : active == 3}, {'text-deselected' : active !=3}, 'btn p-1 m-1 h3']"  @click="active=3">  All Internships </button>
         </div>
-        <div class="row p-0 m-0">
+        <!-- if my courses, all courses, my internships -->
+        <div class="row p-0 m-0" v-if="active != 3">
             <div class="card bg-secondary border-0 p-2 w-100 mt-3 dashCardItem" v-for="item in activated" :key="item.id">
                 <div class="row p-0 m-0">
                     <div class="col-flex">
@@ -40,12 +41,19 @@
                 </div>
             </div>
         </div>
+        <div class="row p-0 m-0" v-else>
+            <AllInternships />
+        </div>
     </div>
 </template>
 
 <script>
+import AllInternships from "./AllInternships"
 export default {
     name: "DashCard",
+    components: {
+        AllInternships
+    },
     data() {
         return {
             myCourses: [],
@@ -65,6 +73,7 @@ export default {
     },
     watch: {
         active(){
+            this.$emit("changedActive", this.active);
             if (this.active == 0) {
                 this.activated = this.myCourses
             }

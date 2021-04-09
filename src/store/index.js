@@ -252,8 +252,8 @@ export const store = createStore({
                 upcomingAssignments: [],
                 finishedAssignments: []  
             },
-            ],
-            myInternships: [
+        ],
+        myInternships: [
             { id: 0, subject: 'Booky', prof:'Daryll Santillan' },
             { id: 1, subject: 'Shopee', prof:'Lorem Ipsum' },
             { id: 2, subject: '808 Studio', prof:'Lorem Ipsum' },
@@ -265,13 +265,27 @@ export const store = createStore({
             { id: 3, subject: 'Lorem Ipsum', prof:'Lorem Ipsum', length: "6h 30min" },
             { id: 4, subject: 'Lorem Ipsum', prof:'Lorem Ipsum', length: "6h 30min" },
             ],
-            allInternships: [
-            { id: 0, subject: 'Lorem Ipsum', prof:'Lorem Ipsum' },
-            { id: 1, subject: 'Lorem Ipsum', prof:'Lorem Ipsum' },
-            { id: 2, subject: 'Lorem Ipsum', prof:'Lorem Ipsum' },
-            { id: 3, subject: 'Lorem Ipsum', prof:'Lorem Ipsum' },
-            { id: 4, subject: 'Lorem Ipsum', prof:'Lorem Ipsum' },
-            ],
+        allInternships: [
+        { id: 0, company: 'Booky', position:'Marketing Intern', img: "", desc: "Booky is a homegrown food app where you can discover new restaurants, get unlimited discounts, and claim numerous digital coupons...", 
+            process: {desc: [
+                "We want every individual to hone their skills and gain the necessary experiences needed in order to attain their dream jobs. With that being said, each companies listed will have their own hiring process, and we will be aiding you through each step. The features in this site is designed to ensure that you are able to prepare yourself for the application for an internship and give you insights on the job application journey. ",
+                "To ensure that everybody who is interested in joining this company has an equal opportunity and ability to start this journey, we did our best tomake our process simple, easy and accessible. If you need a certain accomodation for the applications, please do not hesitate to send a message beforehand at xxx@gmail.com."
+            ], steps: ["applications", "assessment", "interviews", "offer"]}
+        },
+        { id: 1, company: 'Booky', position:'Finance Intern', img: "", desc: "Booky is a homegrown food app where you can discover new restaurants, get unlimited discounts, and claim numerous digital coupons...",
+            process: {desc: [
+                "We want every individual to hone their skills and gain the necessary experiences needed in order to attain their dream jobs. With that being said, each companies listed will have their own hiring process, and we will be aiding you through each step. The features in this site is designed to ensure that you are able to prepare yourself for the application for an internship and give you insights on the job application journey. ",
+                "To ensure that everybody who is interested in joining this company has an equal opportunity and ability to start this journey, we did our best tomake our process simple, easy and accessible. If you need a certain accomodation for the applications, please do not hesitate to send a message beforehand at xxx@gmail.com."
+            ], steps: ["applications", "assessment", "interviews", "offer"]}
+        },
+        { id: 2, company: 'Booky', position:'Operations Intern', img: "", desc: "Booky is a homegrown food app where you can discover new restaurants, get unlimited discounts, and claim numerous digital coupons..." },
+        { id: 3, company: 'Shopee', position:'Features Intern', img: "", desc: "Shopee is an e-commerce site which was founded in 2015. Shopee presents an expansive range of products, a social community for exploration..." },
+        { id: 4, company: 'Shopee', position:'Communities Intern', img: "", desc: "Shopee is an e-commerce site which was founded in 2015. Shopee presents an expansive range of products, a social community for exploration..." },
+        { id: 5, company: 'Shopee', position:'HR Intern', img: "", desc: "Shopee is an e-commerce site which was founded in 2015. Shopee presents an expansive range of products, a social community for exploration..." },
+        { id: 6, company: '808 Studio', position:'Design Intern', img: "", desc: "808 Studio is about providing a fun, liberating and inclusive way to achieve one’s fitness goals that makes them feel as good as they ­­look. We each have our own beat..." },
+        { id: 7, company: '808 Studio', position:'Sales Intern', img: "", desc: "808 Studio is about providing a fun, liberating and inclusive way to achieve one’s fitness goals that makes them feel as good as they ­­look. We each have our own beat..." },
+        { id: 8, company: '808 Studio', position:'Clients Intern', img: "", desc: "808 Studio is about providing a fun, liberating and inclusive way to achieve one’s fitness goals that makes them feel as good as they ­­look. We each have our own beat..." },
+        ],
     }
   },
   mutations: {
