@@ -330,6 +330,8 @@ export default {
   methods: {
       openStep(step) {
           this.$router.push("/allInternships/"+this.id+"/"+step);
+          document.body.scrollTop = 0; // For Safari
+          document.documentElement.scrollTop = 0; // For Chrome, Firefox, IE and Opera
       },
       changeName(e) {
         // console.log(this.$refs.customFile);

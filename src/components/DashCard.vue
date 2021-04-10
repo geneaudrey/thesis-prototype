@@ -1,10 +1,10 @@
 <template>
-    <div class="card border-0 shadow-sm p-4 dashCard">
+    <div class="card border-0 shadow-sm p-3 dashCard">
         <div class="row p-0 m-0 boldDefault">
-            <button type="button" :class="[{'text-black' : active == 0}, {'text-deselected' : active !=0}, 'btn p-1 m-1 h3']"  @click="active=0">  My Courses </button>
-            <button type="button" :class="[{'text-black' : active == 1}, {'text-deselected' : active !=1}, 'btn p-1 m-1 h3']"  @click="active=1"> My Internships </button>
-            <button type="button" :class="[{'text-black' : active == 2}, {'text-deselected' : active !=2}, 'btn p-1 m-1 h3']"  @click="active=2">  All Courses </button>
-            <button type="button" :class="[{'text-black' : active == 3}, {'text-deselected' : active !=3}, 'btn p-1 m-1 h3']"  @click="active=3">  All Internships </button>
+            <button type="button" :class="[{'text-black' : active == 0}, {'text-deselected' : active !=0}, 'btn p-1 m-1 boldDefault']"  @click="active=0">  My Courses </button>
+            <button type="button" :class="[{'text-black' : active == 1}, {'text-deselected' : active !=1}, 'btn p-1 m-1 boldDefault']"  @click="active=1"> My Internships </button>
+            <button type="button" :class="[{'text-black' : active == 2}, {'text-deselected' : active !=2}, 'btn p-1 m-1 boldDefault']"  @click="active=2">  All Courses </button>
+            <button type="button" :class="[{'text-black' : active == 3}, {'text-deselected' : active !=3}, 'btn p-1 m-1 boldDefault']"  @click="active=3">  All Internships </button>
         </div>
         <!-- if my courses, all courses, my internships -->
         <div class="row p-0 m-0" v-if="active != 3">
@@ -41,9 +41,10 @@
                 </div>
             </div>
         </div>
-        <div class="row p-0 m-0" v-else>
+        
+    </div>
+    <div class="row p-0 m-0" v-if="active == 3">
             <AllInternships />
-        </div>
     </div>
 </template>
 

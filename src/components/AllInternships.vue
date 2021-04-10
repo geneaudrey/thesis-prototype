@@ -1,6 +1,6 @@
 <template>
   <div class="AllInternships w-100">
-    <div class="card w-100 p-3 dashCard shadow border-0">
+    <div class="card w-100 p-3 dashCard shadow border-0 mt-4">
         <div class="row m-0 p-0 ">
             <div class="col-auto p-0 m-0 pr-2 mr-2 border border-left-0 border-top-0 border-bottom-0">
                 <div class="dropdown">
@@ -104,6 +104,8 @@ created() {
 methods: {
     openInternship(index) {
         this.$router.push("/allInternships/"+ index);
+        document.body.scrollTop = 0; // For Safari
+        document.documentElement.scrollTop = 0; // For Chrome, Firefox, IE and Opera
     }
 }
 //   props: {

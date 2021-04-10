@@ -1,7 +1,7 @@
 <template>
   <div class="SubSidebar p-3">
       <div class="sidebar" />
-        <div class="">
+        <div class="sidebarContent">
           <div class="btn-group-vertical w-100">
             <button type="button" :class="[{'activatedItem' : active==0},'btn sidebarItem pl-2']" @click="move(0)">Announcements</button>
             <button type="button" :class="[{'activatedItem' : active==1},'btn sidebarItem pl-2']" @click="move(1)">Modules</button>
@@ -34,6 +34,8 @@ export default {
     methods: {
       move(index) {
         this.$router.push('/myCourses/'+this.id+this.pages[index]);
+        document.body.scrollTop = 0; // For Safari
+        document.documentElement.scrollTop = 0; // For Chrome, Firefox, IE and Opera
       }
     },
     watch: {
@@ -57,7 +59,8 @@ export default {
 }
 .sidebarContent {
   position: fixed;
-  width: 216px;
+  /* top: 0; */
+  width: 14%;
 }
 .sidebarItem {
   text-align: left;

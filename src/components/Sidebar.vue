@@ -1,7 +1,7 @@
 <template>
   <div class="Sidebar p-3">
       <div class="sidebar" />
-        <div class="">
+        <div class="sidebarContent">
           <div class="btn-group-vertical w-100">
             <div class="w-50">
               <img :src="logo" class="icon" />
@@ -61,6 +61,8 @@ export default {
       // this.active = index;
       this.sidebarActive1(index);
       this.$router.push({path: this.pages[index]})
+      document.body.scrollTop = 0; // For Safari
+      document.documentElement.scrollTop = 0; // For Chrome, Firefox, IE and Opera
     }
   }
 };
@@ -77,12 +79,13 @@ export default {
     min-height: 100vh;
     background: #2B7A78;
     /* Shadow / Small */
-
+    
     box-shadow: 0px 1px 3px rgba(0, 0, 0, 0.1);
 }
 .sidebarContent {
   position: fixed;
-  width: 216px;
+  top: 0;
+  width: 14%;
 }
 .sidebarItem {
   text-align: left;
