@@ -5,6 +5,7 @@ $primary: #3AAFA9;
 $secondary: #F5F5F7;
 
 $theme-colors: (
+    "clip": rgb(17,15,36,0.4),
   "desc": rgb(17,15,36,0.6),
   "gray": #ECECEE,
   "darkgray" : #46484D,
@@ -214,6 +215,34 @@ $theme-colors: (
     url('./fonts/gothambold1.ttf') format('truetype');
     font-weight: normal;
     font-style: normal;
+}
+
+.input-group.input-group-seamless-append {
+    > input {
+        width: 100%;
+        padding-right: 52px;
+    }
+    > .input-group-append {
+        position: absolute;
+        right: 1px;
+        top: 1px;
+        bottom: 1px;
+        z-index: 4;
+    }
+}
+
+.input-group.input-group-seamless-prepend {
+    > input {
+        width: 100%;
+        // padding-left: 1000px;
+    }
+    > .input-group-prepend {
+        position: absolute;
+        left: 10px;
+        top: 1px;
+        bottom: 1px;
+        z-index: 4;
+    }
 }
 
 // .navbar {

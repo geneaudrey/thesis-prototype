@@ -28,6 +28,11 @@ const routes = [
     component: InternshipProcess,
     props: true
   },
+  {
+    path: "/allInternships/:id/:process",
+    component: InternshipProcess,
+    props: true
+  },
 
 ];
 
