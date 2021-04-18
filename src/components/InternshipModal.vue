@@ -25,7 +25,7 @@
           In order to proceed to the company’s assessment, you will be redirected to their own site and their own assessment here:
         </p>
 
-        <button class="btn btn-primary rounded-pill boldS mb-3">
+        <button class="btn btn-primary rounded-pill boldS mb-3" data-dismiss="modal" @click="$router.push($router.currentRoute._rawValue.path +'/assessment/completed')">
           PROCEED TO ASSESSMENT
         </button>
 
@@ -56,7 +56,7 @@
           You can expect to have one-on-one interviews or a panel interview which will be conducted online, via phone call or Zoom. Based on the requirements of the role you are applying for, you may also be asked some additional questions specific to the type of work you may be doing.
         </p>
 
-        <button class="btn btn-primary rounded-pill boldS">
+        <button class="btn btn-primary rounded-pill boldS" data-dismiss="modal" @click="$router.push($router.currentRoute._rawValue.path +'/interviews/completed')">
           SCHEDULE AN INTERVIEW
         </button>
       </div>

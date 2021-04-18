@@ -5,7 +5,7 @@
                 Edit Profile
             </p>
             <div class="col d-flex flex-row-reverse">
-                <button class="boldM btn btn-primary rounded-pill align-middle"> 
+                <button class="boldM btn btn-primary rounded-pill align-middle" @click="$router.push($router.currentRoute._rawValue.path + '/completed')"> 
                     Save Changes
                 </button>
                 <button class="boldM btn btn-secondary mr-2 rounded-pill text-primary align-middle"> 

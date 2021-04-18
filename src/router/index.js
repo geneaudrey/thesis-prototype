@@ -2,6 +2,7 @@ import { createWebHistory, createRouter } from "vue-router";
 import Dashboard from "@/components/Dashboard.vue";
 import Courses from "@/components/Courses.vue";
 import InternshipProcess from "@/components/InternshipProcess.vue";
+import FinishedStep from "@/components/FinishedStep.vue";
 // import About from "@/views/About.vue";
 
 const routes = [
@@ -33,6 +34,11 @@ const routes = [
     component: InternshipProcess,
     props: true
   },
+  {
+    path: "/allInternships/:id/:process/completed",
+    component: FinishedStep,
+    props: true
+  }
 
 ];
 
