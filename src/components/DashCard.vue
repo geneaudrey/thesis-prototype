@@ -53,8 +53,9 @@ import AllInternships from "./AllInternships"
 export default {
     name: "DashCard",
     components: {
-        AllInternships
+        AllInternships,
     },
+    emits: ["changedActive"],
     data() {
         return {
             myCourses: [],

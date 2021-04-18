@@ -1,11 +1,14 @@
 // Custom styles & classes here
-@import url('https://cdn.rawgit.com/mfd/f3d96ec7f0e8f034cc22ea73b3797b59/raw/856f1dbb8d807aabceb80b6d4f94b464df461b3e/gotham.css');
+// @import url('https://cdn.rawgit.com/mfd/f3d96ec7f0e8f034cc22ea73b3797b59/raw/856f1dbb8d807aabceb80b6d4f94b464df461b3e/gotham.css');
 // i.e. overriding bootstrap's themes
+@import url(//db.onlinewebfonts.com/c/3a47f5f06b5484abfeee9eac90348a9c?family=Gotham);
+@import url(//db.onlinewebfonts.com/c/0ff8990774ec4865c7f45befbafd4910?family=Gotham);
+// @import url(//db.onlinewebfonts.com/c/fc74760c72164d5321ac886797ce62eb?family=Gotham);
 $primary: #3AAFA9;
 $secondary: #F5F5F7;
 
 $theme-colors: (
-    "clip": rgb(17,15,36,0.4),
+  "clip": rgb(17,15,36,0.4),
   "desc": rgb(17,15,36,0.6),
   "gray": #ECECEE,
   "darkgray" : #46484D,
@@ -13,6 +16,7 @@ $theme-colors: (
   "black" : rgb(17,15,36,1),
   "titleBlack": #303134,
   "textSecondary":rgb(48,49,52,1),
+  "close": #D7D7D7,
   "lightgray": rgb(255,255,255,0.4),
   "time": rgb(144,144,144,1),
   "darkPrimary": #2B7A78,
@@ -107,6 +111,7 @@ $theme-colors: (
 .boldL {
     font-size: 18px !important;
     font-family: 'Gotham Bold' !important;
+    line-height: 24px;
 }
 
 
@@ -119,7 +124,6 @@ $theme-colors: (
     font-size: 16px;
     font-family: 'Gotham' !important;
     line-height: 24px;
-    
 }
 
 
@@ -197,15 +201,15 @@ $theme-colors: (
 //     font-style: normal;
 // }
 
-@font-face {
-	font-family: 'Gotham';
-	src: url('./fonts/GothamBook.eot');
-	src: url('./fonts/GothamBook.eot?#iefix') format('embedded-opentype'),
-    url('./fonts/GothamBook.woff') format('woff'), 
-    url('./fonts/GothamBook.ttf') format('truetype');
-    font-weight: normal;
-    font-style: normal;
-}
+// @font-face {
+// 	font-family: 'Gotham';
+// 	src: url('./fonts/GothamBook.eot');
+// 	src: url('./fonts/GothamBook.eot?#iefix') format('embedded-opentype'),
+//     url('./fonts/GothamBook.woff') format('woff'), 
+//     url('./fonts/GothamBook.ttf') format('truetype');
+//     font-weight: normal;
+//     font-style: normal;
+// }
 
 @font-face {
 	font-family: 'Gotham Bold';
@@ -216,6 +220,8 @@ $theme-colors: (
     font-weight: normal;
     font-style: normal;
 }
+
+@font-face {font-family: "Gotham"; src: url("//db.onlinewebfonts.com/t/0ff8990774ec4865c7f45befbafd4910.eot"); src: url("//db.onlinewebfonts.com/t/0ff8990774ec4865c7f45befbafd4910.eot?#iefix") format("embedded-opentype"), url("//db.onlinewebfonts.com/t/0ff8990774ec4865c7f45befbafd4910.woff2") format("woff2"), url("//db.onlinewebfonts.com/t/0ff8990774ec4865c7f45befbafd4910.woff") format("woff"), url("//db.onlinewebfonts.com/t/0ff8990774ec4865c7f45befbafd4910.ttf") format("truetype"), url("//db.onlinewebfonts.com/t/0ff8990774ec4865c7f45befbafd4910.svg#Gotham") format("svg"); }
 
 .input-group.input-group-seamless-append {
     > input {
@@ -245,6 +251,15 @@ $theme-colors: (
     }
 }
 
+.modal-lg {
+    max-width: 609px !important;
+}
+
+.modal-content  {
+    -webkit-border-radius: 0px !important;
+    -moz-border-radius: 0px !important;
+    border-radius: 20px !important; 
+}
 // .navbar {
 //   height: 70px;
 // }
