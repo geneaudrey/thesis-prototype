@@ -7,20 +7,30 @@ export const store = createStore({
         sidebarActive2: 0,
         myCourses: [
             { id: 0, subject: 'Self-Advocacy & Work for PWDs', prof:'Praise Lam', 
+                img: 'ENABLE UPDATED-34.svg',
                 announcements: [
                 {
                     id: 0,
                     poster: 'Jan Belmonte',
                     time: '13h',
-                    title: 'Title of Announcement',
-                    body: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.',
+                    title: 'GROUP DICUSSION',
+                    body: [
+                        {type: 'p', text: 'Good day everyone!'},
+                        {type: 'p', text: 'I hope the discussion yesterday was a fruitful one for all of you! If you have any more questions you would like to ask me, please feel free to message me anytime! My DMs are always open :) Have a good rest today and remember to accomplish the following module by the end of the week. '},
+                        {type: 'p', text: 'Here is our group photo from earlier! '},
+                        {type: 'img', img: 'pektor.png'}
+                    ],
                 },
                 {
                     id: 1,
                     poster: 'Jan Belmonte',
                     time: '20h',
-                    title: 'Title of Announcement',
-                    body: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.',
+                    title: 'FIRST DAY TOGETHER',
+                    body: [
+                        {type: 'p', text: 'Hi everyone!'},
+                        {type: 'p', text: 'It was great talking to all of you through the chat earlier. Let us schedule a meeting soon together so we can e-meet each other and learn more about your group also! If you are feeling a little bit shy, do not worry. This site is a safe space for all of you. Let us schedule a when-to-meet through chat regarding our available times. '},
+                        {type: 'p', text: 'Have a great day and always remember to enable yourselves to strive more!'},
+                    ],
                 }],
                 modules: [
                     {
@@ -212,7 +222,8 @@ export const store = createStore({
                     }
                 ] 
             },
-            { id: 1, subject: 'How to Start Your Own Business', prof:'Lorem Ipsum', 
+            { id: 1, subject: 'How to Start Your Own Business', prof:'Jan Belmonte', 
+                img: 'ENABLE UPDATED-39.svg',
                 announcements: [
                 {
                     id: 0,
@@ -232,7 +243,8 @@ export const store = createStore({
                 upcomingAssignments: [],
                 finishedAssignments: [] 
             },
-            { id: 2, subject: 'Graphic Design is My Passion', prof:'Lorem Ipsum', 
+            { id: 2, subject: 'Graphic Design is My Passion', prof:'Chelsea Go',
+                img: 'ENABLE UPDATED-37.svg', 
                 announcements: [
                 {
                     id: 0,
@@ -254,37 +266,41 @@ export const store = createStore({
             },
         ],
         myInternships: [
-            { id: 0, subject: 'Booky', prof:'Daryll Santillan' },
-            { id: 1, subject: 'Shopee', prof:'Lorem Ipsum' },
-            { id: 2, subject: '808 Studio', prof:'Lorem Ipsum' },
+            { id: 0, subject: 'Booky', img: "logo1.1.png", prof:'Daryll Santillan' },
+            { id: 1, subject: 'Shopee', img: "logo2.png", prof:'Casper' },
+            { id: 2, subject: '808 Studio', img: "logo3.png", prof:'Dot Li' },
             ],
             allCourses: [
-            { id: 0, subject: 'Lorem Ipsum', prof:'Lorem Ipsum', length: "6h 30min" },
-            { id: 1, subject: 'Lorem Ipsum', prof:'Lorem Ipsum', length: "6h 30min" },
-            { id: 2, subject: 'Lorem Ipsum', prof:'Lorem Ipsum', length: "6h 30min" },
-            { id: 3, subject: 'Lorem Ipsum', prof:'Lorem Ipsum', length: "6h 30min" },
-            { id: 4, subject: 'Lorem Ipsum', prof:'Lorem Ipsum', length: "6h 30min" },
+            { id: 0, subject: 'Overcoming Obstacles as a PWD', prof:'Praise Lam', length: "6h 30min", img:"ENABLE UPDATED-38.svg", desc:"In this class, you will learn how to speak up for yourself, make your own decisions and..." },
+            { id: 1, subject: 'Excelling in Your Job', prof:'Cha Tan', length: "3h 15min", img:"", desc:"In this class, you will learn how to speak up for yourself, make your own decisions and..." },
+            { id: 2, subject: 'Programming a PWD-Friendly Site', prof:'Caitlin Chua', length: "7h 40min", img:"", desc:"In this class, you will learn how to speak up for yourself, make your own decisions and..." },
+            { id: 3, subject: 'Excelling in Your Job Part 2', prof:'Cha Tan', length: "11h 30min", img:"", desc:"In this class, you will learn how to speak up for yourself, make your own decisions and..." },
+            { id: 4, subject: 'Basic Skills Training', prof:'Gene Tan', length: "5h 35min", img:"ENABLE UPDATED-35.svg", desc:"In this class, you will learn how to speak up for yourself, make your own decisions and..." },
+            { id: 5, subject: 'Graphic Design is My Passion', prof:'Chelsea Go', length: "11h 35min", img:"ENABLE UPDATED-38.svg", desc:"In this class, you will learn how to speak up for yourself, make your own decisions and..." },
+            { id: 6, subject: 'How to Start Your Own Business', prof:'Jan Belmonte', length: "6h 30min", img:"ENABLE UPDATED-35.svg", desc:"In this class, you will learn how to speak up for yourself, make your own decisions and..." },
+            { id: 7, subject: 'Self-Advocacy & Work for PWDs', prof:'Praise Lam', length: "3h 15min", img:"ENABLE UPDATED-39.svg", desc:"In this class, you will learn how to speak up for yourself, make your own decisions and..." },
+            { id: 8, subject: 'Excel Well in Excel Sheets', prof:'Pauline de Ocampo', length: "7h 40min", img:"", desc:"In this class, you will learn how to speak up for yourself, make your own decisions and..." },
             ],
         allInternships: [
-        { id: 0, company: 'Booky', position:'Marketing Intern', img: "", desc: "Booky is a homegrown food app where you can discover new restaurants, get unlimited discounts, and claim numerous digital coupons...", 
+        { id: 0, company: 'Booky', position:'Marketing Intern', img: "logo1.1.png", desc: "Booky is a homegrown food app where you can discover new restaurants, get unlimited discounts, and claim numerous digital coupons...", 
             process: {desc: [
                 "We want every individual to hone their skills and gain the necessary experiences needed in order to attain their dream jobs. With that being said, each companies listed will have their own hiring process, and we will be aiding you through each step. The features in this site is designed to ensure that you are able to prepare yourself for the application for an internship and give you insights on the job application journey. ",
                 "To ensure that everybody who is interested in joining this company has an equal opportunity and ability to start this journey, we did our best tomake our process simple, easy and accessible. If you need a certain accomodation for the applications, please do not hesitate to send a message beforehand at xxx@gmail.com."
             ], steps: ["applications", "assessment", "interviews", "offer"]}
         },
-        { id: 1, company: 'Booky', position:'Finance Intern', img: "", desc: "Booky is a homegrown food app where you can discover new restaurants, get unlimited discounts, and claim numerous digital coupons...",
+        { id: 1, company: 'Booky', position:'Finance Intern', img: "logo1.1.png", desc: "Booky is a homegrown food app where you can discover new restaurants, get unlimited discounts, and claim numerous digital coupons...",
             process: {desc: [
                 "We want every individual to hone their skills and gain the necessary experiences needed in order to attain their dream jobs. With that being said, each companies listed will have their own hiring process, and we will be aiding you through each step. The features in this site is designed to ensure that you are able to prepare yourself for the application for an internship and give you insights on the job application journey. ",
                 "To ensure that everybody who is interested in joining this company has an equal opportunity and ability to start this journey, we did our best tomake our process simple, easy and accessible. If you need a certain accomodation for the applications, please do not hesitate to send a message beforehand at xxx@gmail.com."
             ], steps: ["applications", "assessment", "interviews", "offer"]}
         },
-        { id: 2, company: 'Booky', position:'Operations Intern', img: "", desc: "Booky is a homegrown food app where you can discover new restaurants, get unlimited discounts, and claim numerous digital coupons..." },
-        { id: 3, company: 'Shopee', position:'Features Intern', img: "", desc: "Shopee is an e-commerce site which was founded in 2015. Shopee presents an expansive range of products, a social community for exploration..." },
-        { id: 4, company: 'Shopee', position:'Communities Intern', img: "", desc: "Shopee is an e-commerce site which was founded in 2015. Shopee presents an expansive range of products, a social community for exploration..." },
-        { id: 5, company: 'Shopee', position:'HR Intern', img: "", desc: "Shopee is an e-commerce site which was founded in 2015. Shopee presents an expansive range of products, a social community for exploration..." },
-        { id: 6, company: '808 Studio', position:'Design Intern', img: "", desc: "808 Studio is about providing a fun, liberating and inclusive way to achieve one’s fitness goals that makes them feel as good as they ­­look. We each have our own beat..." },
-        { id: 7, company: '808 Studio', position:'Sales Intern', img: "", desc: "808 Studio is about providing a fun, liberating and inclusive way to achieve one’s fitness goals that makes them feel as good as they ­­look. We each have our own beat..." },
-        { id: 8, company: '808 Studio', position:'Clients Intern', img: "", desc: "808 Studio is about providing a fun, liberating and inclusive way to achieve one’s fitness goals that makes them feel as good as they ­­look. We each have our own beat..." },
+        { id: 2, company: 'Booky', position:'Operations Intern', img: "logo1.1.png", desc: "Booky is a homegrown food app where you can discover new restaurants, get unlimited discounts, and claim numerous digital coupons..." },
+        { id: 3, company: 'Shopee', position:'Features Intern', img: "logo2.png", desc: "Shopee is an e-commerce site which was founded in 2015. Shopee presents an expansive range of products, a social community for exploration..." },
+        { id: 4, company: 'Shopee', position:'Communities Intern', img: "logo2.png", desc: "Shopee is an e-commerce site which was founded in 2015. Shopee presents an expansive range of products, a social community for exploration..." },
+        { id: 5, company: 'Shopee', position:'HR Intern', img: "logo2.png", desc: "Shopee is an e-commerce site which was founded in 2015. Shopee presents an expansive range of products, a social community for exploration..." },
+        { id: 6, company: '808 Studio', position:'Design Intern', img: "logo3.png", desc: "808 Studio is about providing a fun, liberating and inclusive way to achieve one’s fitness goals that makes them feel as good as they ­­look. We each have our own beat..." },
+        { id: 7, company: '808 Studio', position:'Sales Intern', img: "logo3.png", desc: "808 Studio is about providing a fun, liberating and inclusive way to achieve one’s fitness goals that makes them feel as good as they ­­look. We each have our own beat..." },
+        { id: 8, company: '808 Studio', position:'Clients Intern', img: "logo3.png", desc: "808 Studio is about providing a fun, liberating and inclusive way to achieve one’s fitness goals that makes them feel as good as they ­­look. We each have our own beat..." },
         ],
     }
   },

@@ -27,9 +27,9 @@ export default {
     data() {
         return {
             todolist: [
-                {id: 1, task: "Lorem Ipsum", subj:"Class A", deadline: "03/03/2021", done: 0},
-                {id: 2, task: "Lorem Ipsum", subj:"Class B", deadline: "03/03/2021", done: 0},
-                {id: 3, task: "Lorem Ipsum", subj:"Class C", deadline: "03/03/2021", done: 0},
+                {id: 1, task: "Submit Assignments", subj:"Class A", deadline: "03/03/2021", done: 0},
+                {id: 2, task: "Discuss with Company A", subj:"Class B", deadline: "03/03/2021", done: 0},
+                {id: 3, task: "Presentation with Daryll", subj:"Class C", deadline: "03/03/2021", done: 0},
             ]
         }
     },

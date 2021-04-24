@@ -9,7 +9,8 @@
         </div>
         <input type="text" class="form-control form-control-sm border-0 pt-2 pb-2 pl-1" placeholder="Search..." >
     </div>
-    <h1 class="pt-4 h2">{{ moduleID != null ? course.modules[parseInt(moduleID)].title : course.subject }} </h1>
+    <h1 class="pt-4 h1">ANNOUNCEMENTS</h1>
+    <h6 class="h6">{{ moduleID != null ? course.modules[parseInt(moduleID)].title.toUpperCase() : course.subject.toUpperCase() }} </h6>
     <div class="row m-0 p-0 pt-2 pb-5">
         <div class="col-7 pl-0 pr-4">
           <div class="CoursesAnnouncements">
@@ -28,13 +29,14 @@
                         </div>
                     </div>
                 </div>
-                <div class="row p-0 m-0 mt-3 lead">
+                <div class="row p-0 m-0 mt-3 h2">
                     {{ announcement.title.toUpperCase() }}
                 </div>
                 <div class="row p-0 m-0 mt-3 regularL">
-                    {{ announcement.body}}
-                </div>
-                <div class="row p-0 m-0 mt-4" style="height: 161px; width: 100%; background: #C4C4C4">
+                  <div v-for="item in announcement.body" :key="item">
+                    <p v-if="item.type == 'p'" class="regularL"> {{ item.text }} </p>
+                    <img v-if ="item.type == 'img'" :src="require('../assets/For Gene/Pictures/'+item.img)" class="img-fluid" alt="Responsive image"/>
+                  </div>
                 </div>
             </div>
           </div>

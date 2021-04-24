@@ -23,7 +23,8 @@
 </template>
 
 <script>
-import logo from "../assets/icons/sample.svg"
+import logo from "../assets/For Gene/Logo/ENABLE UPDATED-41.svg"
+
 import { mapActions } from 'vuex'
 export default {
   name: "Sidebar",

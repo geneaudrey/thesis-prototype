@@ -31,15 +31,17 @@
                             <p class="w-100 text-center m-0 pb-4 regularM border border-top-0 border-left-0 border-right-0"> Designer </p>
                         </div>
                         <div class="row m-0 p-0 ml-1 mr-auto mt-4">
-                            <span class="material-icons p-2 border text-primary" style="border-radius: 100px">
+                            <!-- <span class="material-icons p-2 border text-primary" style="border-radius: 100px">
                                 call
-                            </span>
+                            </span> -->
+                            <img :src="phone" class="p-2 border text-primary" style="border-radius: 100px"/>
                             <span class="mt-auto mb-auto regularM ml-3"> +639 xx xxx xxxx </span>
                         </div>
                         <div class="row m-0 p-0 ml-1 mr-auto mt-3">
-                            <span class="material-icons p-2 border text-primary" style="border-radius: 100px">
+                            <!-- <span class="material-icons p-2 border text-primary" style="border-radius: 100px">
                                 mail
-                            </span>
+                            </span> -->
+                            <img :src="email" class="p-2 border text-primary" style="border-radius: 100px"/>
                             <span class="mt-auto mb-auto regularM ml-3"> xxx.gmail.com </span>
                         </div>
                     </div>
@@ -51,19 +53,27 @@
                         </span>
                         </div>
                         <div class="row m-0 p-0 mb-3" style="border-radius:100px; background: #FBFBFB">
-                            <div class="col-auto m-0 p-0 socMed" style="background: #3D6AD6"> </div>
+                            <!-- <div class="col-auto m-0 p-0 socMed" style="background: #3D6AD6"> -->
+                                <img :src="facebook" class="icon p-2 border-0 col-auto m-0 p-0" style="background: #3D6AD6; border-radius:100px"/>
+                            <!-- </div> -->
                             <div class="col regularM mt-auto mb-auto"> /presu.me </div>
                         </div>
                         <div class="row m-0 p-0 mb-3" style="border-radius:100px; background: #FBFBFB">
-                            <div class="col-auto m-0 p-0 socMed" style="background: #EA518D"> </div>
+                            <!-- <div class="col-auto m-0 p-0 socMed" style="background: #EA518D">  -->
+                                <img :src="dribbble" class="icon p-2 border-0 col-auto m-0 p-0" style="background: #EA518D; border-radius:100px"/>
+                            <!-- </div> -->
                             <div class="col regularM mt-auto mb-auto"> /presu.png </div>
                         </div>
                         <div class="row m-0 p-0 mb-3" style="border-radius:100px; background: #FBFBFB">
-                            <div class="col-auto m-0 p-0 socMed" style="background: #0073B1"> </div>
+                            <!-- <div class="col-auto m-0 p-0 socMed" style="background: #0073B1">  -->
+                                <img :src="linkedIn" class="icon p-2 border-0 col-auto m-0 p-0" style="background: #0073B1; border-radius:100px"/>
+                            <!-- </div> -->
                             <div class="col regularM mt-auto mb-auto"> /presu.works </div>
                         </div>
                         <div class="row m-0 p-0" style="border-radius:100px; background: #FBFBFB">
-                            <div class="col-auto m-0 p-0 socMed" style="background: #FF0000"> </div>
+                            <!-- <div class="col-auto m-0 p-0 socMed" style="background: #FF0000">  -->
+                                <img :src="youTube" class="icon p-2 border-0 col-auto m-0 p-0" style="background: #FF0000; border-radius:100px"/>
+                            <!-- </div> -->
                             <div class="col regularM mt-auto mb-auto"> /presu.films </div>
                         </div>
                     </div>
@@ -80,6 +90,13 @@
 </template>
 
 <script>
+import facebook from "../assets/For Gene/Icons/facebook 1.svg"
+import dribbble from "../assets/For Gene/Icons/dribbble 1.svg"
+import linkedIn from "../assets/For Gene/Icons/linkedin 1.svg"
+import youTube from "../assets/For Gene/Icons/youtube 1.svg"
+
+import phone from "../assets/For Gene/Icons/telephone 1.svg"
+import email from "../assets/For Gene/Icons/email (1) 1.svg"
 import Sidebar from "./Sidebar.vue"
 // import Modal from "./InternshipModal.vue"
 import ProcessHomePage from "./ProcessHomePage"
@@ -93,6 +110,16 @@ export default {
       ProcessHomePage,
       Applications,
       Offer
+  },
+  setup() {
+      return {
+          facebook,
+          dribbble,
+          linkedIn,
+          youTube,
+          phone,
+          email
+      }
   },
   props: {
     id: String,
@@ -133,6 +160,8 @@ export default {
     height: 38.49px;
     width: 38.49px;
     border-radius: 100px;
+    line-height: 35.49px;
+    text-align: center;
 }
 
 .searchTextBoxSpecial {

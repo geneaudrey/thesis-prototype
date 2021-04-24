@@ -13,10 +13,10 @@
             </div>
             <h1 class="pt-4 h1 text-titleBlack"> {{dashboardTitle}} </h1>
             <div class="row m-0 p-0 pt-2 pb-5">
-                <div :class="[{'col-8 pr-4': dashboardTitle != 'ALL INTERNSHIPS'}, {'col-12 pr-0': dashboardTitle == 'ALL INTERNSHIPS'}, 'pl-0']">
+                <div :class="[{'col-8 pr-4': active < 2}, {'col-12 pr-0': active >= 2}, 'pl-0']">
                     <DashCard @changedActive="changedActive"/>
                 </div>
-                <div class="col-4 pl-0 pr-0" v-if="dashboardTitle != 'ALL INTERNSHIPS'">
+                <div class="col-4 pl-0 pr-0" v-if="active < 2">
                     <Todo />
                     <Calendar class="mt-4" />
                 </div>
@@ -44,11 +44,13 @@ export default {
   data() {
     return {
         dashboard: ["MY COURSES", "MY INTERNSHIPS", "ALL COURSES", "ALL INTERNSHIPS"],
-        dashboardTitle: "MY COURSES"
+        dashboardTitle: "MY COURSES",
+        active: 0
     }
 },
 methods: {
     changedActive(newActive) {
+        this.active = newActive;
         this.dashboardTitle = this.dashboard[newActive];
     }
 }
