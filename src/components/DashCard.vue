@@ -6,7 +6,7 @@
             <button type="button" :class="[{'text-black' : active == 2}, {'text-deselected' : active !=2}, 'btn p-1 m-1 boldDefault']"  @click="active=2">  All Courses </button>
             <button type="button" :class="[{'text-black' : active == 3}, {'text-deselected' : active !=3}, 'btn p-1 m-1 boldDefault']"  @click="active=3">  All Internships </button>
         </div>
-        <!-- if my courses, all courses, my internships -->
+        <!-- if my courses, my internships -->
         <div class="row p-0 m-0" v-if="active < 2">
             <div class="card bg-secondary border-0 p-2 w-100 mt-3 dashCardItem" v-for="item in activated" :key="item.id">
                 <div class="row p-0 m-0">
