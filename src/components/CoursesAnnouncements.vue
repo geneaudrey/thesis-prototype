@@ -15,8 +15,8 @@
         placeholder="Search..."
       />
     </div>
-    <h1 class="pt-4 h1">ANNOUNCEMENTS</h1>
-    <h6 class="h6">
+    <h1 class="pt-4 h1 textPrimary">ANNOUNCEMENTS</h1>
+    <h6 class="h6 textPrimary">
       {{
         moduleID != null
           ? course.modules[parseInt(moduleID)].title.toUpperCase()

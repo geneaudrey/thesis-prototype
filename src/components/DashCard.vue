@@ -23,7 +23,7 @@
       >
         My Internships
       </button>
-      <button
+      <!-- <button
         type="button"
         :class="[
           { 'text-black': active == 2 },
@@ -44,12 +44,12 @@
         @click="active = 3"
       >
         All Internships
-      </button>
+      </button> -->
     </div>
     <!-- if my courses, my internships -->
-    <div class="row p-0 m-0" v-if="active < 2">
+    <div class="row p-0 m-0 p-2 mb-2" v-if="active < 2">
       <div
-        class="card bg-secondary border-0 p-2 w-100 mt-3 dashCardItem"
+        class="card bg-secondary border-0 p-2 w-100 mt-2 dashCardItem"
         v-for="item in activated"
         :key="item.id"
       >

@@ -16,17 +16,17 @@
         </button>
         <button
           type="button"
+          :class="[{ activatedItem: active == 2 }, 'btn sidebarItem pl-2']"
+          @click="move(2)"
+        >
+          Opportunities
+        </button>
+        <button
+          type="button"
           :class="[{ activatedItem: active == 1 }, 'btn sidebarItem pl-2']"
           @click="move(1)"
         >
           Dashboard
-        </button>
-        <button
-          type="button"
-          :class="[{ activatedItem: active == 2 }, 'btn sidebarItem pl-2']"
-          @click="move(2)"
-        >
-          Courses
         </button>
         <button
           type="button"
@@ -83,7 +83,7 @@ export default {
   },
   data() {
     return {
-      pages: ["/home", "/dashboard", "/courses", "/calendar", "/inbox"],
+      pages: ["/home", "/dashboard", "/opportunities", "/calendar", "/inbox"],
     };
   },
   created() {

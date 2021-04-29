@@ -1,7 +1,7 @@
 <template>
   <div class="row m-0 p-0" style="width: 100%; min-height: 100vh">
     <div class="col-2 m-0 p-0" style="max-width: 240px">
-      <Sidebar :active="1" />
+      <Sidebar :active="process== 'module' ? 1 : 2" />
     </div>
     <div class="col-10 pl-4 pt-3 d-flex flex-column" style="min-height: 100vh">
       <div class="input-group shadow-sm" style="width: 20%">

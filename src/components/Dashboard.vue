@@ -19,7 +19,7 @@
             placeholder="Search..."
           />
         </div>
-        <h1 class="pt-4 h1 text-titleBlack">{{ dashboardTitle }}</h1>
+        <h1 class="pt-4 h1 text-textPrimary">{{ dashboardTitle.toUpperCase() }}</h1>
         <div class="row m-0 p-0 pt-2 pb-5">
           <div
             :class="[

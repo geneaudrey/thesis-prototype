@@ -2,7 +2,7 @@
   <div class="Process">
     <div class="row m-0 p-0" style="width: 100%">
       <div class="col-2 m-0 p-0" style="max-width: 240px">
-        <Sidebar :active="1" />
+        <Sidebar :active="2" />
       </div>
 
       <div class="col-10 m-0 p-0 pl-4 pt-3">
@@ -20,7 +20,7 @@
             placeholder="Search..."
           />
         </div>
-        <p class="pt-4 h1 text-titleBlack">
+        <p class="pt-4 h1 text-textPrimary">
           {{ process ? "APPLICATIONS" : "PROCESS" }}
         </p>
         <div class="row m-0 p-0">

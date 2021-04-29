@@ -22,12 +22,12 @@
             </button>
           </div>
           <div class="col-7 mt-auto mb-auto">
-            <p class="mb-1 regularDefault text-black">{{ item.task }}</p>
-            <p class="mb-0 text-textSecondary regularM">{{ item.subj }}</p>
+            <p class="mb-1 regularDefault text-textBlack">{{ item.task }}</p>
+            <p class="mb-0 text-textPrimary regularM text-textPrimary">{{ item.subj }}</p>
           </div>
           <div class="col-4 mt-auto mb-auto pr-1 pl-4">
-            <p class="mb-0 pb-1 text-textSecondary regularM">Deadline:</p>
-            <p class="mb-0 regularM">{{ item.deadline }}</p>
+            <p class="mb-0 pb-1 text-textPrimary regularM text-textPrimary">Deadline:</p>
+            <p class="mb-0 boldM">{{ item.deadline }}</p>
           </div>
         </div>
       </div>

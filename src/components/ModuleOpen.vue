@@ -15,11 +15,11 @@
         placeholder="Search..."
       />
     </div>
-    <h1 class="pt-4 h2">
+    <h1 class="pt-4 h2 textPrimary">
       {{
         moduleID != null
-          ? course.modules[parseInt(moduleID)].title
-          : course.subject
+          ? course.modules[parseInt(moduleID)].title.toUpperCase()
+          : course.subject.toUpperCase()
       }}
     </h1>
     <div class="row m-0 p-0 pt-1 pb-5">
@@ -84,7 +84,7 @@
                 <p v-if="section.type == 'in-line-link'" v-html="section.text" class="paragraph pb-3" />
                 <p
                   v-if="section.type == 'link'"
-                  class="row m-0 p-0 text-primary"
+                  class="row m-0 p-0 text-primary h5"
                 >
                   <span class="h5 mt-auto mb-auto"> {{ section.text }} </span>
                   <span class="material-icons m-0 p-0" style="font-size: 36px">
@@ -208,7 +208,7 @@
                 <span class="material-icons m-0 p-0" style="font-size: 36px">
                   navigate_before
                 </span>
-                <span class="boldDefault mt-auto mb-auto"> Back </span>
+                <span class="boldDefault mt-auto mb-auto"> BACK </span>
               </div>
               <div
                 class="col d-flex flex-row-reverse m-0 p-0 pr-4 pb-3 text-primary btn pt-1"
@@ -218,7 +218,7 @@
                 <span class="material-icons m-0 p-0" style="font-size: 36px">
                   navigate_next
                 </span>
-                <span class="boldDefault mt-auto mb-auto"> Next </span>
+                <span class="boldDefault mt-auto mb-auto"> NEXT </span>
               </div>
               <div
                 class="col d-flex flex-row-reverse m-0 p-0 pr-4 pb-3 text-primary btn pt-1"
@@ -228,7 +228,7 @@
                 <span class="material-icons m-0 p-0" style="font-size: 36px">
                   navigate_next
                 </span>
-                <span class="boldDefault mt-auto mb-auto"> End </span>
+                <span class="boldDefault mt-auto mb-auto"> END </span>
               </div>
             </div>
           </div>

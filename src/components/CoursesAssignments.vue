@@ -15,11 +15,11 @@
         placeholder="Search..."
       />
     </div>
-    <h1 class="pt-4 h2">
+    <h1 class="pt-4 h1 textPrimary">
       {{
         moduleID != null
-          ? course.modules[parseInt(moduleID)].title
-          : course.subject
+          ? course.modules[parseInt(moduleID)].title.toUpperCase()
+          : course.subject.toUpperCase()
       }}
     </h1>
     <div class="row m-0 p-0 pt-2 pb-5">

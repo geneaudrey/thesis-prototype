@@ -3,6 +3,7 @@ import Dashboard from "@/components/Dashboard.vue";
 import Courses from "@/components/Courses.vue";
 import InternshipProcess from "@/components/InternshipProcess.vue";
 import FinishedStep from "@/components/FinishedStep.vue";
+import Opportunities from "@/components/Opportunities.vue";
 // import About from "@/views/About.vue";
 
 const routes = [
@@ -42,6 +43,16 @@ const routes = [
   {
     path: "/myCourses/:process/completed",
     component: FinishedStep,
+    props: true,
+  },
+  {
+    path: "/opportunities",
+    component: Opportunities,
+    props: true,
+  },
+  {
+    path: "/opportunities/:type",
+    component: Opportunities,
     props: true,
   },
 ];
