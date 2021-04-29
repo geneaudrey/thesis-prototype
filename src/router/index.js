@@ -17,29 +17,33 @@ const routes = [
   {
     path: "/myCourses/:id/:type",
     component: Courses,
-    props: true
+    props: true,
   },
   {
     path: "/myCourses/:id/:type/:moduleID/:moduleIDID",
     component: Courses,
-    props: true
+    props: true,
   },
   {
     path: "/allInternships/:id/",
     component: InternshipProcess,
-    props: true
+    props: true,
   },
   {
     path: "/allInternships/:id/:process",
     component: InternshipProcess,
-    props: true
+    props: true,
   },
   {
     path: "/allInternships/:id/:process/completed",
     component: FinishedStep,
-    props: true
-  }
-
+    props: true,
+  },
+  {
+    path: "/myCourses/:process/completed",
+    component: FinishedStep,
+    props: true,
+  },
 ];
 
 const router = createRouter({

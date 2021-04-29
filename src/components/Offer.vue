@@ -1,16 +1,11 @@
 <template>
-    <div class="card w-100">
-        sjidfhaiuwfnjwaenfjeQ
-    </div>
+  <div class="card w-100">sjidfhaiuwfnjwaenfjeQ</div>
 </template>
 
 <script>
 export default {
-    created(){
-    }
-}
+  created() {},
+};
 </script>
 
-<style scoped>
-
-</style>
+<style scoped></style>

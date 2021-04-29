@@ -13,7 +13,7 @@ export default {
   name: "App",
   components: {
     // Dashboard
-  }
+  },
 };
 </script>
 
@@ -21,13 +21,11 @@ export default {
 #app {
   /* font-family: 'Brandon Grotesque Medium'; */
   -webkit-font-smoothing: antialiased;
-  background: #F2F2F2;
+  background: #f2f2f2;
   min-height: 100vh;
   /* -moz-osx-font-smoothing: grayscale;
   text-align: center;
   color: #2c3e50;
   margin-top: 60px; */
 }
-
-
 </style>
