@@ -101,8 +101,7 @@
           </div>
           <div class="col-3 mt-auto mb-auto mr-1 pl-4 pr-3">
             <button
-              type="button"
-              class="btn btn-primary pr-0 pl-0 w-100 boldS dashButton"
+              class="btn btn-primary text-white pr-0 pl-0 w-100 boldS dashButton"
               v-if="active == 0 || active == 1"
               @click="
                 $router.push({
@@ -111,20 +110,6 @@
               "
             >
               Continue
-            </button>
-            <button
-              type="button"
-              class="btn btn-outline-primary border-2 pl-0 pr-0 w-100 boldS dashButton"
-              v-if="active == 2"
-            >
-              View Course
-            </button>
-            <button
-              type="button"
-              class="btn btn-outline-primary border-2 pl-0 pr-0 w-100 boldS dashButton"
-              v-if="active == 3"
-            >
-              View Internship
             </button>
           </div>
         </div>
@@ -193,7 +178,4 @@ export default {
 </script>
 
 <style scoped>
-.btn:hover {
-  color: black !important;
-}
 </style>
