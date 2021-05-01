@@ -1,28 +1,46 @@
 <template>
   <div class="card dashCard mb-4 border-0">
     <div
-      class="imageBorder mask"
+      :class="['imageBorder mask']"
       alt="Responsive image"
       style="position: relative"
+      v-if="type=='all-internships'"
     >
       <span class="title h1 noThick p-1 pl-5 pr-5 pb-2 text-white">
         {{ internship.company }} {{ internship.position + "ship" }}
       </span>
     </div>
+
+    <div
+      :class="['imageBorder mask2']"
+      alt="Responsive image"
+      style="position: relative"
+      v-else
+    >
+      <span class="title h1 noThick p-1 pl-5 pr-5 pb-2 text-white">
+        {{ internship.subject }}
+      </span>
+    </div>
     <div class="pl-5 pr-5 pb-3 pt-3 mt-3">
-      <p class="h2 text-darkPrimary">What is the process for application?</p>
-      <p
-        v-for="par in internship.process.desc"
+      <p class="h2 text-darkPrimary" v-if="process != null">What is the process for application?</p>
+      <div
+        v-for="par in (process == null ? internship.intro : internship.process.desc)"
         :key="par"
-        class="paragraph pt-3"
       >
-        {{ par }}
-      </p>
-      <p class="paragraphBold text-primary pt-3">
+        <p class="paragraph pb-3" v-if="par.type=='p'"> {{ par.text }} </p>
+        <p class="h2 text-darkPrimary pt-0" v-if="par.type=='header'"> {{ par.text }} </p>
+        <ul v-if="par.type == 'list'" class="pl-3 ml-1 paragraph pb-3">
+          <li v-for="item in par.text" :key="item">
+            {{ item }}
+          </li>
+        </ul>
+      </div>
+      <button class="btn btn-primary boldM p-3 pl-5 pr-5 mb-2" style="border-radius: 20px" v-if="process == null" @click="apply()"> {{type == "all-internships" ? 'APPLY NOW' : 'ENROLL NOW'}} </button>
+      <p class="paragraphBold text-primary pt-3" v-if="process != null">
         Check this page and your notifications to see updates in your progress.
       </p>
     </div>
-    <div class="row m-0 p-0 pl-4 pr-4 ml-auto mr-auto mb-4">
+    <div class="row m-0 p-0 pl-4 pr-4 ml-auto mr-auto mb-4" v-if="process != null">
       <div
         v-for="(step, index) in internship.process.steps"
         :key="index"
@@ -36,21 +54,21 @@
             {{ step.toUpperCase() }}
           </p>
           <p
-            class="text-center mt-3 regularS"
+            class="text-center mt-3 regularS mb-1"
             style="width: 128px; min-height: 101px"
           >
             {{ steps[step].desc }}
           </p>
           <button
             v-if="step == 'applications' || step == 'offer'"
-            class="btn btn-primary boldS rounded-pill pt-2pb-2 w-100"
+            class="btn btn-primary boldS rounded-pill pt-1 pb-3 w-100"
             @click="openStep(step)"
           >
             PROCEED
           </button>
           <button
             v-else
-            class="btn btn-primary boldS rounded-pill pt-2pb-2 w-100"
+            class="btn btn-primary boldS rounded-pill pt-1 pb-2 w-100"
             data-toggle="modal"
             data-target="#modal"
             @click="openedStep = step"
@@ -82,7 +100,7 @@ export default {
   components: {
     Modal,
   },
-  props: ["internship", "id"],
+  props: ["internship", "id", "process", "type"],
   setup() {
     return {
       // coverImage
@@ -118,10 +136,17 @@ export default {
   },
   methods: {
     openStep(step) {
-      this.$router.push("/allInternships/" + this.id + "/" + step);
+      this.$router.push("/opportunities/all-internships/" + this.id + "/" + step);
       document.body.scrollTop = 0; // For Safari
       document.documentElement.scrollTop = 0; // For Chrome, Firefox, IE and Opera
     },
+    apply() {
+      if (this.type == "all-internships") {
+        this.$router.push(this.$router.currentRoute._rawValue.path + '/process');
+        document.body.scrollTop = 0; // For Safari
+        document.documentElement.scrollTop = 0; // For Chrome, Firefox, IE and Opera
+      }
+    }
   },
 };
 </script>
@@ -152,6 +177,17 @@ export default {
   background-repeat: no-repeat;
 
   /* mask-image: url(https://image.flaticon.com/icons/png/512/1/1346.png); */
+  mask-size: 100% 225px;
+  mask-repeat: no-repeat;
+  mask-position: center;
+}
+
+.mask2 {
+  height: 251px;
+  background-image: url("../assets/For Gene/Illustrations/ENABLE UPDATED-14.svg");
+  background-size: cover;
+  background-position: top;
+  background-repeat: no-repeat;
   mask-size: 100% 225px;
   mask-repeat: no-repeat;
   mask-position: center;

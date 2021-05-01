@@ -1198,6 +1198,165 @@ export const store = createStore({
           subject: "Booky",
           img: "logo1.1.png",
           prof: "Daryll Santillan",
+          announcements: [
+            {
+              id: 0,
+              poster: "Daryll Santillan",
+              time: "13h",
+              title: "INTERN HUDDLE",
+              body: [
+                { type: "p", text: "Good day interns!" },
+                {
+                  type: "p",
+                  text:
+                    "I hope the discussion yesterday was a fruitful one for all of you! If you have any more questions you would like to ask me, please feel free to message me anytime! My DMs are always open :) Enjoy your long weekend ahead and let’s see each other again next week!",
+                },
+                { type: "p", text: "Here is our group photo from earlier!" },
+                { type: "img", img: "pektor.png" },
+              ],
+            },
+            {
+              id: 0,
+              poster: "Daryll Santillan",
+              time: "3d",
+              title: "FIRST DAY TOGETHER",
+              body: [
+                { type: "p", text: "Hi everyone!" },
+                {
+                  type: "p",
+                  text:
+                    "It was great talking to all of you through the chat earlier. Let us schedule a meeting soon together so we can e-meet each other and know each others’ work ethics! If you are feeling a little bit shy, do not worry. This internship is a safe space for all of you. Let us schedule a when-to-meet through chat regarding our available times. ",
+                },
+                { type: "p", text: "Have a great day and always remember to enable yourselves to strive more!" },
+              ],
+            },
+          ],
+          milestones: [
+            {
+              id: 0,
+              title: "March",
+              parts: [
+                {
+                  id: 0,
+                  title: "Introductions",
+                  desc:
+                    "Introduction of what Booky is and presenting the basics of what this internship entails...",
+                  status: 2,
+                  type: "lesson",
+                  lessonNum: 1,
+                  body: []
+                },
+                {
+                  id: 1,
+                  title: "Excel Sheet Practice",
+                  desc:
+                    "Refresher of using Excel sheets for future use in other activities and tasks given for the interns...",
+                  status: 3,
+                  type: "lesson",
+                  lessonNum: 1,
+                  body: []
+                },
+                {
+                  id: 2,
+                  title: "Use of Click-Up",
+                  desc:
+                    "Organize and discuss between departments with tasks through the use of Click-Up...",
+                  status: 0,
+                  type: "lesson",
+                  lessonNum: 1,
+                  body: []
+                },
+              ]
+            },
+            {
+              id: 1,
+              title: "April",
+              parts: [
+                {
+                  id: 0,
+                  title: "Ideate a Booky Prime Sale",
+                  desc:
+                    "Provide campaign ideas and plans for the incoming Booky Prime Sale to be posted in all available social media platforms...",
+                  status: 2,
+                  type: "lesson",
+                  lessonNum: 1,
+                  body: []
+                },
+                {
+                  id: 1,
+                  title: "Discussions with the Marketing Team",
+                  desc:
+                    "End of the quarter discussion with the Marketing Team regarding the tasks accomplished and what can be improved...",
+                  status: 3,
+                  type: "lesson",
+                  lessonNum: 1,
+                  body: []
+                },
+                {
+                  id: 2,
+                  title: "Booky Prime Sale Live",
+                  desc:
+                    "The campaign idea made will be set live in the Booky website as well as on Booky’s social media platforms...",
+                  status: 0,
+                  type: "lesson",
+                  lessonNum: 1,
+                  body: []
+                },
+              ]
+            },
+            {
+              id: 2,
+              title: "May",
+              parts: [
+                {
+                  id: 0,
+                  title: "Handling of Partnerships",
+                  desc:
+                    "Set meetings, email and discuss possible partnerships with other brands and companies....",
+                  status: 2,
+                  type: "lesson",
+                  lessonNum: 1,
+                  body: []
+                }
+              ]
+            },
+          ],
+          discussions: [
+            {
+              id: 0,
+              title: "Feedback on First Week of Internship",
+              body: [
+                {
+                  type: "header",
+                  text: "How Are You Feeling?"
+                },
+                {
+                  type: "p",
+                  text: "How have your internship experience been? Have you been enjoying it and learning a lot? Have you been experiencing problems with other individuals or the community in general? Any feedback can be placed in this discussion board. We will do our best to help you throughout this journey. As this place is a safe space for all PWDs, please do not be afraid to approach us. If you would like to talk about your experience more privately, you may always approach me through DMs. "
+                }
+              ],
+              replies: [
+                {
+                    id: 0,
+                    commenter: "Cha Tan",
+                    time: "17:32",
+                    comment: "Hi there",
+                    files: ["Some sort of file.pdf", "Some sort of file.png"],
+                    replies: []
+                },
+                {
+                    id:1,
+                    commenter: "Cha Tan",
+                    time: "17:29",
+                    comment: "Here are some of my works that I am proud of during my internship :D",
+                    files: [],
+                    replies: []
+                }
+            ]                
+                
+
+            }
+          ]
         },
         { id: 1, subject: "Shopee", img: "logo2.png", prof: "Casper" },
         { id: 2, subject: "808 Studio", img: "logo3.png", prof: "Dot Li" },
@@ -1211,6 +1370,27 @@ export const store = createStore({
           img: "ENABLE UPDATED-38.svg",
           desc:
             "In this class, you will learn how to speak up for yourself, make your own decisions and...",
+          cover: "ENABLE UPDATED-14.svg",
+          intro: [
+              { type: "header",
+                text: "About this specialization"
+              },
+              { type: "p",
+                text: "In this class, you will learn how to speak up for yourself, make your own decisions and find confidence in your skills for future job applications with the help of Project Inclusion. You will also find others who are on the same journey as you are and find those who will support you. It is also important to know your rights and responsibilities as an individual and as a person with disability. "
+              },
+              { type: "header",
+                text: "What you will Learn "
+              },
+              { type: "list",
+                text: [
+                  "Gain confidence on yourself and your skills",
+                  "Craft Resumes and Acing Interviews",
+                  "Communicate with others who are on the same path as you",
+                  "Setting goals and making choices"
+                ]
+              },
+          ]
+   
         },
         {
           id: 1,
@@ -1291,12 +1471,39 @@ export const store = createStore({
           company: "Booky",
           position: "Marketing Intern",
           img: "logo1.1.png",
+          cover: "ENABLE UPDATED-29.svg",
           desc:
             "Booky is a homegrown food app where you can discover new restaurants, get unlimited discounts, and claim numerous digital coupons...",
+          intro: [
+            { type: "header",
+              text: "What is Booky?"
+            },
+            { type: "p",
+              text: "Booky is a homegrown food app where you can discover new restaurants, get unlimited discounts, and claim numerous digital coupons. On top of that, Booky works completely OFFLINE."
+            },
+            { type: "header",
+              text: "Booky Internship Opportunity"
+            },
+            { type: "p",
+              text: "We're looking for an individual to become a member of the marketing team, working closely with the campaigns and partnerships team, but also coordinating with the different teams in the company (digital marketing, creatives, web team). At the end of this internship, the individual will have a holistic experience of marketing as a discipline while having developed core attributes in managing campaigns, forging relationships with partners, and ideating and executing marketing strategies. "
+            },
+            { type: "header",
+              text: "Responsibilities"
+            },
+            { type: "list",
+              text: [
+                "Work with the head to assess growth opportunities for core products, craft strategies that will help drive revenue through campaign execution ",
+                "Evaluate existing processes and how they can be better streamlined for operational efficiency ",
+                "Understand, analyze, and apply data to recommend relevant experiments that the teams can test and scale with ",
+                "Help coordinate with external partners and explore key initiatives that will drive growth ",
+                "Come up with insights from a user and merchant perspective that will improve app usage, contribute to core product value proposition, and the Booky vision as a whole "
+              ]
+            },
+          ],
           process: {
             desc: [
-              "We want every individual to hone their skills and gain the necessary experiences needed in order to attain their dream jobs. With that being said, each companies listed will have their own hiring process, and we will be aiding you through each step. The features in this site is designed to ensure that you are able to prepare yourself for the application for an internship and give you insights on the job application journey. ",
-              "To ensure that everybody who is interested in joining this company has an equal opportunity and ability to start this journey, we did our best tomake our process simple, easy and accessible. If you need a certain accomodation for the applications, please do not hesitate to send a message beforehand at xxx@gmail.com.",
+              {type: "p", text: "We want every individual to hone their skills and gain the necessary experiences needed in order to attain their dream jobs. With that being said, each companies listed will have their own hiring process, and we will be aiding you through each step. The features in this site is designed to ensure that you are able to prepare yourself for the application for an internship and give you insights on the job application journey. "},
+              {type: "p", text: "To ensure that everybody who is interested in joining this company has an equal opportunity and ability to start this journey, we did our best tomake our process simple, easy and accessible. If you need a certain accomodation for the applications, please do not hesitate to send a message beforehand at xxx@gmail.com."},
             ],
             steps: ["applications", "assessment", "interviews", "offer"],
           },

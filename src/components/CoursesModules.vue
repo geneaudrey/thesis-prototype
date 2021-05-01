@@ -1,8 +1,8 @@
 <template>
   <div class="col-2 pr-0 pl-0 w-40" style="max-width: 240px">
-    <SubSidebar :id="id" :active="1" />
+    <SubSidebar :id="id" :active="1" :tab="tab"/>
   </div>
-  <div class="col-8 pl-4 pt-3">
+  <div class="col-8 pl-3 pt-3">
     <div class="input-group shadow-sm" style="width: 20%">
       <div class="input-group-prepend">
         <span class="input-group-text pr-1 border-0" style="background: #ffffff"
@@ -15,7 +15,7 @@
         placeholder="Search..."
       />
     </div>
-    <h1 class="pt-4 h1 textPrimary">
+    <h1 class="pt-3 h1 mb-0 textPrimary">
       MODULES
     </h1>
     <h6 class="h6 textPrimary">
@@ -26,11 +26,11 @@
       }}
     </h6>
     <div class="row m-0 p-0 pt-2 pb-5">
-      <div class="col-7 pl-0 pr-4">
+      <div class="col-7 pl-0 pr-3">
         <div
           class="lineBreak mt-1"
           :moduleID="moduleID"
-          v-if="type == 'modules' && moduleID == null"
+          v-if="(type == 'modules' || type=='milestones') && moduleID == null"
         ></div>
         <div class="CoursesModules">
           <div class="row m-0 p-0" v-for="mod in modules" :key="mod.id">
@@ -51,7 +51,7 @@
                   :class="[
                     { circleActive: part.status > 0 },
                     { circleInactive: part.status == 0 },
-                    'mt-3 regularS',
+                    'mt-2 regularS',
                   ]"
                 >
                   <div class="text-center" style="line-height: 20px">
@@ -71,7 +71,7 @@
                   class="card w-100 p-3 border-0 shadow-sm module"
                   @click="openModule(mod.id, index)"
                 >
-                  <p>{{ part.title }}</p>
+                  <p class="boldL">{{ part.title }}</p>
                   <p class="regularS">{{ part.desc }}</p>
                 </div>
               </div>
@@ -102,6 +102,7 @@ export default {
     id: String,
     moduleID: String,
     type: String,
+    tab: String
   },
   data() {
     return {
@@ -110,18 +111,26 @@ export default {
     };
   },
   created() {
-    this.course = this.$store.state.myCourses[this.id];
-    this.modules = this.course.modules;
+    if (this.tab=="myCourses") {
+      this.course = this.$store.state.myCourses[this.id];
+      this.modules = this.course.modules;
+    }
+    else {
+      this.course = this.$store.state.myInternships[this.id];
+      this.modules = this.course.milestones;
+    }
   },
   methods: {
     openModule(modid, modidid) {
-      // console.log(modid, modidid);
-      // this.$store.commit('finishModulePart', { id: this.id, moduleID: modid, moduleIDID: modidid});
-      this.$router.push(
-        "/myCourses/" + this.id + "/modules/" + modid + "/" + modidid
-      );
-      document.body.scrollTop = 0; // For Safari
-      document.documentElement.scrollTop = 0; // For Chrome, Firefox, IE and Opera
+      if (this.tab == "myCourses") {
+        // console.log(modid, modidid);
+        // this.$store.commit('finishModulePart', { id: this.id, moduleID: modid, moduleIDID: modidid});
+        this.$router.push(
+          "/"+this.tab+"/" + this.id + "/modules/" + modid + "/" + modidid
+        );
+        document.body.scrollTop = 0; // For Safari
+        document.documentElement.scrollTop = 0; // For Chrome, Firefox, IE and Opera
+      }
     },
   },
 };

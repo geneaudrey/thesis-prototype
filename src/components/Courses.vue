@@ -2,20 +2,22 @@
   <div class="Courses">
     <div class="row m-0 p-0" style="width: 100%">
       <div class="col-2 m-0 p-0" style="max-width: 240px">
-        <Sidebar :active="1" />
+        <Sidebar :active="1" :tab="tab"/>
       </div>
 
       <Announcements
         :id="id"
         :moduleID="moduleID"
         :type="type"
+        :tab="tab"
         v-if="type == null || type == 'announcements'"
       />
 
       <Modules
         :id="id"
         :type="type"
-        v-if="type == 'modules' && moduleID == null"
+        :tab="tab"
+        v-if="(type == 'modules' || type=='milestones') && moduleID == null"
       />
       <ModuleOpen
         :id="id"
@@ -23,6 +25,7 @@
         :moduleID="moduleID"
         :type="type"
         :moduleIDID="moduleIDID"
+        :tab="tab"
         :mod="course.modules[parseInt(moduleID)]"
       />
       <Assignments
@@ -30,6 +33,7 @@
         :id="id"
         :moduleID="moduleID"
         :type="type"
+        :tab="tab"
       />
       <!-- {{ type }} -->
     </div>
@@ -62,6 +66,7 @@ export default {
     type: String,
     moduleID: String,
     moduleIDID: String,
+    tab: String
   },
   data() {
     return {

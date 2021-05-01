@@ -105,7 +105,7 @@
               v-if="active == 0 || active == 1"
               @click="
                 $router.push({
-                  path: '/myCourses/' + item.id + '/announcements',
+                  path: '/'+ tabs[active]+'/' + item.id + '/announcements',
                 })
               "
             >
@@ -150,6 +150,7 @@ export default {
       allInternships: [],
       activated: [],
       active: 0,
+      tabs: ["myCourses", "myInternships"]
     };
   },
   created() {

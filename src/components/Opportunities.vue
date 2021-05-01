@@ -37,7 +37,7 @@
                 <button class="btn btn-light boldL rounded-pill pl-4 pr-4 text-primary mt-3 mb-5" @click="open('all-internships')"> APPLY NOW </button>
             </div>
         </div>
-        <AllInternships v-if="active > 0" :active="active" class="mb-4 pb-1"/>
+        <AllInternships v-if="active > 0" :active="active" :type="type" class="mb-4 pb-1"/>
       </div>
     </div>
   </div>

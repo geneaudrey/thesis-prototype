@@ -6,55 +6,55 @@
         <div class="w-50">
           <img :src="logo" class="icon" />
         </div>
-        <p class="mb-1 text-lightgray pl-2">MAIN</p>
+        <p class="mb-1 text-lightgray pl-2 boldS">MAIN</p>
         <button
           type="button"
-          :class="[{ activatedItem: active == 0 }, 'btn sidebarItem pl-2']"
+          :class="[{ activatedItem: active == 0 }, 'btn sidebarItem pl-2 regularM']"
           @click="move(0)"
         >
           Home
         </button>
         <button
           type="button"
-          :class="[{ activatedItem: active == 2 }, 'btn sidebarItem pl-2']"
+          :class="[{ activatedItem: active == 2 }, 'btn sidebarItem pl-2 regularM']"
           @click="move(2)"
         >
           Opportunities
         </button>
         <button
           type="button"
-          :class="[{ activatedItem: active == 1 }, 'btn sidebarItem pl-2']"
+          :class="[{ activatedItem: active == 1 }, 'btn sidebarItem pl-2 regularM']"
           @click="move(1)"
         >
           Dashboard
         </button>
         <button
           type="button"
-          :class="[{ activatedItem: active == 3 }, 'btn sidebarItem pl-2']"
+          :class="[{ activatedItem: active == 3 }, 'btn sidebarItem pl-2 regularM']"
           @click="move(3)"
         >
           Calendar
         </button>
         <button
           type="button"
-          :class="[{ activatedItem: active == 4 }, 'btn sidebarItem pl-2']"
+          :class="[{ activatedItem: active == 4 }, 'btn sidebarItem pl-2 regularM']"
           @click="move(4)"
         >
           Inbox
         </button>
       </div>
       <div class="btn-group-vertical w-100">
-        <p class="mb-1 text-lightgray">ACCOUNT</p>
+        <p class="mb-1 text-lightgray boldS">ACCOUNT</p>
         <button
           type="button"
-          :class="[{ activatedItem: active == 5 }, 'btn sidebarItem pl-2']"
+          :class="[{ activatedItem: active == 5 }, 'btn sidebarItem pl-2 regularM']"
           @click="move(5)"
         >
           User
         </button>
         <button
           type="button"
-          :class="[{ activatedItem: active == 6 }, 'btn sidebarItem pl-2']"
+          :class="[{ activatedItem: active == 6 }, 'btn sidebarItem pl-2 regularM']"
           @click="move(6)"
         >
           Log Out

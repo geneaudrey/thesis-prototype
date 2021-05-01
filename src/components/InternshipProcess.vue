@@ -21,14 +21,15 @@
           />
         </div>
         <p class="pt-4 h1 text-textPrimary">
-          {{ process ? "APPLICATIONS" : "PROCESS" }}
+          {{ process == null ? "INTERNSHIP DESCRIPTION" : (process == "process" ? "PROCESS" : "APPLICATIONS") }}
         </p>
         <div class="row m-0 p-0">
-          <div class="col-9 ml-0 pl-0" v-if="process == null">
+          <div class="col-9 ml-0 pl-0" v-if="process == null || process== 'process'">
             <ProcessHomePage
               :internship="internship"
               :id="id"
-              v-if="process == null"
+              :process="process"
+              :type="type"
             />
           </div>
 
@@ -179,12 +180,28 @@ export default {
   props: {
     id: String,
     process: String,
+    type: String
   },
   data() {
     return {};
   },
   created() {
-    this.internship = this.$store.state.allInternships[this.id];
+    if (this.type == "all-internships") {
+      this.internship = this.$store.state.allInternships[this.id];
+    }
+    else {
+      this.internship = this.$store.state.allCourses[this.id];
+    }
+  },
+  watch: {
+    type() {
+      if (this.type == "all-internships") {
+        this.internship = this.$store.state.allInternships[this.id];
+      }
+      else {
+        this.internship = this.$store.state.allCourses[this.id];
+      }
+    }
   },
   mounted() {},
   methods: {},

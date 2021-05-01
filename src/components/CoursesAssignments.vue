@@ -1,8 +1,8 @@
 <template>
   <div class="col-2 pr-0 pl-0 w-40" style="max-width: 240px">
-    <SubSidebar :id="id" :active="3" />
+    <SubSidebar :id="id" :active="3" :tab="tab"/>
   </div>
-  <div class="col-8 pl-4 pt-3">
+  <div class="col-8 pl-3 pt-3">
     <div class="input-group shadow-sm" style="width: 20%">
       <div class="input-group-prepend">
         <span class="input-group-text pr-1 border-0" style="background: #ffffff"
@@ -15,7 +15,7 @@
         placeholder="Search..."
       />
     </div>
-    <h1 class="pt-4 h1 textPrimary">
+    <h1 class="pt-3 h1 textPrimary">
       {{
         moduleID != null
           ? course.modules[parseInt(moduleID)].title.toUpperCase()
@@ -23,7 +23,7 @@
       }}
     </h1>
     <div class="row m-0 p-0 pt-2 pb-5">
-      <div class="col-7 pl-0 pr-4">
+      <div class="col-7 pl-0 pr-3">
         <div class="CoursesAssignments">
           <Assign :type="0" :assignments="upcomingAssignments" />
           <Assign class="mt-4" :type="1" :assignments="finishedAssignments" />
@@ -54,6 +54,7 @@ export default {
     id: String,
     moduleID: String,
     type: String,
+    tab: String
   },
   data() {
     return {

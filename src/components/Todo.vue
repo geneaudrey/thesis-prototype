@@ -21,7 +21,7 @@
               <i class="fas fa-star"></i>
             </button>
           </div>
-          <div class="col-7 mt-auto mb-auto">
+          <div class="col-7 mt-auto mb-auto pr-0">
             <p class="mb-1 regularDefault text-textBlack">{{ item.task }}</p>
             <p class="mb-0 text-textPrimary regularM text-textPrimary">{{ item.subj }}</p>
           </div>

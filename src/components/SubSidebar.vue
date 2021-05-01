@@ -5,25 +5,28 @@
       <div class="btn-group-vertical w-100">
         <button
           type="button"
-          :class="[{ activatedItem: active == 0 }, 'btn sidebarItem pl-2']"
+          :class="[{ activatedItem: active == 0 }, 'btn sidebarItem pl-2 regularM']"
+          style="padding-top:5%; padding-bottom:5%"
           @click="move(0)"
         >
           Announcements
         </button>
         <button
           type="button"
-          :class="[{ activatedItem: active == 1 }, 'btn sidebarItem pl-2']"
+          :class="[{ activatedItem: active == 1 }, 'btn sidebarItem pl-2 regularM']"
+          style="padding-top:5%; padding-bottom:5%"
           @click="move(1)"
         >
-          Modules
+          {{ tab == "myCourses" ? 'Modules' : 'Milestones'}}
         </button>
         <!-- <button type="button" :class="[{'activatedItem' : active==2},'btn sidebarItem pl-2']" @click="move(2)">Files</button> -->
         <button
           type="button"
-          :class="[{ activatedItem: active == 3 }, 'btn sidebarItem pl-2']"
+          :class="[{ activatedItem: active == 3 }, 'btn sidebarItem pl-2 regularM']"
+          style="padding-top:5%; padding-bottom:5%"
           @click="move(3)"
         >
-          Assignments
+          {{ tab == "myCourses" ? 'Assignments' : 'Discussions'}}
         </button>
         <!-- <button type="button" :class="[{'activatedItem' : active==4},'btn sidebarItem pl-2']" @click="move(4)">Discussions</button> -->
       </div>
@@ -40,6 +43,7 @@ export default {
   props: {
     id: String,
     active: Number,
+    tab: String
   },
   data() {
     return {
@@ -50,6 +54,13 @@ export default {
         "/assignments",
         "/discussions",
       ],
+      pages2: [
+        "/announcements",
+        "/milestones",
+        "/files",
+        "/discussions",
+        "/discussions",
+      ],
       // pages: ['/announcements', '/modules', '/assignments']
     };
   },
@@ -58,7 +69,8 @@ export default {
   },
   methods: {
     move(index) {
-      this.$router.push("/myCourses/" + this.id + this.pages[index]);
+      var pages = this.tab == 'myCourses' ? this.pages : this.pages2
+      this.$router.push("/"+this.tab+"/" + this.id + pages[index]);
       document.body.scrollTop = 0; // For Safari
       document.documentElement.scrollTop = 0; // For Chrome, Firefox, IE and Opera
     },

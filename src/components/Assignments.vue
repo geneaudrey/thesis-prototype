@@ -3,7 +3,7 @@
     <div class="card-header border-0 h6">
       <b> {{ type == 0 ? "UPCOMING ASSIGNMENTS" : "PAST ASSIGNMENTS" }} </b>
     </div>
-    <div class="card-body p-0 pl-3 pr-3 pb-2">
+    <div class="card-body p-0 pl-2 pr-3 pb-2">
       <div
         :class="['card border-bottom-0 border-left-0 border-right-0 p-3 pl-4 pr-4', {'border-top-0' : item.id == 0}]"
         style="border-radius: 0px; border-width: 1.5px !important; border-color: #B7BBBC !important"

@@ -4,39 +4,50 @@ import Courses from "@/components/Courses.vue";
 import InternshipProcess from "@/components/InternshipProcess.vue";
 import FinishedStep from "@/components/FinishedStep.vue";
 import Opportunities from "@/components/Opportunities.vue";
+import About from "@/components/About.vue";
+import Login from "@/components/Login.vue";
 // import About from "@/views/About.vue";
 
 const routes = [
   {
     path: "/",
-    component: Dashboard,
+    component: About,
+  },
+  {
+    path: "/about",
+    component: About,
+  },
+  {
+    path: "/:type",
+    component: Login,
+    props: true
   },
   {
     path: "/dashboard",
     component: Dashboard,
   },
   {
-    path: "/myCourses/:id/:type",
+    path: "/:tab/:id/:type",
     component: Courses,
     props: true,
   },
   {
-    path: "/myCourses/:id/:type/:moduleID/:moduleIDID",
+    path: "/:tab/:id/:type/:moduleID/:moduleIDID",
     component: Courses,
     props: true,
   },
   {
-    path: "/allInternships/:id/",
+    path: "/opportunities/:type/:id/",
     component: InternshipProcess,
     props: true,
   },
   {
-    path: "/allInternships/:id/:process",
+    path: "/opportunities/:type/:id/:process",
     component: InternshipProcess,
     props: true,
   },
   {
-    path: "/allInternships/:id/:process/completed",
+    path: "/opportunities/:type/:id/:process/completed",
     component: FinishedStep,
     props: true,
   },

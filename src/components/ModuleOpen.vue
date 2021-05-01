@@ -72,7 +72,7 @@
                     {{ item }}
                   </li>
                 </ul>
-                <ul v-if="section.type == 'listOrdered'" class="paragraph pb-3" style="list-style-type: none">
+                <ul v-if="section.type == 'listOrdered'" class="paragraph pb-3 pl-3 ml-1" style="list-style-type: none">
                   <li v-for="item in section.text" :key="item">
                     {{ item }}
                   </li>
