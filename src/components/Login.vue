@@ -6,8 +6,8 @@
             </a>
         </nav>
         <div class="row m-0 pl-4 pr-4 pb-0 w-100 flex-grow-1 justify-content-between">
-            <div class="col-7 pl-4 pt-4 d-flex justify-content-center align-items-center">
-                <div class="h-auto">
+            <div class="col-7 pl-4 pt-4 d-flex justify-content-center align-items-center" style="min-height: 390.364px">
+                <div class="" >
                     <p class="titleText text-primary"> Connect with your inner self and gain job experiences you need. </p>
                     <div class="row m-0 p-0 ml-n4 mt-2">
                         <img :src="one" class="icon col-2 p-0" style="max-width: 104px" />
