@@ -1202,7 +1202,7 @@ export const store = createStore({
             {
               id: 0,
               poster: "Daryll Santillan",
-              time: "13h",
+              time: "21h",
               title: "INTERN HUDDLE",
               body: [
                 { type: "p", text: "Good day interns!" },

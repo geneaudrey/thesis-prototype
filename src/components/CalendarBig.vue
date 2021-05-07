@@ -43,7 +43,7 @@
                                 data-target="#modal-sched">
                                     +New Schedule
                                 </button>
-                                <Modal ref="modal-sched" id="modal-sched" :curryear="selectedYear" :currmonth="selectedDate" :currday="selectedDate" />
+                                <Modal ref="modal-sched" id="modal-sched" :curryear="selectedYear" :currmonth="selectedDate" :currday="selectedDate" @addSched="addSched"/>
                             </div>
                         </div>
                         <div class="row m-0 p-0 pt-4 pb-4">
@@ -51,7 +51,7 @@
                                 <span class="h3 mt-auto mb-auto boldL" style="color: #717579"> {{week}} </span>
                             </div>
                         </div>
-                        <div class="row m-0 p-0" style="height: 97.85px;" v-for="row in Math.ceil((months[month].days + months[month].startDay)/7)" :key="row">
+                        <div class="row m-0 p-0" style="height: 97.85px;" v-for="row in 6" :key="row">
                             <div :class="['col m-0 p-0  h4 border border-top-0 border-left-0',
                             {'text-gray4 bg-calendarGray' : 0 >= ((row-1)*7 + (col-1) - months[month].startDay + 1) || ((row-1)*7 + (col-1) - months[month].startDay + 1) > months[month].days},
                             {'text-black bg-white hov' : ((row-1)*7 + (col-1) - months[month].startDay + 1) > 0 && ((row-1)*7 + (col-1) - months[month].startDay + 1) <= months[month].days},
@@ -78,21 +78,23 @@
                             </div>
                         </div>
                     </div>
-                        <div class="col-3 p-0 border border-top-0 border-bottom-0 border-right-0">
+                        <div class="col-3 p-0 border border-top-0 border-bottom-0 border-right-0"
+                        style="max-height: 695.591px; overflow-y:scroll">
                             <p class="h4 mb-0 ml-2 pl-2"> Schedules </p>
                             <p class="regularM text-dark4 ml-2 pl-2 mb-5"> {{months[selectedMonth].month +" "+ selectedDate+", " +weeksful[selectedWeek]}}</p>
                             <div v-if="`${selectedYear}${months[selectedMonth].month}${selectedDate}` in schedules">
                                 <div class="border border-bottom-0 border-left-0 border-right-0 p-2 pt-3 pb-3 mt-4"
-                                v-for="(todo, index) in schedules[`${selectedYear}${months[selectedMonth].month}${selectedDate}`].todo" :key="index">
-                                    <div class="regularM m-0 mt-n4 p-0 ml-4"> <span class="pl-3 pr-3 w-auto bg-white"> {{todo.time}} </span> </div>
-                                    <div v-if="todo.task" class="regularM p-4 bg-primary mt-3 ml-2 text-white" style="border-radius:16px"> {{ todo.task }} </div>
-                                    <div v-if="todo.reminder" class="regularM p-4 ml-2 bg-gray mt-3" style="border-radius:16px"> {{ todo.reminder }} </div>
-
+                                 v-for="(time, index) in defaultTime" :key="index">
+                                    <div class="regularM m-0 mt-n4 p-0 ml-4"> <span class="pl-3 pr-3 w-auto bg-white"> {{time}} </span> </div>
+                                    <div v-if="time in schedules[`${selectedYear}${months[selectedMonth].month}${selectedDate}`].todo">
+                                        <div v-for="task in schedules[`${selectedYear}${months[selectedMonth].month}${selectedDate}`]['todo'][time].task" :key="task" class="regularM p-4 bg-primary mt-3 ml-2 text-white" style="border-radius:16px"> {{ task }} </div>
+                                        <div v-if="schedules[`${selectedYear}${months[selectedMonth].month}${selectedDate}`]['todo'][time].reminder" class="regularM p-4 ml-2 bg-gray mt-3" style="border-radius:16px"> {{ schedules[`${selectedYear}${months[selectedMonth].month}${selectedDate}`]['todo'][time].reminder }} </div>
+                                    </div>
                                 </div>
                             </div>
                             <div v-else>
                                 <div class="border border-bottom-0 border-left-0 border-right-0 p-2 pt-3 pb-3 mt-4"
-                                v-for="time in defaultTime" :key="time">
+                                v-for="(time, index) in defaultTime" :key="index">
                                     <div class="regularM m-0 mt-n4 p-0 ml-4"> <span class="pl-3 pr-3 w-auto bg-white"> {{time}} </span> </div>
                                     <!-- <div class="regularM p-3 bg-primary mt-3 ml-2 text-white" style="border-radius:16px"> {{ todo.task }} </div>
                                     <div v-if="todo.reminder" class="regularM p-3 ml-2 bg-gray mt-3" style="border-radius:16px"> {{ todo.reminder }} </div> -->
@@ -123,7 +125,8 @@ export default {
   data() {
     return {
         weeks: ["MON", "TUES", "WED", "THURS", "FRI", "SAT", "SUN"],
-        defaultTime: ['5 AM', '7 AM', '9 AM', '11 AM', '1 PM', '3 PM', '5 PM', '7 PM', '9 PM', '11 PM'],
+        defaultTime: ['5 AM', '6 AM', '7 AM', '8 AM', '9 AM', '10 AM', '11 AM', '12 PM', '1 PM', 
+        '2 PM', '3 PM', '4 PM', '5 PM', '6 PM', '7 PM', '8 PM', '9 PM', '10 PM','11 PM'],
         weeksful: ["Monday", "Tuesday", "Wednesday", "Thursday", "Friday", "Saturday", "Sunday"],
         months: [ {month: "January", days: 0, startDay: 0}, 
         {month: "February", days: 0, startDay: 0},
@@ -148,50 +151,44 @@ export default {
         schedules: {
             "2021May20": {
                 count: 3,
-                todo: [
-                    {
+                todo: {
+                    "7 AM": {
                         time: "7 AM",
-                        task: "Send Collateral"
+                        task: ["Send Collateral"]
                     },
-                    {
+                    "8 AM": {
                         time: "8 AM",
-                        task: "Meeting with Ms. Lam via Zoom",
+                        task: ["Meeting with Ms. Lam via Zoom"],
                         reminder: "Check Inbox"
                     },
-                    {
-                        time: "10 AM",
-                    },
-                    {
-                        time: "12 PM",
-                    },
-                    {
+                    "2 PM": {
                         time: "2 PM",
-                        task: "Weekly Meeting with Ms. Lam via Hangouts"
+                        task: ["Weekly Meeting with Ms. Lam via Hangouts"]
                     }
-                ]
+                }
             },
             "2021May2": {
                 count: 1,
-                todo: [
-                    {
+                todo: {
+                    "7 AM": {
                         time: "7 AM",
-                        task: "Send Collateral"
+                        task: ["Send Collateral"]
                     }
-                ]
+                }
                         
             },
             "2021May24": {
                 count: 2,
-                todo: [
-                    {
+                todo: {
+                    "7 AM" : {
                         time: "7 AM",
-                        task: "Send Collateral"
+                        task: ["Send Collateral"]
                     },
-                    {
+                    "2 PM": {
                         time: "2 PM",
-                        task: "Weekly Meeting with Ms. Lam via Hangouts"
+                        task: ["Weekly Meeting with Ms. Lam via Hangouts"]
                     }
-                ]
+                }
                         
             }
         }
@@ -206,6 +203,28 @@ export default {
             this.selectedDate = date;
             this.selectedWeek = week;
           }
+      },
+      addSched(startDate, startTime, title) {
+          if (this.schedules[startDate]) {
+              if(this.schedules[startDate].todo[startTime]) {
+              this.schedules[startDate].todo[startTime].task.push(title)
+              }
+              else {
+                  this.schedules[startDate].todo[startTime] = {
+                      task: [title]
+                  }
+              }
+              this.schedules[startDate].count +=1
+          }
+          else {
+              this.schedules[startDate] = {
+                  count: 1,
+                  todo: {}
+                  
+              }
+              this.schedules[startDate].todo[startTime] = {time: startTime, task: [title]}
+          }
+
       }
   },
   created() {
@@ -228,7 +247,7 @@ export default {
   watch: {
       year() {
 
-        console.log("bruh", this.year)
+        // console.log("bruh", this.year)
         var year = this.year;
         var month;
         var week;
