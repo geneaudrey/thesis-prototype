@@ -6,6 +6,8 @@ import FinishedStep from "@/components/FinishedStep.vue";
 import Opportunities from "@/components/Opportunities.vue";
 import About from "@/components/About.vue";
 import Login from "@/components/Login.vue";
+import Home from "@/components/Home.vue";
+import Calendar from "@/components/CalendarBig.vue";
 // import About from "@/views/About.vue";
 
 const routes = [
@@ -23,8 +25,16 @@ const routes = [
     props: true
   },
   {
+    path: "/home",
+    component: Home,
+  },
+  {
     path: "/dashboard",
     component: Dashboard,
+  },
+  {
+    path: "/calendar",
+    component: Calendar,
   },
   {
     path: "/:tab/:id/:type",

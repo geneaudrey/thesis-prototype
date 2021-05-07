@@ -12,35 +12,40 @@
           :class="[{ activatedItem: active == 0 }, 'btn sidebarItem pl-2 regularM']"
           @click="move(0)"
         >
-          Home
+          <img :src="homeIcon" class="icon align-middle" style="padding-left:1px; padding-right:5px"/>
+          <span class="align-middle ml-1"> Home </span>
         </button>
         <button
           type="button"
           :class="[{ activatedItem: active == 2 }, 'btn sidebarItem pl-2 regularM']"
           @click="move(2)"
         >
-          Opportunities
+          <img :src="opportunitiesIcon" class="icon align-middle" style="padding-left:1px; padding-right:3px" />
+          <span class="align-middle ml-1"> Opportunities </span>
         </button>
         <button
           type="button"
           :class="[{ activatedItem: active == 1 }, 'btn sidebarItem pl-2 regularM']"
           @click="move(1)"
         >
-          Dashboard
+          <img :src="dashboardIcon" class="icon align-middle" />
+          <span class="align-middle ml-1"> Dashboard </span>
         </button>
         <button
           type="button"
           :class="[{ activatedItem: active == 3 }, 'btn sidebarItem pl-2 regularM']"
           @click="move(3)"
         >
-          Calendar
+          <img :src="calendarIcon" class="icon align-middle" />
+          <span class="align-middle ml-1"> Calendar </span>
         </button>
         <button
           type="button"
           :class="[{ activatedItem: active == 4 }, 'btn sidebarItem pl-2 regularM']"
           @click="move(4)"
         >
-          Inbox
+          <img :src="inboxIcon" class="icon align-middle" />
+          <span class="align-middle ml-1"> Inbox </span>
         </button>
       </div>
       <div class="btn-group-vertical w-100">
@@ -57,7 +62,8 @@
           :class="[{ activatedItem: active == 6 }, 'btn sidebarItem pl-2 regularM']"
           @click="move(6)"
         >
-          Log Out
+          <img :src="logoutIcon" class="icon align-middle" style="padding-left:1px; padding-right:3px"/>
+          <span class="align-middle ml-1"> Log Out </span>
         </button>
       </div>
     </div>
@@ -66,7 +72,12 @@
 
 <script>
 import logo from "../assets/For Gene/Logo/ENABLE UPDATED-41.svg";
-
+import calendarIcon from "../assets/For Gene/Sidebar/calendar-dates.svg";
+import logoutIcon from "../assets/For Gene/Sidebar/Group 1.svg";
+import inboxIcon from "../assets/For Gene/Sidebar/Icon-1.svg";
+import dashboardIcon from "../assets/For Gene/Sidebar/Icon-2.svg";
+import opportunitiesIcon from "../assets/For Gene/Sidebar/Icon.svg";
+import homeIcon from "../assets/For Gene/Sidebar/Mask.svg";
 import { mapActions } from "vuex";
 export default {
   name: "Sidebar",
@@ -76,6 +87,12 @@ export default {
   setup() {
     return {
       logo,
+      calendarIcon,
+      dashboardIcon,
+      opportunitiesIcon,
+      inboxIcon,
+      logoutIcon,
+      homeIcon
     };
   },
   props: {

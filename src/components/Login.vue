@@ -7,7 +7,7 @@
         </nav>
         <div class="row m-0 pl-4 pr-4 pb-0 w-100 flex-grow-1 justify-content-between">
             <div class="col-7 pl-4 pt-4 d-flex justify-content-center align-items-center">
-                <div class="">
+                <div class="h-auto">
                     <p class="titleText text-primary"> Connect with your inner self and gain job experiences you need. </p>
                     <div class="row m-0 p-0 ml-n4 mt-2">
                         <img :src="one" class="icon col-2 p-0" style="max-width: 104px" />
@@ -67,7 +67,7 @@
                             </div>
                             
                             <button type="submit" class="btn btn-primary boldDefault pt-2 mt-3 pb-2 w-100 border-0" style="border-radius: 3px"
-                            @click="$router.push('/dashboard/')"
+                            @click="$router.push('/home/')"
                             >{{ type=='signup' ? 'Create Account' : (type == 'login' ? 'Log In' : 'Forgot Password')}}</button>
                         </form>
                     </div>
