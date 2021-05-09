@@ -90,6 +90,19 @@
             Back to Dashboard
           </button>
         </div>
+        <div v-if="process == 'offer'">
+          <img :src="offerDone" class="icon" style="max-width: 374px" />
+          <p class="h2 mb-4">CONGRATULATIONS!</p>
+          <p class="regularM mb-0" style="max-width: 600px">
+            Congratulations! You've proven you have a lot to offer. The company looks forward to welcoming you to the team, where you will work and grow alongside highly talented people, face new and exciting challenges, and make a difference.
+          </p>
+          <button
+            class="btn btn-primary boldDefault m-4 p-2"
+            @click="$router.push('/dashboard')"
+          >
+            Back to Dashboard
+          </button>
+        </div>
         <div v-if="process == 'module'">
           <img :src="moduleDone" class="icon" style="max-width: 374px" />
           <p class="h2 mb-4">CONGRATULATIONS!</p>
@@ -113,6 +126,7 @@ import applicationDone from "../assets/For Gene/Illustrations/ENABLE UPDATED-07.
 import assessmentDone from "../assets/For Gene/Illustrations/ENABLE UPDATED-08.svg";
 import interviewDone from "../assets/For Gene/Illustrations/ENABLE UPDATED-06.svg";
 import moduleDone from "../assets/For Gene/Illustrations/ENABLE UPDATED-09.svg";
+import offerDone from "../assets/For Gene/Illustrations/ENABLE UPDATED-09.svg";
 import Sidebar from "./Sidebar.vue";
 export default {
   components: {
@@ -123,7 +137,8 @@ export default {
       applicationDone,
       assessmentDone,
       interviewDone,
-      moduleDone
+      moduleDone,
+      offerDone
     };
   },
   props: {

@@ -418,9 +418,7 @@ export default {
       // console.log(this.$refs.customFile);
       var files = e.target.files || e.dataTransfer.files;
       if (!files.length) return;
-      console.log(files);
       this.files = files;
-      console.log(files.length);
       // var fileName = this.$refs.customFile.val().split("\\").pop();
       // console.log(fileName);
       // $(this).siblings(".custom-file-label").addClass("selected").html(fileName);

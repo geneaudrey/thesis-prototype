@@ -16,7 +16,7 @@
       />
     </div>
     <h1 class="pt-3 h1 mb-0 textPrimary">
-      MODULES
+      {{ type.toUpperCase() }}
     </h1>
     <h6 class="h6 textPrimary">
       {{

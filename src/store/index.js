@@ -1325,6 +1325,7 @@ export const store = createStore({
             {
               id: 0,
               title: "Feedback on First Week of Internship",
+              type: "discussion",
               body: [
                 {
                   type: "header",
@@ -1595,7 +1596,6 @@ export const store = createStore({
         state.myCourses[id].modules[moduleID].parts[moduleIDID].status = 2;
 
         if (moduleIDID < state.myCourses[id].modules[moduleID].parts.length - 1) {
-            console.log(state.myCourses[id].modules[moduleID].parts[moduleIDID].status);
             // state.myCourses[id].modules[moduleID].parts[moduleIDID].status = state.myCourses[id].modules[moduleID].parts[moduleIDID].status == 2 ? 3 : 2;
             state.myCourses[id].modules[moduleID].parts[moduleIDID+1].status = state.myCourses[id].modules[moduleID].parts[moduleIDID+1].status == 2 ? 2 : 3;
         }
@@ -1610,7 +1610,6 @@ export const store = createStore({
     },
     finishModulePart({ commit }, moduleID, moduleIDID) {
         commit("finishModulePart", moduleID, moduleIDID);
-        console.log("lmao")
     }
   },
 });

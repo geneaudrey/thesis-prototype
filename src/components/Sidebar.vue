@@ -100,7 +100,7 @@ export default {
   },
   data() {
     return {
-      pages: ["/home", "/dashboard", "/opportunities", "/calendar", "/inbox"],
+      pages: ["/home", "/dashboard", "/opportunities", "/calendar", "/inbox", "/user", "/"],
     };
   },
   created() {
@@ -113,7 +113,6 @@ export default {
   methods: {
     ...mapActions(["sidebarActive1"]),
     move(index) {
-      console.log(index);
       // this.active = index;
       this.sidebarActive1(index);
       this.$router.push({ path: this.pages[index] });
@@ -149,7 +148,7 @@ export default {
   border-radius: 3px !important;
 }
 .sidebarItem:hover {
-  background: rgba(23, 37, 42, 0.4);
+  background: #235859;
   color: white;
 }
 .activatedItem {

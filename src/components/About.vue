@@ -86,7 +86,6 @@ export default {
   },
   methods: {
     updateScroll() {
-        // console.log(window.scrollY)
         this.scroll = window.scrollY > 200;
     //    this.scrollPosition = window.scrollY
     },

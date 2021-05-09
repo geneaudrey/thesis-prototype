@@ -156,12 +156,10 @@ export default {
     }
   },
   mounted() {
-        console.log("bruh")
         this.startDate = new Date();
         var month = this.startDate.getMonth();
         var date = this.startDate.getDate();
         var year = this.startDate.getFullYear();
-        console.log(month, date, year);
         this.startDate2 = this.months[month] + " " + date + ", " + year;
         this.endDate2 = this.months[month] + " " + date + ", " + year;
   },

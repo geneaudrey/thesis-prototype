@@ -61,14 +61,14 @@
           </p>
           <button
             v-if="step == 'applications' || step == 'offer'"
-            class="btn btn-primary boldS rounded-pill pt-1 pb-3 w-100"
+            class="btn btn-primary boldS rounded-pill pt-2 pb-2 w-100"
             @click="openStep(step)"
           >
             PROCEED
           </button>
           <button
             v-else
-            class="btn btn-primary boldS rounded-pill pt-1 pb-2 w-100"
+            class="btn btn-primary boldS rounded-pill pt-2 pb-2 w-100"
             data-toggle="modal"
             data-target="#modal"
             @click="openedStep = step"
@@ -136,7 +136,12 @@ export default {
   },
   methods: {
     openStep(step) {
-      this.$router.push("/opportunities/all-internships/" + this.id + "/" + step);
+      if (step == "offer") {
+        this.$router.push("/opportunities/all-internships/" + this.id + '/offer/completed')
+      }
+      else {
+        this.$router.push("/opportunities/all-internships/" + this.id + "/" + step);
+      }
       document.body.scrollTop = 0; // For Safari
       document.documentElement.scrollTop = 0; // For Chrome, Firefox, IE and Opera
     },

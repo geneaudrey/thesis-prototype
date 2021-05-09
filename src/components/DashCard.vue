@@ -162,7 +162,6 @@ export default {
   },
   watch: {
     active() {
-      console.log(this.active);
       this.$emit("changedActive", this.active);
       if (this.active == 0) {
         this.activated = this.myCourses;

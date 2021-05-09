@@ -21,12 +21,12 @@
       />
       <ModuleOpen
         :id="id"
-        v-if="moduleID != null"
+        v-if="moduleID != null || (tab == 'myInternships' && type == 'discussions')"
         :moduleID="moduleID"
         :type="type"
         :moduleIDID="moduleIDID"
         :tab="tab"
-        :mod="course.modules[parseInt(moduleID)]"
+        :mod="tab == 'myCourses' ? course.modules[parseInt(moduleID)] : $store.state.myInternships[id].discussions[0]"
       />
       <Assignments
         v-if="type == 'assignments'"
@@ -71,6 +71,7 @@ export default {
   data() {
     return {
       course: {},
+      internship: {},
       announcements: [],
       modules: [],
       files: [],
@@ -79,7 +80,12 @@ export default {
     };
   },
   created() {
-    this.course = this.$store.state.myCourses[this.id];
+    // if (this.tab == "myCourses") {
+      this.course = this.$store.state.myCourses[this.id];
+    // }
+    // else {
+    //   this.internship = this.$store.state.myInternship[this.id];
+    // }
   },
 };
 </script>

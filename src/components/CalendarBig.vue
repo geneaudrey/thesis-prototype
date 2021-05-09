@@ -261,7 +261,6 @@ export default {
         }
     },
     month() {
-        console.log(this.month)
         if (this.month == -1) {
             this.year -= 1
             this.month = 11

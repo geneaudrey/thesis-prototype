@@ -86,7 +86,6 @@ export default {
   },
   watch: {
       type() {
-          console.log(this.type)
         if (this.type == 'all-courses') {
             this.active = 2;
         }

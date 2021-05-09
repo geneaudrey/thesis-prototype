@@ -1,9 +1,10 @@
 <template>
   <div class="col-2 pr-0 pl-0 w-40" style="max-width: 240px">
-    <SubSidebar :id="id" :active="1" />
+    <SubSidebar :id="id" v-if="tab == 'myCourses'" :active="1" :tab="tab"/>
+    <SubSidebar :id="id" v-else :active="2" :tab="tab"/>
   </div>
   <div class="col-8 pl-4 pt-3">
-    <div class="input-group shadow-sm" style="width: 20%">
+    <div class="input-group shadow-sm mb-3" style="width: 20%">
       <div class="input-group-prepend">
         <span class="input-group-text pr-1 border-0" style="background: #ffffff"
           ><i class="fas fa-search" style="color: rgba(0, 0, 0, 0.3)"></i
@@ -15,7 +16,7 @@
         placeholder="Search..."
       />
     </div>
-    <h1 class="pt-4 h2 textPrimary">
+    <h1 class="h2 textPrimary" v-if="tab == 'myCourses'">
       {{
         moduleID != null
           ? course.modules[parseInt(moduleID)].title.toUpperCase()
@@ -25,7 +26,7 @@
     <div class="row m-0 p-0 pt-1 pb-5">
       <div class="col pl-0 pr-0">
         <div class="ModuleOpen">
-          <div class="card m-0">
+          <div class="card m-0 border-0 shadow-sm" style="border-radius: 0px">
             <div class="card-header h6" v-if="openedModule.type == 'lesson'">
               LESSON: PART {{ openedModule.lessonNum }}
             </div>
@@ -143,7 +144,7 @@
 
             <div
               v-if="
-                openedModule.type == 'exercise'
+                openedModule.type == 'exercise' || (openedModule.type == 'discussion' && openedModule.replies != null && openedModule.replies.length > 0)
               "
               class="row pt-0 pr-3 pl-3 pb-3 mb-3 ml-3 mt-0"
             >
@@ -200,7 +201,7 @@
                 </label>
               </div>
             </div>
-            <div class="row m-0 p-0 mt-2">
+            <div class="row m-0 p-0 mt-2" v-if="tab == 'myCourses'">
               <div class="col-auto d-flex m-0 p-0 pl-2 pb-3 text-primary btn pt-1"
               v-if="parseInt(moduleIDID) > 0 || parseInt(moduleID) > 0"
               @click="backModule()"
@@ -259,6 +260,7 @@ export default {
     moduleID: String,
     type: String,
     moduleIDID: String,
+    tab: String
   },
   data() {
     return {
@@ -268,9 +270,14 @@ export default {
     };
   },
   created() {
-    this.course = this.$store.state.myCourses[this.id];
-    this.openedModule = this.mod.parts[this.moduleIDID];
-    this.$store.commit('finishModulePart', { id: this.id, moduleID: this.moduleID, moduleIDID: this.moduleIDID});
+    if (this.tab == "myCourses") {
+      this.course = this.$store.state.myCourses[this.id];
+      this.openedModule = this.mod.parts[this.moduleIDID];
+      this.$store.commit('finishModulePart', { id: this.id, moduleID: this.moduleID, moduleIDID: this.moduleIDID});
+    }
+    else {
+      this.openedModule = this.mod;
+    }
 
   },
   methods: {
@@ -289,7 +296,6 @@ export default {
       else {
         var newModID = parseInt(this.moduleID) - 1;
         var newModIDID = this.course.modules[parseInt(this.moduleID) - 1].parts.length - 1;
-        console.log(newModID, newModIDID);
         this.$store.commit('finishModulePart', { id: this.id, moduleID: (parseInt(this.moduleID) - 1), moduleIDID: this.course.modules[parseInt(this.moduleID) - 1].parts.length - 1});
         this.$router.push(
           "/myCourses/" +
@@ -332,9 +338,7 @@ export default {
       // console.log(this.$refs.customFile);
       var files = e.target.files || e.dataTransfer.files;
       if (!files.length) return;
-      console.log(files);
       this.files = files;
-      console.log(files.length);
       // var fileName = this.$refs.customFile.val().split("\\").pop();
       // console.log(fileName);
       // $(this).siblings(".custom-file-label").addClass("selected").html(fileName);
