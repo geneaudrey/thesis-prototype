@@ -20,11 +20,11 @@
       <span
         class="material-icons text-muted button"
         data-toggle="modal"
-        data-target="#modal"
+        data-target="#modalnotif"
       >
         notifications
       </span>
-      <NotifModal ref="modal" id="modal" />
+      <NotifModal ref="modalnotif" id="modalnotif" />
     </div>
   </div>
 </template>

@@ -139,7 +139,7 @@
 
 <script>
 import one from "../assets/For Gene/Icons/ENABLE UPDATED-38.svg";
-import two from "../assets/For Gene/Icons/ENABLE UPDATED-34.svg";
+import two from "../assets/For Gene/Icons/Suitcase.svg";
 import three from "../assets/For Gene/Icons/ENABLE UPDATED-34.svg";
 import logo from "../assets/For Gene/Logo/ENABLE UPDATED-41.svg";
 export default {

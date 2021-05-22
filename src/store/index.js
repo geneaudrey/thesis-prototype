@@ -1534,7 +1534,7 @@ export const store = createStore({
           subject: "Excel Well in Excel Sheets",
           prof: "Pauline de Ocampo",
           length: "7h 40min",
-          img: "",
+          img: "Site.svg",
           desc:
             "In this class, you will learn how to speak up for yourself, make your own decisions and...",
         },

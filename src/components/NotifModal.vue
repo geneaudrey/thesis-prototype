@@ -1,10 +1,10 @@
 <template>
   <div
     class="modal fade"
-    id="exampleModalCenter2"
+    id="modalnotif"
     tabindex="-1"
     role="dialog"
-    aria-labelledby="exampleModalCenterTitle2"
+    aria-labelledby="modalnotif"
     aria-hidden="true"
   >
     <div class="modal-dialog modal-dialog-centered" role="document">
@@ -20,14 +20,14 @@
           <button
             type="button"
             class="close col-auto mb-auto mt-auto text-close m-0 p-0"
-            data-dismiss="modal"
+            data-dismiss="modalnotif"
             aria-label="Close"
           >
             <!-- <span aria-hidden="true" class="lead">&times;</span> -->
             <span class="material-icons"> close </span>
           </button>
         </div>
-        <div class="modal-body m-0 p-0 mt-n4">
+        <div class="modal-body m-0 p-1 mt-n4">
           <div class="p-0" v-for="(notif, index) in notifs" :key="index">
             <p
               :class="[
