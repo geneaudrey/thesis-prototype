@@ -114,7 +114,9 @@
             someaddress@gmail.com
           </p>
         </div>
-        <p class="m-0 p-0 regularM text-center">Account Settings</p>
+        <p class="m-0 p-0 regularM text-center" style="overflow: hidden">
+          Account Settings
+        </p>
         <p
           class="logout m-0 p-0 ml-auto mr-auto boldM text-center pt-2"
           @click="$router.push('/')"
@@ -246,12 +248,14 @@ export default {
   top: 0;
   left: 0;
   background-color: white; /* Black*/
+  white-space: nowrap;
   overflow-x: hidden; /* Disable horizontal scroll */
   padding-top: 60px; /* Place content 60px from the top */
   transition: 0.5s; /* 0.5 second transition effect to slide in the sidebar */
 }
 .sidebarContentOVERLAY {
   transition: 0.3s;
+  overflow-x: hidden;
 }
 .profilePic {
   width: 116.08px;
