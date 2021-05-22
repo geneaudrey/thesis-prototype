@@ -96,16 +96,16 @@
           <!-- <div class="col mt-auto mb-auto text-primary " v-if="active==2">
                         {{item.length}} 
                     </div> -->
-          <div class="col-auto mt-auto mb-auto ml-auto">
+          <div class="col-auto mt-auto mb-auto ml-auto ml-2 mr-0 pr-1">
             <img :src="ellipse" class="icon" v-if="active == 0" />
           </div>
-          <div class="col-3 mt-auto mb-auto mr-1 pl-4 pr-3">
+          <div class="col-3 mt-auto mb-auto mr-1 pl-3 pr-3">
             <button
               class="btn btn-primary text-white pr-0 pl-0 w-100 boldS dashButton"
               v-if="active == 0 || active == 1"
               @click="
                 $router.push({
-                  path: '/'+ tabs[active]+'/' + item.id + '/announcements',
+                  path: '/' + tabs[active] + '/' + item.id + '/announcements',
                 })
               "
             >
@@ -127,7 +127,7 @@ import AllInternships from "./AllInternships";
 import announce from "../assets/For Gene/Icons/volume.svg";
 import note from "../assets/For Gene/Icons/note-text.svg";
 import comment from "../assets/For Gene/Icons/comment.svg";
-import ellipse from "../assets/For Gene/Icons/Ellipse 1.svg";
+import ellipse from "../assets/For Gene/Icons/Percent.svg";
 export default {
   name: "DashCard",
   components: {
@@ -150,7 +150,7 @@ export default {
       allInternships: [],
       activated: [],
       active: 0,
-      tabs: ["myCourses", "myInternships"]
+      tabs: ["myCourses", "myInternships"],
     };
   },
   created() {
@@ -177,5 +177,4 @@ export default {
 };
 </script>
 
-<style scoped>
-</style>
+<style scoped></style>

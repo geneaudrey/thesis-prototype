@@ -1,9 +1,10 @@
 <template>
   <div class="col-2 pr-0 pl-0 w-40" style="max-width: 240px">
-    <SubSidebar :id="id" :active="0" :tab="tab"/>
+    <SubSidebar :id="id" :active="0" :tab="tab" />
   </div>
   <div class="col-8 pl-3 pt-3">
-    <div class="input-group shadow-sm" style="width: 20%">
+    <Notif />
+    <!-- <div class="input-group shadow-sm" style="width: 20%">
       <div class="input-group-prepend">
         <span class="input-group-text pr-1 border-0" style="background: #ffffff"
           ><i class="fas fa-search" style="color: rgba(0, 0, 0, 0.3)"></i
@@ -14,7 +15,7 @@
         class="form-control form-control-sm border-0 pt-2 pb-2 pl-1"
         placeholder="Search..."
       />
-    </div>
+    </div> -->
     <h1 class="pt-3 h1 mb-0 textPrimary">ANNOUNCEMENTS</h1>
     <h6 class="h6 textPrimary">
       {{
@@ -50,7 +51,16 @@
                   <span class="material-icons col-auto m-0 p-0 mt-auto mb-auto">
                     arrow_right
                   </span>
-                  <span class="mt-auto mb-auto col m-0 p-0 boldL" style="text-overflow: ellipsis; overflow: hidden; white-space: nowrap;"> {{ course.subject }} </span>
+                  <span
+                    class="mt-auto mb-auto col m-0 p-0 boldL"
+                    style="
+                      text-overflow: ellipsis;
+                      overflow: hidden;
+                      white-space: nowrap;
+                    "
+                  >
+                    {{ course.subject }}
+                  </span>
                 </div>
                 <div class="row m-0 mt-1 p-0 text-time">
                   {{ announcement.time }}
@@ -85,6 +95,7 @@
 <script>
 import SubSidebar from "./SubSidebar.vue";
 import Todo from "./Todo.vue";
+import Notif from "./Notif.vue";
 import Calendar from "./Calendar.vue";
 export default {
   name: "CoursesAnnouncements",
@@ -92,12 +103,13 @@ export default {
     Todo,
     Calendar,
     SubSidebar,
+    Notif,
   },
   props: {
     id: String,
     moduleID: String,
     type: String,
-    tab: String
+    tab: String,
   },
   data() {
     return {
@@ -106,27 +118,25 @@ export default {
     };
   },
   created() {
-    if (this.tab =="myCourses") {
+    if (this.tab == "myCourses") {
       this.course = this.$store.state.myCourses[this.id];
       this.announcements = this.course.announcements;
-    }
-    else {
+    } else {
       this.course = this.$store.state.myInternships[this.id];
       this.announcements = this.course.announcements;
     }
   },
   watch: {
     tab() {
-      if (this.tab =="myCourses") {
+      if (this.tab == "myCourses") {
         this.course = this.$store.state.myCourses[this.id];
         this.announcements = this.course.announcements;
-      }
-      else {
+      } else {
         this.course = this.$store.state.myInternships[this.id];
         this.announcements = this.course.announcements;
       }
-    }
-  }
+    },
+  },
 };
 </script>
 

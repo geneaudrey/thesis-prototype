@@ -1,9 +1,10 @@
 <template>
   <div class="col-2 pr-0 pl-0 w-40" style="max-width: 240px">
-    <SubSidebar :id="id" :active="3" :tab="tab"/>
+    <SubSidebar :id="id" :active="3" :tab="tab" />
   </div>
   <div class="col-8 pl-3 pt-3">
-    <div class="input-group shadow-sm" style="width: 20%">
+    <Notif />
+    <!-- <div class="input-group shadow-sm" style="width: 20%">
       <div class="input-group-prepend">
         <span class="input-group-text pr-1 border-0" style="background: #ffffff"
           ><i class="fas fa-search" style="color: rgba(0, 0, 0, 0.3)"></i
@@ -14,7 +15,7 @@
         class="form-control form-control-sm border-0 pt-2 pb-2 pl-1"
         placeholder="Search..."
       />
-    </div>
+    </div> -->
     <h1 class="pt-3 h1 textPrimary">
       {{
         moduleID != null
@@ -42,6 +43,7 @@ import SubSidebar from "./SubSidebar.vue";
 import Todo from "./Todo.vue";
 import Calendar from "./Calendar.vue";
 import Assign from "./Assignments.vue";
+import Notif from "./Notif.vue";
 export default {
   name: "CoursesAssignments",
   components: {
@@ -49,12 +51,13 @@ export default {
     Calendar,
     SubSidebar,
     Assign,
+    Notif,
   },
   props: {
     id: String,
     moduleID: String,
     type: String,
-    tab: String
+    tab: String,
   },
   data() {
     return {

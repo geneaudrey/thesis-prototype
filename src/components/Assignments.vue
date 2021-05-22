@@ -5,8 +5,15 @@
     </div>
     <div class="card-body p-0 pl-2 pr-3 pb-2">
       <div
-        :class="['card border-bottom-0 border-left-0 border-right-0 p-3 pl-4 pr-4', {'border-top-0' : item.id == 0}]"
-        style="border-radius: 0px; border-width: 1.5px !important; border-color: #B7BBBC !important"
+        :class="[
+          'card border-bottom-0 border-left-0 border-right-0 p-3 pl-4 pr-4',
+          { 'border-top-0': item.id == 0 },
+        ]"
+        style="
+          border-radius: 0px;
+          border-width: 1.5px !important;
+          border-color: #b7bbbc !important;
+        "
         v-for="item in assignments"
         :key="item.id"
       >
@@ -14,15 +21,42 @@
           {{ item.title }}
         </div>
         <div class="row m-0 p-0 pt-1">
-          <span class="boldM text-muted pr-2 border border-top-0 border-bottom-0 border-left-0 border-muted" style="border-width: 2px !important; border-color: #B7BBBC !important"> {{ type == 0 ? "Available" : "Closed" }} </span>
+          <span
+            class="boldM text-muted pr-2 border border-top-0 border-bottom-0 border-left-0 border-muted"
+            style="
+              border-width: 2px !important;
+              border-color: #b7bbbc !important;
+            "
+          >
+            {{ type == 0 ? "Available" : "Closed" }}
+          </span>
           <!-- <span class="mr-2 ml-2 text-muted"> I </span> -->
-          <span class="regularM text-muted pl-2 pr-2 border border-top-0 border-bottom-0 border-left-0" style="border-width: 2px !important; border-color: #B7BBBC !important"> Due {{ item.availableUntil }} </span>
+          <span
+            class="regularM text-muted pl-2 pr-2 border border-top-0 border-bottom-0 border-left-0"
+            style="
+              border-width: 2px !important;
+              border-color: #b7bbbc !important;
+            "
+          >
+            Due {{ item.availableUntil }}
+          </span>
           <!-- <span class="mr-2 ml-2 text-muted"> I </span> -->
-          <span :class="[{ 'text-success': item.status == 'Submitted'}, 
-          {'text-danger': item.status == 'Missing' || item.status == 'Late' },
-          {'text-muted': item.status == 'Missing' || item.status == 'Incomplete' },
-          'boldM pl-2'
-          ]"> {{ item.status }} </span>
+          <span
+            :class="[
+              { 'text-success': item.status == 'Submitted' },
+              {
+                'text-danger':
+                  item.status == 'Missing' || item.status == 'Late',
+              },
+              {
+                'text-muted':
+                  item.status == 'Missing' || item.status == 'Incomplete',
+              },
+              'boldM pl-2',
+            ]"
+          >
+            {{ item.status }}
+          </span>
         </div>
       </div>
     </div>

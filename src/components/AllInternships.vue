@@ -1,19 +1,23 @@
 <template>
   <div class="AllInternships w-100">
-    <div class="card border-0 shadow-sm p-0 dashCard m-0 boldDefault" style="max-width: 113px">
-          <button
-            type="button"
-            class="btn text-primary"
-            @click="$router.push('/opportunities')"
-          >
-              <span class="material-icons m-0 p-0 align-middle ml-n3" style="font-size: 50px">
-                  navigate_before
-              </span>
-              <span class="align-middle m-0 p-0 ml-n2">
-                  BACK
-              </span>
-          </button>
-        </div>
+    <div
+      class="card border-0 shadow-sm p-0 dashCard m-0 boldDefault"
+      style="max-width: 113px"
+    >
+      <button
+        type="button"
+        class="btn text-primary"
+        @click="$router.push('/opportunities')"
+      >
+        <span
+          class="material-icons m-0 p-0 align-middle ml-n3"
+          style="font-size: 50px"
+        >
+          navigate_before
+        </span>
+        <span class="align-middle m-0 p-0 ml-n2"> BACK </span>
+      </button>
+    </div>
     <div class="card w-100 p-3 dashCard shadow border-0 mt-3">
       <div class="row m-0 p-0">
         <div
@@ -115,7 +119,7 @@
         :key="col"
       >
         <div
-          class="card dashCard border-0 shadow m-0 p-4"
+          class="card dashCard border-0 shadow m-0 p-4 h-100"
           v-if="(row - 1) * 3 + (col - 1) < allInternships.length"
         >
           <div class="row m-0 p-0">
@@ -197,7 +201,7 @@
             </p>
           </div>
 
-          <div class="row m-0 p-0 mt-2">
+          <div class="row m-0 p-0 mt-2 mt-auto">
             <button
               class="btn btn-primary rounded-pill boldS pt-2 pb-2 pr-3 pl-3"
               @click="openInternship((row - 1) * 3 + (col - 1))"
@@ -280,7 +284,7 @@ export default {
   },
   methods: {
     openInternship(index) {
-      this.$router.push("/opportunities/"+this.type+"/" + index);
+      this.$router.push("/opportunities/" + this.type + "/" + index);
       document.body.scrollTop = 0; // For Safari
       document.documentElement.scrollTop = 0; // For Chrome, Firefox, IE and Opera
     },

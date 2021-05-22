@@ -4,7 +4,7 @@
       :class="['imageBorder mask']"
       alt="Responsive image"
       style="position: relative"
-      v-if="type=='all-internships'"
+      v-if="type == 'all-internships'"
     >
       <span class="title h1 noThick p-1 pl-5 pr-5 pb-2 text-white">
         {{ internship.company }} {{ internship.position + "ship" }}
@@ -22,25 +22,41 @@
       </span>
     </div>
     <div class="pl-5 pr-5 pb-3 pt-3 mt-3">
-      <p class="h2 text-darkPrimary" v-if="process != null">What is the process for application?</p>
+      <p class="h2 text-darkPrimary" v-if="process != null">
+        What is the process for application?
+      </p>
       <div
-        v-for="par in (process == null ? internship.intro : internship.process.desc)"
+        v-for="par in process == null
+          ? internship.intro
+          : internship.process.desc"
         :key="par"
       >
-        <p class="paragraph pb-3" v-if="par.type=='p'"> {{ par.text }} </p>
-        <p class="h2 text-darkPrimary pt-0" v-if="par.type=='header'"> {{ par.text }} </p>
+        <p class="paragraph pb-3" v-if="par.type == 'p'">{{ par.text }}</p>
+        <p class="h2 text-darkPrimary pt-0" v-if="par.type == 'header'">
+          {{ par.text }}
+        </p>
         <ul v-if="par.type == 'list'" class="pl-3 ml-1 paragraph pb-3">
           <li v-for="item in par.text" :key="item">
             {{ item }}
           </li>
         </ul>
       </div>
-      <button class="btn btn-primary boldM p-3 pl-5 pr-5 mb-2" style="border-radius: 20px" v-if="process == null" @click="apply()"> {{type == "all-internships" ? 'APPLY NOW' : 'ENROLL NOW'}} </button>
+      <button
+        class="btn btn-primary boldM p-3 pl-5 pr-5 mb-2"
+        style="border-radius: 20px"
+        v-if="process == null"
+        @click="apply()"
+      >
+        {{ type == "all-internships" ? "APPLY NOW" : "ENROLL NOW" }}
+      </button>
       <p class="paragraphBold text-primary pt-3" v-if="process != null">
         Check this page and your notifications to see updates in your progress.
       </p>
     </div>
-    <div class="row m-0 p-0 pl-4 pr-4 ml-auto mr-auto mb-4" v-if="process != null">
+    <div
+      class="row m-0 p-0 pl-4 pr-4 ml-auto mr-auto mb-4"
+      v-if="process != null"
+    >
       <div
         v-for="(step, index) in internship.process.steps"
         :key="index"
@@ -137,21 +153,26 @@ export default {
   methods: {
     openStep(step) {
       if (step == "offer") {
-        this.$router.push("/opportunities/all-internships/" + this.id + '/offer/completed')
-      }
-      else {
-        this.$router.push("/opportunities/all-internships/" + this.id + "/" + step);
+        this.$router.push(
+          "/opportunities/all-internships/" + this.id + "/offer/completed"
+        );
+      } else {
+        this.$router.push(
+          "/opportunities/all-internships/" + this.id + "/" + step
+        );
       }
       document.body.scrollTop = 0; // For Safari
       document.documentElement.scrollTop = 0; // For Chrome, Firefox, IE and Opera
     },
     apply() {
       if (this.type == "all-internships") {
-        this.$router.push(this.$router.currentRoute._rawValue.path + '/process');
+        this.$router.push(
+          this.$router.currentRoute._rawValue.path + "/process"
+        );
         document.body.scrollTop = 0; // For Safari
         document.documentElement.scrollTop = 0; // For Chrome, Firefox, IE and Opera
       }
-    }
+    },
   },
 };
 </script>

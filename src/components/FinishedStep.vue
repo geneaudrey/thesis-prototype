@@ -1,10 +1,11 @@
 <template>
   <div class="row m-0 p-0" style="width: 100%; min-height: 100vh">
     <div class="col-2 m-0 p-0" style="max-width: 240px">
-      <Sidebar :active="process== 'module' ? 1 : 2" />
+      <Sidebar :active="process == 'module' ? 1 : 2" />
     </div>
     <div class="col-10 pl-4 pt-3 d-flex flex-column" style="min-height: 100vh">
-      <div class="input-group shadow-sm" style="width: 20%">
+      <Notif />
+      <!-- <div class="input-group shadow-sm" style="width: 20%">
         <div class="input-group-prepend">
           <span
             class="input-group-text pr-1 border-0"
@@ -17,7 +18,7 @@
           class="form-control form-control-sm border-0 pt-2 pb-2 pl-1"
           placeholder="Search..."
         />
-      </div>
+      </div> -->
       <div
         class="card border-0 w-100 flex-grow-1 mt-3 mr-2 mb-2 d-flex justify-content-center align-items-center text-center"
       >
@@ -94,7 +95,10 @@
           <img :src="offerDone" class="icon" style="max-width: 374px" />
           <p class="h2 mb-4">CONGRATULATIONS!</p>
           <p class="regularM mb-0" style="max-width: 600px">
-            Congratulations! You've proven you have a lot to offer. The company looks forward to welcoming you to the team, where you will work and grow alongside highly talented people, face new and exciting challenges, and make a difference.
+            Congratulations! You've proven you have a lot to offer. The company
+            looks forward to welcoming you to the team, where you will work and
+            grow alongside highly talented people, face new and exciting
+            challenges, and make a difference.
           </p>
           <button
             class="btn btn-primary boldDefault m-4 p-2"
@@ -107,7 +111,9 @@
           <img :src="moduleDone" class="icon" style="max-width: 374px" />
           <p class="h2 mb-4">CONGRATULATIONS!</p>
           <p class="regularM mb-0" style="max-width: 600px">
-            Congratulations! You have accomplished the whole course. We hope the lessons were able to provide you with the insights and answers you were looking for. Now on to the next courses!
+            Congratulations! You have accomplished the whole course. We hope the
+            lessons were able to provide you with the insights and answers you
+            were looking for. Now on to the next courses!
           </p>
           <button
             class="btn btn-primary boldDefault m-4 p-2"
@@ -127,10 +133,12 @@ import assessmentDone from "../assets/For Gene/Illustrations/ENABLE UPDATED-08.s
 import interviewDone from "../assets/For Gene/Illustrations/ENABLE UPDATED-06.svg";
 import moduleDone from "../assets/For Gene/Illustrations/ENABLE UPDATED-09.svg";
 import offerDone from "../assets/For Gene/Illustrations/ENABLE UPDATED-09.svg";
+import Notif from "./Notif.vue";
 import Sidebar from "./Sidebar.vue";
 export default {
   components: {
     Sidebar,
+    Notif,
   },
   setup() {
     return {
@@ -138,7 +146,7 @@ export default {
       assessmentDone,
       interviewDone,
       moduleDone,
-      offerDone
+      offerDone,
     };
   },
   props: {

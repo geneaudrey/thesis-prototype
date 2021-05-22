@@ -23,10 +23,14 @@
           </div>
           <div class="col-7 mt-auto mb-auto pr-0">
             <p class="mb-1 regularDefault text-textBlack">{{ item.task }}</p>
-            <p class="mb-0 text-textPrimary regularM text-textPrimary">{{ item.subj }}</p>
+            <p class="mb-0 text-textPrimary regularM text-textPrimary">
+              {{ item.subj }}
+            </p>
           </div>
           <div class="col-4 mt-auto mb-auto pr-1 pl-4">
-            <p class="mb-0 pb-1 text-textPrimary regularM text-textPrimary">Deadline:</p>
+            <p class="mb-0 pb-1 text-textPrimary regularM text-textPrimary">
+              Deadline:
+            </p>
             <p class="mb-0 boldM">{{ item.deadline }}</p>
           </div>
         </div>

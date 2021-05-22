@@ -1,10 +1,11 @@
 <template>
   <div class="col-2 pr-0 pl-0 w-40" style="max-width: 240px">
-    <SubSidebar :id="id" :active="1" :tab="tab"/>
+    <SubSidebar :id="id" :active="1" :tab="tab" />
   </div>
   <div class="col-8 pl-3 pt-3">
-    <div class="input-group shadow-sm" style="width: 20%">
-      <div class="input-group-prepend">
+    <Notif />
+    <!-- <div class="input-group shadow-sm" style="width: 20%"> -->
+    <!-- <div class="input-group-prepend">
         <span class="input-group-text pr-1 border-0" style="background: #ffffff"
           ><i class="fas fa-search" style="color: rgba(0, 0, 0, 0.3)"></i
         ></span>
@@ -14,7 +15,7 @@
         class="form-control form-control-sm border-0 pt-2 pb-2 pl-1"
         placeholder="Search..."
       />
-    </div>
+    </div> -->
     <h1 class="pt-3 h1 mb-0 textPrimary">
       {{ type.toUpperCase() }}
     </h1>
@@ -30,7 +31,7 @@
         <div
           class="lineBreak mt-1"
           :moduleID="moduleID"
-          v-if="(type == 'modules' || type=='milestones') && moduleID == null"
+          v-if="(type == 'modules' || type == 'milestones') && moduleID == null"
         ></div>
         <div class="CoursesModules">
           <div class="row m-0 p-0" v-for="mod in modules" :key="mod.id">
@@ -44,7 +45,11 @@
             >
               <div class="col-1 m-0 p-0">
                 <div
-                  :class="['ml-auto', {'bar' : parseInt(part.id) < mod.parts.length - 1 }, {'' : parseInt(part.id) == mod.parts.length - 1 }]"
+                  :class="[
+                    'ml-auto',
+                    { bar: parseInt(part.id) < mod.parts.length - 1 },
+                    { '': parseInt(part.id) == mod.parts.length - 1 },
+                  ]"
                   v-if="part.status == 2 && mod.parts.length > 1"
                 ></div>
                 <div
@@ -91,18 +96,20 @@
 import SubSidebar from "./SubSidebar.vue";
 import Todo from "./Todo.vue";
 import Calendar from "./Calendar.vue";
+import Notif from "./Notif.vue";
 export default {
   name: "CoursesModules",
   components: {
     Todo,
     Calendar,
     SubSidebar,
+    Notif,
   },
   props: {
     id: String,
     moduleID: String,
     type: String,
-    tab: String
+    tab: String,
   },
   data() {
     return {
@@ -111,11 +118,10 @@ export default {
     };
   },
   created() {
-    if (this.tab=="myCourses") {
+    if (this.tab == "myCourses") {
       this.course = this.$store.state.myCourses[this.id];
       this.modules = this.course.modules;
-    }
-    else {
+    } else {
       this.course = this.$store.state.myInternships[this.id];
       this.modules = this.course.milestones;
     }
@@ -126,7 +132,7 @@ export default {
         // console.log(modid, modidid);
         // this.$store.commit('finishModulePart', { id: this.id, moduleID: modid, moduleIDID: modidid});
         this.$router.push(
-          "/"+this.tab+"/" + this.id + "/modules/" + modid + "/" + modidid
+          "/" + this.tab + "/" + this.id + "/modules/" + modid + "/" + modidid
         );
         document.body.scrollTop = 0; // For Safari
         document.documentElement.scrollTop = 0; // For Chrome, Firefox, IE and Opera

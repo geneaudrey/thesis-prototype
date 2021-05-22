@@ -6,7 +6,8 @@
       </div>
 
       <div class="col-10 m-0 p-0 pl-4 pt-3">
-        <div class="input-group shadow-sm" style="width: 20%">
+        <Notif />
+        <!-- <div class="input-group shadow-sm" style="width: 20%">
           <div class="input-group-prepend">
             <span
               class="input-group-text pr-1 border-0"
@@ -19,12 +20,21 @@
             class="form-control form-control-sm border-0 pt-2 pb-2 pl-1 searchTextBoxSpecial"
             placeholder="Search..."
           />
-        </div>
+        </div> -->
         <p class="pt-4 h1 text-textPrimary">
-          {{ process == null ? "INTERNSHIP DESCRIPTION" : (process == "process" ? "PROCESS" : "APPLICATIONS") }}
+          {{
+            process == null
+              ? "INTERNSHIP DESCRIPTION"
+              : process == "process"
+              ? "PROCESS"
+              : "APPLICATIONS"
+          }}
         </p>
         <div class="row m-0 p-0">
-          <div class="col-9 ml-0 pl-0" v-if="process == null || process== 'process'">
+          <div
+            class="col-9 ml-0 pl-0"
+            v-if="process == null || process == 'process'"
+          >
             <ProcessHomePage
               :internship="internship"
               :id="id"
@@ -154,6 +164,8 @@ import youTube from "../assets/For Gene/Icons/youtube 1.svg";
 import phone from "../assets/For Gene/Icons/telephone 1.svg";
 import email from "../assets/For Gene/Icons/email (1) 1.svg";
 import Sidebar from "./Sidebar.vue";
+
+import Notif from "./Notif.vue";
 // import Modal from "./InternshipModal.vue"
 import ProcessHomePage from "./ProcessHomePage";
 import Applications from "./Applications.vue";
@@ -166,6 +178,7 @@ export default {
     ProcessHomePage,
     Applications,
     Offer,
+    Notif,
   },
   setup() {
     return {
@@ -180,7 +193,7 @@ export default {
   props: {
     id: String,
     process: String,
-    type: String
+    type: String,
   },
   data() {
     return {};
@@ -188,8 +201,7 @@ export default {
   created() {
     if (this.type == "all-internships") {
       this.internship = this.$store.state.allInternships[this.id];
-    }
-    else {
+    } else {
       this.internship = this.$store.state.allCourses[this.id];
     }
   },
@@ -197,11 +209,10 @@ export default {
     type() {
       if (this.type == "all-internships") {
         this.internship = this.$store.state.allInternships[this.id];
-      }
-      else {
+      } else {
         this.internship = this.$store.state.allCourses[this.id];
       }
-    }
+    },
   },
   mounted() {},
   methods: {},

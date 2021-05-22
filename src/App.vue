@@ -2,7 +2,7 @@
   <!-- <img alt="Vue logo" src="./assets/logo.png" /> -->
   <!-- <HelloWorld msg="Welcome to Your Vue.js App" /> -->
   <!-- <Dashboard /> -->
-  <router-view  ref="loadingContainer"/>
+  <router-view ref="loadingContainer" />
 </template>
 
 <script>
@@ -20,34 +20,32 @@ export default {
       container: this.fullPage ? null : this.$refs.formContainer,
       canCancel: true,
       onCancel: this.onCancel,
-      color: '#3AAFA9'
+      color: "#3AAFA9",
     });
-    window.addEventListener('load', () => {
-         // run after everything is in-place
-         loader.hide();
-    })
+    window.addEventListener("load", () => {
+      // run after everything is in-place
+      loader.hide();
+    });
   },
-  watch:{
-      // $route (){
-      //   let loader = this.$loading.show({
-      //     // Optional parameters
-      //     container: this.fullPage ? null : this.$refs.formContainer,
-      //     canCancel: true,
-      //     onCancel: this.onCancel,
-      //     color: '#3AAFA9'
-      //   });
-      //   this.$nextTick(this.hideLoader(loader));
-      //     // this.show = false;
-      // }
+  watch: {
+    // $route (){
+    //   let loader = this.$loading.show({
+    //     // Optional parameters
+    //     container: this.fullPage ? null : this.$refs.formContainer,
+    //     canCancel: true,
+    //     onCancel: this.onCancel,
+    //     color: '#3AAFA9'
+    //   });
+    //   this.$nextTick(this.hideLoader(loader));
+    //     // this.show = false;
+    // }
   },
   methods: {
     hideLoader(loader) {
       loader.hide();
-    }
-  }
-
+    },
+  },
 };
-
 </script>
 
 <style>

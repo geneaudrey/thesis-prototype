@@ -1,41 +1,21 @@
 <template>
-  <div class="SubSidebar p-3">
+  <div class="ChatSidebar p-3">
     <div class="sidebar" />
     <div class="sidebarContent">
       <div class="btn-group-vertical w-100">
         <button
+          v-for="(chat, index) in chatList"
+          :key="index"
           type="button"
           :class="[
-            { activatedItem: active == 0 },
-            'btn sidebarItem pl-2 regularM',
+            { activatedItem: active == index },
+            { boldM: chat.unreadMessages.length > 0 },
+            { regularM: chat.unreadMessages.length == 0 },
+            'btn sidebarItem pl-2',
           ]"
           style="padding-top: 5%; padding-bottom: 5%"
-          @click="move(0)"
         >
-          Announcements
-        </button>
-        <button
-          type="button"
-          :class="[
-            { activatedItem: active == 1 },
-            'btn sidebarItem pl-2 regularM',
-          ]"
-          style="padding-top: 5%; padding-bottom: 5%"
-          @click="move(1)"
-        >
-          {{ tab == "myCourses" ? "Modules" : "Milestones" }}
-        </button>
-        <!-- <button type="button" :class="[{'activatedItem' : active==2},'btn sidebarItem pl-2']" @click="move(2)">Files</button> -->
-        <button
-          type="button"
-          :class="[
-            { activatedItem: active == 3 },
-            'btn sidebarItem pl-2 regularM',
-          ]"
-          style="padding-top: 5%; padding-bottom: 5%"
-          @click="move(3)"
-        >
-          {{ tab == "myCourses" ? "Assignments" : "Discussions" }}
+          {{ chat.name }}
         </button>
         <!-- <button type="button" :class="[{'activatedItem' : active==4},'btn sidebarItem pl-2']" @click="move(4)">Discussions</button> -->
       </div>
@@ -45,36 +25,22 @@
 
 <script>
 export default {
-  name: "SubSidebar",
+  name: "ChatSidebar",
   // components: {
   //     logo
   // },
   props: {
-    id: String,
     active: Number,
-    tab: String,
   },
   data() {
     return {
-      pages: [
-        "/announcements",
-        "/modules",
-        "/files",
-        "/assignments",
-        "/discussions",
-      ],
-      pages2: [
-        "/announcements",
-        "/milestones",
-        "/files",
-        "/discussions",
-        "/discussions",
-      ],
+      chatList: [],
       // pages: ['/announcements', '/modules', '/assignments']
     };
   },
   created() {
     // this.activated = this.myCourses;
+    this.chatList = this.$store.state.inbox;
   },
   methods: {
     move(index) {

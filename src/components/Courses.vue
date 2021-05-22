@@ -2,7 +2,7 @@
   <div class="Courses">
     <div class="row m-0 p-0" style="width: 100%">
       <div class="col-2 m-0 p-0" style="max-width: 240px">
-        <Sidebar :active="1" :tab="tab"/>
+        <Sidebar :active="1" :tab="tab" />
       </div>
 
       <Announcements
@@ -17,16 +17,22 @@
         :id="id"
         :type="type"
         :tab="tab"
-        v-if="(type == 'modules' || type=='milestones') && moduleID == null"
+        v-if="(type == 'modules' || type == 'milestones') && moduleID == null"
       />
       <ModuleOpen
         :id="id"
-        v-if="moduleID != null || (tab == 'myInternships' && type == 'discussions')"
+        v-if="
+          moduleID != null || (tab == 'myInternships' && type == 'discussions')
+        "
         :moduleID="moduleID"
         :type="type"
         :moduleIDID="moduleIDID"
         :tab="tab"
-        :mod="tab == 'myCourses' ? course.modules[parseInt(moduleID)] : $store.state.myInternships[id].discussions[0]"
+        :mod="
+          tab == 'myCourses'
+            ? course.modules[parseInt(moduleID)]
+            : $store.state.myInternships[id].discussions[0]
+        "
       />
       <Assignments
         v-if="type == 'assignments'"
@@ -66,7 +72,7 @@ export default {
     type: String,
     moduleID: String,
     moduleIDID: String,
-    tab: String
+    tab: String,
   },
   data() {
     return {
@@ -81,7 +87,7 @@ export default {
   },
   created() {
     // if (this.tab == "myCourses") {
-      this.course = this.$store.state.myCourses[this.id];
+    this.course = this.$store.state.myCourses[this.id];
     // }
     // else {
     //   this.internship = this.$store.state.myInternship[this.id];

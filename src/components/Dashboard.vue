@@ -5,7 +5,8 @@
         <Sidebar :active="1" />
       </div>
       <div class="col-10 pl-4 pt-3">
-        <div class="input-group shadow-sm" style="width: 20%">
+        <Notif />
+        <!-- <div class="input-group shadow-sm" style="width: 20%">
           <div class="input-group-prepend">
             <span
               class="input-group-text pr-1 border-0"
@@ -18,8 +19,10 @@
             class="form-control form-control-sm border-0 pt-2 pb-2 pl-1"
             placeholder="Search..."
           />
-        </div>
-        <h1 class="pt-4 h1 text-textPrimary">{{ dashboardTitle.toUpperCase() }}</h1>
+        </div> -->
+        <h1 class="pt-4 h1 text-textPrimary">
+          {{ dashboardTitle.toUpperCase() }}
+        </h1>
         <div class="row m-0 p-0 pt-2 pb-5">
           <div
             :class="[
@@ -45,6 +48,7 @@ import Sidebar from "./Sidebar.vue";
 import DashCard from "./DashCard.vue";
 import Todo from "./Todo.vue";
 import Calendar from "./Calendar.vue";
+import Notif from "./Notif.vue";
 export default {
   name: "Dashboard",
   components: {
@@ -52,6 +56,7 @@ export default {
     DashCard,
     Todo,
     Calendar,
+    Notif,
   },
   data() {
     return {

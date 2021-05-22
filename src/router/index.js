@@ -8,6 +8,7 @@ import About from "@/components/About.vue";
 import Login from "@/components/Login.vue";
 import Home from "@/components/Home.vue";
 import Calendar from "@/components/CalendarBig.vue";
+import Inbox from "@/components/Inbox.vue";
 // import About from "@/views/About.vue";
 
 const routes = [
@@ -22,7 +23,7 @@ const routes = [
   {
     path: "/:type",
     component: Login,
-    props: true
+    props: true,
   },
   {
     path: "/home",
@@ -74,6 +75,11 @@ const routes = [
   {
     path: "/opportunities/:type",
     component: Opportunities,
+    props: true,
+  },
+  {
+    path: "/inbox",
+    component: Inbox,
     props: true,
   },
 ];
