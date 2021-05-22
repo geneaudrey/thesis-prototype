@@ -48,7 +48,7 @@ const routes = [
     props: true,
   },
   {
-    path: "/opportunities/:type/:id/",
+    path: "/opportunities/:type/:id",
     component: InternshipProcess,
     props: true,
   },
@@ -58,7 +58,12 @@ const routes = [
     props: true,
   },
   {
-    path: "/opportunities/:type/:id/:process/completed",
+    path: "/opportunities/:type/:id/process/:process",
+    component: InternshipProcess,
+    props: true,
+  },
+  {
+    path: "/opportunities/:type/:id/process/:process/completed",
     component: FinishedStep,
     props: true,
   },

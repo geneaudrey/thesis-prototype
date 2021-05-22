@@ -154,11 +154,11 @@ export default {
     openStep(step) {
       if (step == "offer") {
         this.$router.push(
-          "/opportunities/all-internships/" + this.id + "/offer/completed"
+          "/opportunities/all-internships/" + this.id + "/process/offer/completed"
         );
       } else {
         this.$router.push(
-          "/opportunities/all-internships/" + this.id + "/" + step
+          "/opportunities/all-internships/" + this.id + "/process/" + step
         );
       }
       document.body.scrollTop = 0; // For Safari
